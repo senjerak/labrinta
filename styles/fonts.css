@@ -1,0 +1,49 @@
+@font-face {
+    font-family: opdysbold;
+    src: url(../fonts/OpenDyslexic-Bold.otf);
+}
+
+@font-face {
+    font-family: opdysboldI;
+    src: url(../fonts/OpenDyslexic-BoldItalic.otf);
+}
+
+@font-face {
+    font-family: opdysitalic;
+    src: url(../fonts/OpenDyslexic-Italic.otf);
+}
+
+@font-face {
+    font-family: opdysreg;
+    src: url(../fonts/OpenDyslexic-Regular.otf);
+}
+
+@font-face {
+    font-family: opdysmonoreg;
+    src: url(../fonts/OpenDyslexicMono-Regular.otf);
+}
+
+@font-face {
+    font-family: opdysaltaitalic;
+    src: url(../fonts/OpenDyslexicAlta-Italic.otf);
+}
+
+@font-face {
+    font-family: opdysaltareg;
+    src: url(../fonts/OpenDyslexicAlta-Regular.otf);
+}
+
+@font-face {
+    font-family: opdysaltabold;
+    src: url(../fonts/OpenDyslexicAlta-Bold.otf);
+}
+
+@font-face {
+    font-family: opdysaltaboldI;
+    src: url(../fonts/OpenDyslexicAlta-BoldItalic.otf);
+}
+
+@font-face {
+    font-family: somesome;
+    src: url(../fonts/SomewhereSomehow_0.ttf);
+}
