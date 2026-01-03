@@ -1,0 +1,328 @@
+body {
+    background: url(../media/324.GIF);
+    background-size: 100px;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    cursor: url(../media/labricursor.png), auto;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+a,
+button {
+    cursor: url(../media/labricursor2.png), auto;
+}
+
+.active {
+    color: yellow !important;
+}
+
+.stars {
+    width: 800rem;
+    height: 100%;
+    z-index: -1;
+    background: url(../media/labribg2.png) repeat;
+    position: absolute;
+    animation: slide 60s linear infinite;
+}
+
+.fatwrap {
+    z-index: 1;
+    width: auto;
+}
+
+.header {
+    width: auto;
+    background: url(../media/labriheader.png);
+    background-size: contain;
+    background-repeat: repeat-x;
+    height: 11rem;
+    display: block;
+    text-align: right;
+}
+
+.header img {
+    height: 160%;
+    margin-top: -55px;
+
+}
+
+.headerdivider {
+    position: absolute;
+    z-index: 11;
+    width: 100%;
+    background: url(../media/labridivider.png);
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 4rem;
+    margin-top: -40px;
+}
+
+.headeroverlay {
+    width: 100vw;
+    background-image: url(../media/labriheader2.gif);
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 11rem;
+    position: absolute;
+    top: 0;
+}
+
+.banner {
+    width: auto;
+    background: url(../media/037.GIF);
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    border: solid 5px transparent;
+    border-image: url(../media/085.GIF) 30 round;
+}
+
+.banner button {
+    position: inherit;
+    margin-left: 35px;
+    margin-right: 35px;
+    border-style: none;
+    font-family: opdysaltabold;
+    background: url(../media/231.GIF);
+    background-size: cover;
+    color: white;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.banner button:hover {
+    filter: invert(100%);
+}
+
+.lowbanner {
+    width: auto;
+    background: pink;
+    height: 2rem;
+
+}
+
+.centermain {
+    z-index: -1;
+    width: 90vw;
+    background: rgb(40, 58, 52);
+    height: 100%;
+}
+
+.centermain_pro {
+    background: url(../media/TILES24.png);
+    z-index: -1;
+    width: 90vw;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    background-size: 100px;
+}
+
+.promainwrap {
+    box-shadow: -10px 20px 50px black;
+    margin-top: 10px;
+    display: flexbox;
+    justify-content: center;
+    background-size: 5px;
+    overflow-y: scroll;
+    width: 50%;
+    margin-left: 40px;
+    background: url(../media/GRANITE7.JPG);
+}
+
+.prohead {
+    box-shadow: -1px 2px 9px black;
+    width: 90%;
+    height: 10%;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background: url(../media/ciq60461.jpg);
+}
+
+.prohead h1 {
+    text-align: right;
+    color: white;
+    font-family: opdysaltabold;
+    font-size: 24px;
+    margin: 5px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.promainwrap p {
+    text-align: left;
+    color: white;
+    font-family: opdysaltareg;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.prowrap {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.aboutbg {
+    background: url(../media/681.GIF);
+    width: 100%;
+    height: 300px;
+    background-size: 100px;
+}
+
+.aboutdetails {
+    position: absolute;
+    height: 600px;
+    width: 700px;
+    margin-top: 10px;
+    margin-left: 100px;
+    background: url(../media/tumblr_e3fe46666eee7e954181d4b7b0433986_4e84ab75_1280.png);
+    background-size: cover;
+    z-index: 3;
+    display: flex;
+    pointer-events: none;
+}
+
+.aboutscreen {
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    background: rgb(4, 0, 255);
+    z-index: 1;
+    margin-left: 184px;
+    margin-top: 100px;
+    overflow-y: scroll;
+    color: black;
+    transform: skewX(2.5deg) rotateZ(2deg) perspective(256px);
+    padding-top: 36px;
+    padding-left: 12px;
+    padding-right: 8px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.centermain_about {
+    z-index: -1;
+    width: 90vw;
+    background: url(../media/N054.JPG);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.centermain_links {
+    z-index: -1;
+    width: 90vw;
+    background: url(../media/rainbowstr.gif);
+    height: 100%;
+    background-size: 100px;
+    overflow-x: scroll;
+    display: flex;
+    justify-content: center;
+}
+
+.linksmain {
+    width: 50%;
+    background: url(../media/tumblr_3bf57bc387a6e0828d0970a4cd36cf87_cd41c2b4_500.png);
+    height: auto;
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-left: 150px;
+}
+
+.linksmainwrap {
+    position: absolute;
+    height: 520px;
+    width: 330px;
+    background: url(../media/TRAVERTN.png);
+    z-index: 1;
+    margin-left: 10px;
+    margin-top: 75px;
+    overflow-y: scroll;
+    padding-top: 36px;
+    padding-left: 12px;
+    padding-right: 8px;
+    word-wrap: break-word;
+    box-sizing: border-box;
+}
+
+.linksmainwrap h1 {
+    font-family: opdysaltabold;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: right;
+    color: white;
+    padding-right: 20px;
+}
+
+
+.linksmainwrap ul {
+    font-family: opdysaltabold;
+    text-shadow: 2px 2px 4px #000000;
+    text-align: left;
+    color: white;
+    padding-right: 20px;
+    font-size: 20px;
+    list-style-type: none;
+}
+
+
+.mainwrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.centerwrapper {
+    display: block;
+    height: 100vh;
+}
+
+.right {
+    right: 0;
+    position: absolute;
+    width: 30%;
+    background: url(../media/mainright.png);
+    background-size: cover;
+    background-repeat: norepeat;
+    height: 100%;
+    z-index: 5;
+}
+
+.left {
+    left: 0;
+    position: absolute;
+    width: 30%;
+    background: url(../media/mainleft.png);
+    background-size: cover;
+    background-repeat: norepeat;
+    height: 100%;
+    z-index: 5;
+}
+
+.footer {
+    z-index: 10;
+    bottom: 0;
+    position: relative;
+    width: auto;
+    background: url(../media/037.GIF);
+    height: 2rem;
+    border: solid 5px transparent;
+    border-image: url(../media/085.GIF) 30 round;
+}
+
+.footer marquee {
+    color: white;
+    font-family: opdysboldI;
+}
+
+.loader {
+    position: fixed;
+    background-color: grey;
+    inset: 0;
+    z-index: 9999999;
+}
