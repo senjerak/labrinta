@@ -3,7 +3,7 @@
 
 <!-- 
 welcome! :^)
-I hand-write as much as I can with the help of copy and paste. No AI wrote this code. I like to source inspiration from various indie sites so check out my site shrine for more details. This is a passion project for my BFA Thesis so I hope that you enjoy it!
+I hand-write as much as I can with the help of copy and paste. No AI wrote this code. I like to source inspiration from various indie sites so if you see anything of yours that I posted let me know! This website is just another passion project for my BFA Thesis so I hope that you enjoy it!
 -->
 
 <head>
@@ -15,6 +15,141 @@ I hand-write as much as I can with the help of copy and paste. No AI wrote this 
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="icon" type="image/x-icon" href="./media/labrifavi.png" />
     <script src="scripts/loader.js"></script>
+    <script type="text/javascript">
+        // <![CDATA[
+        var speed = 25; // how fast - smaller is faster
+        var how_often = 10; // average time between re-appearances of a comet (in seconds)
+        var how_many = 10; // maximum number of comets in flight
+        var colours = new Array("#ff0", "#f93", "#f60", "#e93", "#e94", "#da5", "#da6", "#cb7", "#cb8", "#cc9", "#dcb", "#ddd");
+        // above line lists colours for the comet and its tail (can be as long or short as you like)
+
+        /****************************
+        * Shooting Star/Comet Effect*
+        *(c)2008-13 mf2fm web-design*
+        *  http://www.mf2fm.com/rv  *
+        * DON'T EDIT BELOW THIS BOX *
+        ****************************/
+
+        var dx = new Array();
+        var dy = new Array();
+        var xpos = new Array();
+        var ypos = new Array();
+        var comets = new Array();
+        var swide = 800;
+        var shigh = 600;
+        var tail = colours.length;
+        var boddie = false;
+
+        function addLoadEvent(funky) {
+            var oldonload = window.onload;
+            if (typeof (oldonload) != 'function') window.onload = funky;
+            else window.onload = function () {
+                if (oldonload) oldonload();
+                funky();
+            }
+        }
+
+        addLoadEvent(whooosh);
+
+        function whooosh() {
+            if (document.getElementById) {
+                var i;
+                boddie = document.createElement("div");
+                boddie.style.position = "fixed";
+                boddie.style.top = "0px";
+                boddie.style.left = "0px";
+                boddie.style.overflow = "visible";
+                boddie.style.width = "1px";
+                boddie.style.height = "1px";
+                boddie.style.backgroundColor = "transparent";
+                document.body.appendChild(boddie);
+                set_width();
+                for (i = 0; i < how_many; i++) {
+                    write_comet(i * tail);
+                    setTimeout('launch(' + (i * tail) + ')', Math.max(1000 * i));
+                }
+            }
+        }
+
+        function write_comet(a) {
+            var i, s;
+            for (i = 0; i < tail; i++) {
+                s = 2 + (i < tail / 4) + 2 * !i;
+                comets[i + a] = div(s, s);
+                comets[i + a].style.backgroundColor = colours[i];
+                boddie.appendChild(comets[i + a]);
+            }
+        }
+
+        function div(w, h) {
+            var d = document.createElement("div");
+            d.style.position = "absolute";
+            d.style.overflow = "hidden";
+            d.style.width = w + "px";
+            d.style.height = h + "px";
+            return (d);
+        }
+
+        function stepthrough(a) {
+            var i;
+            if (Math.random() < 0.008 || ypos[a] + dy[a] < 5 || xpos[a] + dx[a] < 5 || xpos[a] + dx[a] >= swide - 5 || ypos[a] + dy[a] >= shigh - 5) {
+                for (i = 0; i < tail; i++) setTimeout('comets[' + (i + a) + '].style.visibility="hidden"', speed * (tail - i));
+                setTimeout('launch(' + a + ')', Math.max(1000, 2000 * Math.random() * how_often));
+            }
+            else setTimeout('stepthrough(' + a + ')', speed);
+            for (i = tail - 1; i >= 0; i--) {
+                if (i) {
+                    xpos[i + a] = xpos[i + a - 1];
+                    ypos[i + a] = ypos[i + a - 1];
+                }
+                else {
+                    xpos[i + a] += dx[a];
+                    ypos[i + a] += dy[a];
+                }
+                comets[i + a].style.left = xpos[i + a] + "px";
+                comets[i + a].style.top = ypos[i + a] + "px";
+            }
+        }
+
+        function launch(a) {
+            var i;
+            dx[a] = (Math.random() > 0.5 ? 1 : -1) * (1 + Math.random() * 3);
+            dy[a] = (Math.random() > 0.5 ? 1 : -1) * ((7 - dx[a]) / 3 + Math.random() * (dx[a] + 5) / 3);
+            xpos[a] = 2 * tail * dx[a] + Math.round(Math.random() * (swide - 4 * tail * dx[a]));
+            ypos[a] = 2 * tail * dy[a] + Math.round(Math.random() * (shigh - 4 * tail * dy[a]));
+            for (i = 0; i < tail; i++) {
+                xpos[i + a] = xpos[a];
+                ypos[i + a] = ypos[a];
+                comets[i + a].style.visibility = "visible";
+            }
+            stepthrough(a);
+        }
+
+        window.onresize = set_width;
+        function set_width() {
+            var sw_min = 999999;
+            var sh_min = 999999;
+            if (document.documentElement && document.documentElement.clientWidth) {
+                if (document.documentElement.clientWidth > 0) sw_min = document.documentElement.clientWidth;
+                if (document.documentElement.clientHeight > 0) sh_min = document.documentElement.clientHeight;
+            }
+            if (typeof (self.innerWidth) != "undefined" && self.innerWidth) {
+                if (self.innerWidth > 0 && self.innerWidth < sw_min) sw_min = self.innerWidth;
+                if (self.innerHeight > 0 && self.innerHeight < sh_min) sh_min = self.innerHeight;
+            }
+            if (document.body.clientWidth) {
+                if (document.body.clientWidth > 0 && document.body.clientWidth < sw_min) sw_min = document.body.clientWidth;
+                if (document.body.clientHeight > 0 && document.body.clientHeight < sh_min) sh_min = document.body.clientHeight;
+            }
+            if (sw_min == 999999 || sh_min == 999999) {
+                sw_min = 800;
+                sh_min = 600;
+            }
+            swide = sw_min;
+            shigh = sh_min;
+        }
+        // ]]>
+    </script>
 </head>
 
 <body>
@@ -26,8 +161,7 @@ I hand-write as much as I can with the help of copy and paste. No AI wrote this 
     <div class="fatwrap">
         <div class="header">
             <div class="headeroverlay"></div>
-            <img src="./media/LABRILOGO.png" />
-
+            <a href="main.html"><img src="./media/LABRILOGO.png" /></a>
         </div>
         <div class="headerdivider"></div>
         <div class="mainwrapper">
@@ -39,10 +173,8 @@ I hand-write as much as I can with the help of copy and paste. No AI wrote this 
                     <a href="links.html"><button>links</button></a>
                     <a href="labrinta.html"><button>begin</button></a>
                 </div>
-
                 <div class="centermain">
                 </div>
-
             </div>
 
             <div class="right">
@@ -53,8 +185,37 @@ I hand-write as much as I can with the help of copy and paste. No AI wrote this 
         </div>
         <div class="headerdivider"></div>
         <div class="footer">
-            <marquee>2025-2026 𖥔 Gabi Lecusay 𖥔 BFA Thesis</marquee>
+            <marquee>
+                <img src="https://solaria.neocities.org/buttons/learnhtmlbutton.gif" />
+                <img src="https://solaria.neocities.org/buttons/handcoded.png" />
+                <img src="https://zeusofthecrows.github.io/stadt/assets/images/buttons/brands/archive.png" />
+                <img src="https://solaria.neocities.org/buttons/web.gif" />
+                <img src="https://solaria.neocities.org/buttons/queercode.png" />
+                <img src="https://solaria.neocities.org/buttons/css.gif" />
+                <img src="https://solaria.neocities.org/buttons/mobilefriendly.png" />
+                <img src="https://weirdwizard69.neocities.org/graphics/button2.gif" />
+                <img scr="https://wanwanworld.neocities.org/buttons/80.gif" />
+                <img src="https://wanwanworld.neocities.org/buttons/202.gif" />
+                <img src="https://wanwanworld.neocities.org/buttons/207.gif" />
+                <img src="https://wanwanworld.neocities.org/buttons/_4.gif" />
+                <img src="https://wanwanworld.neocities.org/buttons/345.gif" />
+                <img src="https://wanwanworld.neocities.org/buttons/106.png" />
+                <img src="https://wanwanworld.neocities.org/buttons/39.gif" />
+                <img src="https://wanwanworld.neocities.org/buttons/211.gif" />
+                <img src="https://solaria.neocities.org/buttons/righttorepair.jpg" />
+                <img src="https://wanwanworld.neocities.org/buttons/284.gif" />
+                <img src="https://cinni.net/images/cinni_button.2.png" />
+                <img src="https://cinni.net/images/button/MELONLAND-FORUM.GIF" />
+                <img src="https://theoldnet.com/images/theoldnetanimblur2.gif" />
+                <img src="https://cinni.net/images/button/wiby.gif" />
+                <img src="https://weirdwizard69.neocities.org/button1.png" />
+                <img src="https://odditycommoddity.neocities.org/3-Assets/Images/Web/Buttons/ilikecomputer.png" />
+                <img src="https://odditycommoddity.neocities.org/3-Assets/Images/Web/Buttons/dreamworld.png" />
+
+            </marquee>
+            <div class="headerdividerfoot"></div>
         </div>
+
     </div>
 
 
