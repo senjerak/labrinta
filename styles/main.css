@@ -1,14 +1,18 @@
 body {
-    background: url(../media/324.GIF);
+    background: url(../textures/324.GIF);
     background-size: 100px;
     background-repeat: repeat;
     margin: 0;
     padding: 0;
     cursor: url(../media/labricursor.png), auto;
+    height: 100vh;
+    width: 100vw;
 }
 
 html {
-    overflow-x: hidden;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
 }
 
 a,
@@ -21,8 +25,8 @@ button {
 }
 
 .stars {
-    width: 800rem;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
     background: url(../media/labribg2.png) repeat;
     position: absolute;
@@ -39,59 +43,74 @@ button {
     background: url(../media/labriheader.png);
     background-size: contain;
     background-repeat: repeat-x;
-    height: 11rem;
+    height: 16vh;
     display: block;
     text-align: right;
 }
 
 .header img {
-    height: 160%;
-    margin-top: -55px;
+    height: 30vh;
+    margin-top: -7vh;
 
 }
 
 .headerdivider {
     position: absolute;
     z-index: 11;
-    width: 100%;
-    background: url(../media/labridivider.png);
+    width: 100vw;
+    background: url(../borders/labridivider.png);
     background-repeat: repeat-x;
     background-size: contain;
-    height: 4rem;
-    margin-top: -40px;
+    height: 4vh;
+    margin-top: -2vh;
+    pointer-events: none;
+}
+
+.headerdividerfoot {
+    position: absolute;
+    z-index: 11;
+    width: 100vw;
+    background: url(../borders/labridivider.png);
+    background-repeat: repeat-x;
+    background-size: contain;
+    height: 4vh;
+    margin-top: 6px;
+    pointer-events: none;
 }
 
 .headeroverlay {
     width: 100vw;
-    background-image: url(../media/labriheader2.gif);
+    background-image: url(../borders/labriheader2.gif);
     background-repeat: repeat-x;
     background-size: contain;
-    height: 11rem;
+    height: 12vh;
     position: absolute;
-    top: 0;
+    top: 4vh;
+    pointer-events: none;
 }
 
 .banner {
     width: auto;
-    background: url(../media/037.GIF);
-    height: 2rem;
+    background: url(../textures/037.GIF);
+    height: 4vh;
     display: flex;
     justify-content: center;
     border: solid 5px transparent;
-    border-image: url(../media/085.GIF) 30 round;
+    border-image: url(../textures/085.GIF) 30 round;
 }
 
 .banner button {
     position: inherit;
-    margin-left: 35px;
-    margin-right: 35px;
+    margin-left: 3vw;
+    margin-right: 3vw;
     border-style: none;
     font-family: opdysaltabold;
-    background: url(../media/231.GIF);
+    background: url(../textures/231.GIF);
     background-size: cover;
     color: white;
     border-radius: 10px;
     font-size: 16px;
+    margin-top: 0.5vh;
 }
 
 .banner button:hover {
@@ -101,48 +120,111 @@ button {
 .lowbanner {
     width: auto;
     background: pink;
-    height: 2rem;
+    height: 2vh;
 
 }
 
 .centermain {
     z-index: -1;
     width: 90vw;
-    background: rgb(40, 58, 52);
-    height: 100%;
+    background: url(../media/starss.gif);
+    height: 75vh;
 }
 
+.mainwrapper {
+    height: 78vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.centerwrapper {
+    height: auto;
+}
+
+.right {
+    right: 0;
+    position: absolute;
+    width: 25vw;
+    background: url(../media/mainright.png);
+    background-size: cover;
+    background-repeat: norepeat;
+    height: 80vh;
+    z-index: 5;
+}
+
+.left {
+    left: 0;
+    position: absolute;
+    width: 25vw;
+    background: url(../media/mainleft.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 80vh;
+    z-index: 5;
+}
+
+.footer {
+    padding-top: 20px;
+    display: flex;
+    z-index: 10;
+    bottom: 0;
+    position: relative;
+    width: auto;
+    background: url(../textures/037.GIF);
+    height: 4vh;
+    border: solid 5px transparent;
+    border-image: url(../textures/085.GIF) 30 round;
+}
+
+.footer marquee {
+    color: white;
+    font-family: opdysboldI;
+    height: 20px;
+    padding-top: 15px;
+    top: 0;
+    position: absolute;
+}
+
+.footer img {
+    margin-top: -50px;
+    padding: 0;
+}
+
+.loader {
+    position: fixed;
+    background: url(../textures/rainbowstr.gif);
+    inset: 0;
+    z-index: 9999999;
+}
+
+/* Prologue */
+
 .centermain_pro {
-    background: url(../media/TILES24.png);
+    background: url(../textures/SB102.JPG);
     z-index: -1;
     width: 90vw;
-    height: 100%;
+    height: 90vh;
     overflow-y: scroll;
     display: flex;
     justify-content: center;
-    background-size: 100px;
+    background-size: 500px;
 }
 
 .promainwrap {
     box-shadow: -10px 20px 50px black;
-    margin-top: 10px;
+    margin-top: 1vh;
     display: flexbox;
     justify-content: center;
     background-size: 5px;
     overflow-y: scroll;
-    width: 50%;
-    margin-left: 40px;
-    background: url(../media/GRANITE7.JPG);
-}
-
-.prohead {
-    box-shadow: -1px 2px 9px black;
-    width: 90%;
-    height: 10%;
-    margin-top: 10px;
-    margin-right: auto;
-    margin-left: auto;
-    background: url(../media/ciq60461.jpg);
+    width: 40vw;
+    margin-left: 3vw;
+    padding: 20px;
+    background: url(../textures/GRANITE7.JPG);
+    border: solid 20px transparent;
+    border-image: url(../borders/floral2.png) 21 round;
+    overflow: auto;
 }
 
 .prohead h1 {
@@ -163,14 +245,86 @@ button {
 }
 
 .prowrap {
-    width: 90%;
+    width: 25vw;
     margin-left: auto;
     margin-right: auto;
 }
 
+/* Links */
+
+.centermain_links {
+    background: url(../textures/TILES24.png);
+    z-index: -1;
+    width: 90vw;
+    height: 100vh;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    background-size: 100px;
+}
+
+.linksmainwrap {
+    border: solid black 5px;
+    box-shadow: -10px 20px 50px black;
+    margin-top: 10vh;
+    display: flexbox;
+    justify-content: center;
+    background-size: 5px;
+    overflow-y: scroll;
+    width: 20vw;
+    height: 52vh;
+    margin-left: 2vw;
+    background: url(../textures/paperbag195.jpg);
+}
+
+.linkshead {
+    box-shadow: -1px 2px 9px black;
+    width: 30vh;
+    height: 10vh;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    background: url(../textures/CLOTH04.png);
+}
+
+.linkshead h1 {
+    text-align: right;
+    color: white;
+    font-family: opdysaltabold;
+    font-size: 24px;
+    margin: 5px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+
+.linksmainwrap p {
+    text-align: left;
+    color: white;
+    font-family: opdysaltareg;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.linkborder {
+    margin-top: 0;
+    background-size: 5px;
+    overflow-y: scroll;
+    width: 30vw;
+    height: 70vh;
+    margin-left: 2vw;
+    position: absolute;
+    background-image: url(../media/frame.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+/* About */
+
 .aboutbg {
-    background: url(../media/681.GIF);
-    width: 100%;
+    background: url(../textures/681.GIF);
+    width: 100vw;
     height: 300px;
     background-size: 100px;
 }
@@ -181,7 +335,7 @@ button {
     width: 700px;
     margin-top: 10px;
     margin-left: 100px;
-    background: url(../media/tumblr_e3fe46666eee7e954181d4b7b0433986_4e84ab75_1280.png);
+    background: url(../media/computer.png);
     background-size: cover;
     z-index: 3;
     display: flex;
@@ -206,123 +360,21 @@ button {
     box-sizing: border-box;
 }
 
-.centermain_about {
-    z-index: -1;
-    width: 90vw;
-    background: url(../media/N054.JPG);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.centermain_links {
-    z-index: -1;
-    width: 90vw;
-    background: url(../media/rainbowstr.gif);
-    height: 100%;
-    background-size: 100px;
-    overflow-x: scroll;
-    display: flex;
-    justify-content: center;
-}
-
-.linksmain {
-    width: 50%;
-    background: url(../media/tumblr_3bf57bc387a6e0828d0970a4cd36cf87_cd41c2b4_500.png);
-    height: auto;
-    z-index: 3;
-    background-repeat: no-repeat;
-    background-size: contain;
-    margin-left: 150px;
-}
-
-.linksmainwrap {
-    position: absolute;
-    height: 520px;
-    width: 330px;
-    background: url(../media/TRAVERTN.png);
-    z-index: 1;
-    margin-left: 10px;
-    margin-top: 75px;
-    overflow-y: scroll;
-    padding-top: 36px;
-    padding-left: 12px;
-    padding-right: 8px;
-    word-wrap: break-word;
-    box-sizing: border-box;
-}
-
-.linksmainwrap h1 {
-    font-family: opdysaltabold;
-    text-shadow: 2px 2px 4px #000000;
-    text-align: right;
-    color: white;
-    padding-right: 20px;
-}
-
-
-.linksmainwrap ul {
-    font-family: opdysaltabold;
-    text-shadow: 2px 2px 4px #000000;
+.aboutscreen p {
     text-align: left;
     color: white;
-    padding-right: 20px;
-    font-size: 20px;
-    list-style-type: none;
+    font-family: opdysaltareg;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px #000000;
 }
 
-
-.mainwrapper {
+.centermain_about {
+    z-index: -1;
+    width: 70vw;
+    background: url(../textures/N054.JPG);
+    height: 80vh;
     display: flex;
     justify-content: center;
 }
 
-.centerwrapper {
-    display: block;
-    height: 100vh;
-}
-
-.right {
-    right: 0;
-    position: absolute;
-    width: 30%;
-    background: url(../media/mainright.png);
-    background-size: cover;
-    background-repeat: norepeat;
-    height: 100%;
-    z-index: 5;
-}
-
-.left {
-    left: 0;
-    position: absolute;
-    width: 30%;
-    background: url(../media/mainleft.png);
-    background-size: cover;
-    background-repeat: norepeat;
-    height: 100%;
-    z-index: 5;
-}
-
-.footer {
-    z-index: 10;
-    bottom: 0;
-    position: relative;
-    width: auto;
-    background: url(../media/037.GIF);
-    height: 2rem;
-    border: solid 5px transparent;
-    border-image: url(../media/085.GIF) 30 round;
-}
-
-.footer marquee {
-    color: white;
-    font-family: opdysboldI;
-}
-
-.loader {
-    position: fixed;
-    background-color: grey;
-    inset: 0;
-    z-index: 9999999;
-}
+/* About */

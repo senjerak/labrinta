@@ -2,7 +2,7 @@
     z-index: -1;
     height: 100vh;
     width: 800rem;
-    background: url(../media/1071.GIF) repeat;
+    background: url(../textures/1071.GIF) repeat;
     animation: slide 60s linear infinite;
 }
 
@@ -22,7 +22,7 @@
 .splashbtn {
     width: 80px;
     border: none;
-    background: url(../media/854.GIF);
+    background: url(../textures/854.GIF);
     background-size: cover;
     background-repeat: no-repeat;
     color: white;
