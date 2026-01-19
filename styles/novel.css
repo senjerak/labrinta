@@ -3,6 +3,32 @@ body {
     background: url(../s_one/raindrops.webp);
 }
 
+
+.loader {
+    position: fixed;
+    background: url(../media/animate.gif);
+    background-repeat: repeat;
+    inset: 0;
+    z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.loader img {
+    position: absolute;
+    top: 40%;
+    width: 120px;
+    height: 120px;
+}
+
+#load {
+    z-index: 5;
+    width: 120px;
+    height: 20px;
+    filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.5));
+}
+
 #novelDiv {
     width: 1024px;
     height: 580px;

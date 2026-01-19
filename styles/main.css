@@ -92,7 +92,7 @@ button {
 .banner {
     width: auto;
     background: url(../textures/037.GIF);
-    height: 4vh;
+    height: 5vh;
     display: flex;
     justify-content: center;
     border: solid 5px transparent;
@@ -133,24 +133,22 @@ button {
     justify-content: center;
 }
 
-.centermain>img {
+.centermain img {
     position: absolute;
-    margin-top: 20vh;
+    margin-top: 18vh;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
+    z-index: 1;
 }
 
-.signwrapper {
-    width: 384px;
-    height: 128px;
-    margin-top: 25vh;
-    z-index: 5;
-}
 
-.signwrapper:hover #sign {
-    transform: scale(0.4);
+#sign:hover {
+    transform: scale(1.1);
 }
 
 #sign {
+    margin-top: 24vh;
+    z-index: 5;
+    filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
     transition: transform 0.1s steps(3, end);
 }
 
@@ -216,10 +214,29 @@ button {
 
 .loader {
     position: fixed;
-    background: url(../textures/rainbowstr.gif);
+    background: url(../media/animate.gif);
+    background-repeat: repeat;
     inset: 0;
     z-index: 9999999;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
+
+.loader img {
+    position: absolute;
+    top: 40%;
+    width: 120px;
+    height: 120px;
+}
+
+#load {
+    z-index: 5;
+    width: 120px;
+    height: 20px;
+    filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.5));
+}
+
 
 /* Prologue */
 
