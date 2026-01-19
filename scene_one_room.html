@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example</title>
+    <script type="text/javascript" src="./scripts/novel_engine.js"></script>
+    <script type="text/javascript" src="./scripts/scene1.js"></script>
+    <link rel="stylesheet" href="./styles/novel.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+</head>
+
+<body onload="initNovel(800, 600);">
+
+    <div id="novelDiv">
+
+        <div class="window"></div>
+
+        <div style="position: absolute;
+             left:0; top: 0; z-index:-1">
+            <img id="background0" src="./s_one/home.png" />
+        </div>
+
+        <!-- <div style="position: absolute;
+             left:0; top: 0; z-index:-1">
+            <img id="background1" src="./images/997.GIF">
+        </div> -->
+
+        <div id="dialogDiv" style="z-index:100">
+        </div>
+
+    </div>
+
+</html>
