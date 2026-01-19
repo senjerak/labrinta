@@ -133,19 +133,25 @@ button {
     justify-content: center;
 }
 
-.centermain img {
+.centermain>img {
     position: absolute;
     margin-top: 20vh;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
 }
 
-#sign:hover {
-    width: 20%;
+.signwrapper {
+    width: 384px;
+    height: 128px;
+    margin-top: 25vh;
+    z-index: 5;
+}
+
+.signwrapper:hover #sign {
+    transform: scale(0.4);
 }
 
 #sign {
-    margin-top: 25vh;
-    z-index: 5;
+    transition: transform 0.1s steps(3, end);
 }
 
 .mainwrapper {
