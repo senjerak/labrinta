@@ -1,4 +1,4 @@
-var preload = ["home.png", "CASPER_talk.gif", "CASCA_talk.gif"];
+var preload = ["home.png", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCAwalkmad.gif",];
 
 var preloadObj = new Array(preload.length);
 
@@ -25,15 +25,18 @@ function prepareNovel() {
   novel.audioPath = ""; // path to your audio directory
 
   casca = new Character("Casca", { color: "rgb(145, 148, 230)" });
-  casper = new Character("Casper", { color: "rgb(134, 234, 127)" });
+  casper = new Character("Casper", { color: "rgba(218, 234, 127, 1)" });
   n = new Character("");
 
-  place1 = new Position(300, 400, 0, 0);
+  // casper walks in
+  place1 = new Position(650, 300, 0, 0);
+
+
   place2 = new Position(300, 400, 0.5, 0.5);
   place3 = new Position(300, 400, 1, 0);
 
   leftSide = new Position(0, 0.75, 0, 1);
-  rightSide = new Position(800, 450, 1, 1);
+  rightSide = new Position(1010, 550, 1, 1);
   upperCenter = new Position(0.5, 0.3, 0.5, 0.5);
   rightTop = new Position(0.9, 0.1, 1, 0);
 
@@ -47,15 +50,17 @@ function prepareNovel() {
     scene,
     "home.png",
 
+    casca,
+    { image: "CASCAWalkmad.gif", position: rightSide },
+
     n,
     "The morning dew after a night of rainfall",
 
-    // casper,
-    // { image: "CASPERWalk.gif", position: rightSide },
+
     casper,
-    { image: "CASPER_talk.gif", position: leftSide },
+    { image: "CASPER_talk.gif", position: place1 },
     casper,
-    "good morning! the sun is up! so, I am up!",
+    "good morning! . . . the sun is up! so I am up!",
 
     /* jsCall,
     {
