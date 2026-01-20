@@ -33,6 +33,12 @@ html {
     filter: drop-shadow(6px 6px 0px rgba(0, 0, 0, 0.5));
 }
 
+.avatar {
+    float: left;
+    position: absolute;
+    padding: 10px;
+}
+
 
 /* S1 P1 */
 

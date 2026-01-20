@@ -1,6 +1,7 @@
 body {
     text-align: center;
     background: url(../s_one/raindrops.webp);
+    cursor: url(../media/labricursor.png), auto;
 }
 
 
@@ -38,6 +39,28 @@ body {
     margin-top: 30px;
     position: relative;
     text-align: center;
+}
+
+a,
+button {
+    cursor: url(../media/labricursor2.png), auto;
+}
+
+
+.homebtn {
+    position: absolute;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    right: 0;
+    top: 0;
+    background: url(../s_one/homebtn.png);
+    background-size: contain;
+}
+
+.homebtn:hover {
+    background: url(../s_one/home.gif);
+    background-size: contain;
 }
 
 
