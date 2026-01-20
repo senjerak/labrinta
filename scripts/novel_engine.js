@@ -1395,7 +1395,6 @@ function initNovel(w, h) {
   novel_script = script;
   novel_collectLabels();
   novel.frame = novel.labels["start"];
-  playNovel();
 }
 
 /*

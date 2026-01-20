@@ -1,8 +1,9 @@
 body,
 html {
-    background: black;
+    background: url(../s_one/SB028.JPG);
+    background-size: cover;
     margin: 0;
-    padding: 0;
+    padding: 40px;
     overflow-x: hidden;
     scrollbar-width: none;
 }
@@ -38,14 +39,15 @@ html {
 .scrollone {
     position: absolute;
     width: 100vw;
-    height: 500vh;
-    background: url(../s_one/SB028.JPG);
-    background-size: contain;
+    height: 600vh;
+    margin-left: auto;
+    margin-right: auto;
 
 }
 
 .scrollone img {
-    filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
+    position: absolute;
+    filter: drop-shadow(8px 8px 0px rgba(0, 0, 0, 0.5));
     width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -56,21 +58,24 @@ html {
 }
 
 #smaller {
+    position: absolute;
     width: 100px;
-    filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(4px 4px 0px rgba(0, 0, 0, 0.5));
 }
 
 .doodles {
     position: absolute;
-    bottom: 0;
+    bottom: -50px;
     width: 100vw;
-    height: 500px;
+    height: 50vh;
     background: url(../s_one/stickers/bgpic.png);
     background-size: contain;
-    margin-bottom: 220px;
+    margin-bottom: 160px;
+    margin-left: -80px;
 }
 
 .foot {
+    margin: -80px;
     position: absolute;
     bottom: 0;
     width: 100vw;

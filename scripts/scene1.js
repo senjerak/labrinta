@@ -1,4 +1,4 @@
-var preload = ["home.png", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCAwalkmad.gif",];
+var preload = ["home.png", "elevator.gif", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCAwalkmad.gif",];
 
 var preloadObj = new Array(preload.length);
 
@@ -21,29 +21,32 @@ for (var i = 0; i < preload.length; i++) {
 }
 
 function prepareNovel() {
-  novel.imagePath = "../s_one/"; // path to your image directory
+  novel.imagePath = "../s_one/", "../sprites/"; // path to your image directory
   novel.audioPath = ""; // path to your audio directory
 
   casca = new Character("Casca", { color: "rgb(145, 148, 230)" });
   casper = new Character("Casper", { color: "rgba(218, 234, 127, 1)" });
   n = new Character("");
 
-  // casper walks in
+  //casca_enter
+  rightSide = new Position(1030, 560, 1, 1);
+  // casper 
   place1 = new Position(650, 300, 0, 0);
+  // casca
+  place2 = new Position(572, 430, 0.5, 0.5);
+  // casper 
+  place3 = new Position(450, 300, 1, 0);
+  //casca_elevator
+  place4 = new Position(600, 310, 1, 0);
+  //casper_elevator
+  place5 = new Position(470, 300, 1, 0);
 
-
-  place2 = new Position(300, 400, 0.5, 0.5);
-  place3 = new Position(300, 400, 1, 0);
-
-  leftSide = new Position(0, 0.75, 0, 1);
-  rightSide = new Position(1010, 550, 1, 1);
-  upperCenter = new Position(0.5, 0.3, 0.5, 0.5);
-  rightTop = new Position(0.9, 0.1, 1, 0);
 
   photo = new Character("", { position: upperCenter });
   textArea = new TextBlock("");
 
   script = [
+
     label,
     "start",
 
@@ -51,30 +54,23 @@ function prepareNovel() {
     "home.png",
 
     casca,
-    { image: "CASCAWalkmad.gif", position: rightSide },
+    { image: `CASCAWalkmad.gif?A=${Date.now()}`, position: rightSide, },
 
-    n,
+    casca,
     "The morning dew after a night of rainfall",
 
+    casca,
+    { image: "CASCA_talkmad.gif", position: place2, },
 
     casper,
     { image: "CASPER_talk.gif", position: place1 },
     casper,
     "good morning! . . . the sun is up! so I am up!",
 
-    /* jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },*/
-
-    casca,
-    { position: rightSide, image: "CASCAWalkmad.gif" },
     casca,
     { image: "CASCA_talk.gif" },
     casca,
-    "casper. please. It's too early. Stop it already.",
+    "Casper. Please. It's too early. Stop it already.",
 
     n,
     "casper couldn't stop, even if he wanted to. He doesn't know how. He doesn't know why.",
@@ -82,21 +78,24 @@ function prepareNovel() {
     "What does stopping even mean?",
 
     casca,
-    "now... help me pick up your toys so that we can leave.",
+    "now. . . help me pick up your toys so that we can leave.",
 
     casper,
-    { position: rightSide },
+    { position: place3 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
     casca,
-    "no. leave it alone.",
+    "no. . . leave it alone.",
 
     casca,
-    "there's no time for that, we have to put our raincoats and skidaddle before they run out of rentals.",
+    "there's no time for that! we've got to skidaddle before they run out of rentals.",
 
     casper,
-    "...rental shmental..",
+    ". . .oh. . okay. .",
+
+    casper,
+    ". . .rental shmental. .",
 
     casca,
     "what was that?",
@@ -105,16 +104,42 @@ function prepareNovel() {
     "oops! sorry!",
 
     casca,
-    "hmm...",
+    "hmm. . .",
 
-    /*jsCall,
+    casca,
+    "okay, well, come on. let's get those shoes on and head toward the elevators.",
+
+    casper,
+    "okay! okay! pkay!",
+
+
+    jsCall,
     {
       fcn: () => {
-        window.location.href = "../next.html";
+        document.querySelector(".window").style.display = "none";
       },
-    },*/
+    },
 
     scene,
-    "home.png",
+    "elevator.gif",
+
+    casca,
+    { image: "CASCA_talkmad.gif", position: place4, },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place5, },
+
+    casper,
+    "wheeeee~~!",
+
+
+    /* jsCall,
+     {
+       fcn: () => {
+         window.location.href = "../scene_two_podderstation.html";
+       },
+     },*/
+
+
   ];
 }
