@@ -159,6 +159,11 @@ button {
     justify-content: center;
 }
 
+#temptiny {
+    top: 6vh;
+    transform: scale(0.9);
+}
+
 .centerwrapper {
     height: auto;
 }

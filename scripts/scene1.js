@@ -1,4 +1,4 @@
-var preload = ["home.png", "elevator.gif", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCA_talksad.gif", "CASPER_talkmad.gif", "CASPER_talksad.gif", "CASCAwalksad.gif", "CASCA_talk.gif", "CASCAwalkmad.gif",];
+var preload = ["home.png", "elevator.gif", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCA_talkmadL.gif", "CASCA_talksad.gif", "CASPER_talkmad.gif", "CASPER_talksad.gif", "CASCAwalksad.gif", "CASCA_talk.gif", "CASCAwalkmad.gif", "pfp1.png", "pfp2.png",];
 
 var preloadObj = new Array(preload.length);
 
@@ -28,14 +28,14 @@ function prepareNovel() {
   casper = new Character("Casper", { color: "rgba(218, 234, 127, 1)" });
   n = new Character("");
 
-  //casca_enter
+  //enter
   rightSide = new Position(1030, 560, 1, 1);
   // casper 
-  place1 = new Position(650, 300, 0, 0);
+  place1 = new Position(275, 295, 0, 0);
   // casca
   place2 = new Position(572, 430, 0.5, 0.5);
   // casper 
-  place3 = new Position(450, 300, 1, 0);
+  place3 = new Position(897, 300, 1, 0);
   //casca_elevator
   place4 = new Position(600, 310, 1, 0);
   //casper_elevator
@@ -53,35 +53,38 @@ function prepareNovel() {
     scene,
     "home.png",
 
-    casca,
-    { image: `CASCAWalkmad.gif?A=${Date.now()}`, position: rightSide, },
+    casper,
+    { image: `casper_walks.gif?A=${Date.now()}`, position: rightSide, },
+    casper,
+    "good morning! . . . the sun is up! so I am up!",
 
     casca,
-    "The morning dew after a night of rainfall",
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSide, },
+    casca,
+    "Casper. It's too early. Stop it already.",
 
     casca,
     { image: "CASCA_talkmad.gif", position: place2, },
 
     casper,
-    { image: "CASPER_talk.gif", position: place1 },
+    { image: "CASPER_talkL.gif", position: place1, },
     casper,
-    "good morning! . . . the sun is up! so I am up!",
-
-    casca,
-    { image: "CASCA_talk.gif" },
-    casca,
-    "Casper. Please. It's too early. Stop it already.",
+    ". . . aw.",
 
     n,
-    "casper couldn't stop, even if he wanted to. He doesn't know how. He doesn't know why.",
+    "Casper couldn't stop, even if he wanted to. He doesn't know how. He doesn't know why.",
     n,
     "What does stopping even mean?",
 
+    casper,
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSide, },
+    casca,
+    { image: "CASCA_talkmadL.gif", position: place2, },
     casca,
     "now. . . help me pick up your toys so that we can leave.",
 
     casper,
-    { position: place3 },
+    { image: "CASPER_talk.gif", position: place3 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -110,8 +113,7 @@ function prepareNovel() {
     "okay, well, come on. let's get those shoes on and head toward the elevators.",
 
     casper,
-    "okay! okay! pkay!",
-
+    "okay! okay! okay!",
 
     jsCall,
     {
@@ -132,6 +134,11 @@ function prepareNovel() {
     casper,
     "wheeeee~~!",
 
+    casca,
+    "Casper. . .",
+
+    casper,
+    ". . . sorry! sorry!",
 
     /* jsCall,
      {
