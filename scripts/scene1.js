@@ -1,4 +1,4 @@
-var preload = ["home.png", "elevator.gif", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCAwalkmad.gif",];
+var preload = ["home.png", "elevator.gif", "CASPER_talk.gif", "CASCA_talkmad.gif", "CASCA_talksad.gif", "CASPER_talkmad.gif", "CASPER_talksad.gif", "CASCAwalksad.gif", "CASCA_talk.gif", "CASCAwalkmad.gif",];
 
 var preloadObj = new Array(preload.length);
 
