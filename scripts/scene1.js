@@ -92,6 +92,7 @@ function prepareNovel() {
     scene,
     "home.png",
 
+    /*
     label,
     "menu1",
     menu,
@@ -101,7 +102,7 @@ function prepareNovel() {
       [jump, "elevator"],
       "rental",
       [jump, "rental"],
-    ],
+    ],*/
 
     n,
     "Poddertown, the industrious hive for the humble Podlet, wakes to the gentle embrace of a dwarf sun.<br> It is somewhat cold, wet, and not very bright.",
