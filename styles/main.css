@@ -145,8 +145,58 @@ button {
     transform: scale(1.1);
 }
 
+#signabout:hover {
+    transform: scale(1.1);
+}
+
+#signlinks:hover {
+    transform: scale(1.1);
+}
+
+#signpro:hover {
+    transform: scale(1.1);
+}
+
+#signguest:hover {
+    transform: scale(1.05);
+}
+
 #sign {
     margin-top: 24vh;
+    z-index: 5;
+    filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
+    transition: transform 0.1s steps(3, end);
+}
+
+#signabout {
+    width: 200px;
+    margin-top: 26vh;
+    margin-right: 40vw;
+    z-index: 5;
+    filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
+    transition: transform 0.1s steps(3, end);
+}
+
+#signlinks {
+    width: 200px;
+    margin-top: 26vh;
+    margin-left: 40vw;
+    z-index: 5;
+    filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
+    transition: transform 0.1s steps(3, end);
+}
+
+#signpro {
+    width: 200px;
+    margin-top: 6vh;
+    z-index: 5;
+    filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
+    transition: transform 0.1s steps(3, end);
+}
+
+#signguest {
+    width: 500px;
+    margin-top: 50vh;
     z-index: 5;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
     transition: transform 0.1s steps(3, end);
