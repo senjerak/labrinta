@@ -1,10 +1,22 @@
 var preload = [
+  "homebtn.png",
+
   "home.png",
   "home.gif",
-  "homebtn.png",
   "windowtilt.gif",
   "elevator.gif",
   "rental.png",
+  "overpass.png",
+  "enter.png",
+  "front.png",
+  "lobby.png",
+  "lobby_closer.png",
+  "room1.png",
+  "room1inside.png",
+  "market.jpg",
+  "room2.png",
+  "room2inside.png",
+  "room3.png",
   "mrchoco.png",
 
   "CASCA_talkmad.gif",
@@ -92,18 +104,45 @@ function prepareNovel() {
     scene,
     "home.png",
 
-    /*
     label,
     "menu1",
     menu,
     [
       "So, what would you like to see?",
+      "OwO",
+      [jump, "beginning"],
+      "stay",
+      [jump, "beginning"],
       "elevator",
       [jump, "elevator"],
       "rental",
       [jump, "rental"],
-    ],*/
+      "overpass",
+      [jump, "highwayone"],
+      "enter.png",
+      [jump, "enter"],
+      "front",
+      [jump, "front"],
+      "lobby",
+      [jump, "lobby"],
+      "lobby_closer",
+      [jump, "lobby_closer"],
+      "room1door",
+      [jump, "room1door"],
+      "room1",
+      [jump, "room1inside"],
+      "market",
+      [jump, "market"],
+      "room2door",
+      [jump, "room2door"],
+      "room2",
+      [jump, "room2inside"],
+      "room3door",
+      [jump, "room3door"],
+    ],
 
+    label,
+    "beginning",
     n,
     "Poddertown, the industrious hive for the humble Podlet, wakes to the gentle embrace of a dwarf sun.<br> It is somewhat cold, wet, and not very bright.",
 
@@ -269,6 +308,182 @@ function prepareNovel() {
 
     casper,
     "it's MY turn to look. . . so you're gonna have ta go hide somewhere.",
+
+    label,
+    "highwayone",
+    scene,
+    "overpass.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "enter",
+    scene,
+    "enter.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "front",
+    scene,
+    "front.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "lobby",
+    scene,
+    "lobby.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "lobby_closer",
+    scene,
+    "lobby_closer.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "room1door",
+    scene,
+    "room1.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "room1",
+    scene,
+    "room1inside.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "market",
+    scene,
+    "market.jpg",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "room2door",
+    scene,
+    "room2.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "room2",
+    scene,
+    "room2inside.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "room3door",
+    scene,
+    "room3.png",
+    jsCall,
+    {
+      fcn: () => {
+        document.querySelector(".window").style.display = "none";
+      },
+    },
+
+    casper,
+    { image: "CASPER_talk.gif", position: place3 },
+    casper,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
     /* jsCall,
      {
