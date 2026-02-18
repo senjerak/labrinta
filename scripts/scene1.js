@@ -136,7 +136,7 @@ function prepareNovel() {
       "room2door",
       [jump, "room2door"],
       "room2",
-      [jump, "room2inside"],
+      [jump, "room2"],
       "room3door",
       [jump, "room3door"],
     ],
@@ -269,13 +269,13 @@ function prepareNovel() {
     "rental",
     scene,
     "rental.png",
-
+    /*
     jsCall,
     {
       fcn: () => {
         document.querySelector(".window").style.display = "none";
       },
-    },
+    },*/
 
     mrchoco,
     { image: "mrchoco.png", position: place1 },
@@ -313,12 +313,6 @@ function prepareNovel() {
     "highwayone",
     scene,
     "overpass.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -329,12 +323,6 @@ function prepareNovel() {
     "enter",
     scene,
     "enter.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -346,11 +334,6 @@ function prepareNovel() {
     scene,
     "front.png",
     jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -362,11 +345,6 @@ function prepareNovel() {
     scene,
     "lobby.png",
     jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -377,15 +355,18 @@ function prepareNovel() {
     "lobby_closer",
     scene,
     "lobby_closer.png",
+
+    /*
     jsCall,
     {
       fcn: () => {
         document.querySelector(".window").style.display = "none";
       },
-    },
+    },*/
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
+
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -393,12 +374,6 @@ function prepareNovel() {
     "room1door",
     scene,
     "room1.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -409,12 +384,6 @@ function prepareNovel() {
     "room1",
     scene,
     "room1inside.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -425,12 +394,6 @@ function prepareNovel() {
     "market",
     scene,
     "market.jpg",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -441,12 +404,6 @@ function prepareNovel() {
     "room2door",
     scene,
     "room2.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -457,12 +414,6 @@ function prepareNovel() {
     "room2",
     scene,
     "room2inside.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },
@@ -473,12 +424,6 @@ function prepareNovel() {
     "room3door",
     scene,
     "room3.png",
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
 
     casper,
     { image: "CASPER_talk.gif", position: place3 },

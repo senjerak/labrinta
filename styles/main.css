@@ -169,8 +169,8 @@ button {
 }
 
 #signabout {
-    width: 100px;
-    margin-top: 26vh;
+    width: 80px;
+    margin-top: 16vh;
     margin-right: 40vw;
     z-index: 5;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
@@ -178,9 +178,9 @@ button {
 }
 
 #signlinks {
-    width: 100px;
-    margin-top: 26vh;
-    margin-left: 40vw;
+    width: 90px;
+    margin-top: 46vh;
+    margin-left: 45vw;
     z-index: 5;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
     transition: transform 0.1s steps(3, end);
@@ -188,7 +188,8 @@ button {
 
 #signpro {
     width: 100px;
-    margin-top: 6vh;
+    margin-top: 10vh;
+    margin-left: 20vw;
     z-index: 5;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
     transition: transform 0.1s steps(3, end);
@@ -196,7 +197,7 @@ button {
 
 #signguest {
     width: 300px;
-    margin-top: 50vh;
+    margin-top: 60vh;
     z-index: 5;
     filter: drop-shadow(12px 12px 0px rgba(0, 0, 0, 0.5));
     transition: transform 0.1s steps(3, end);
