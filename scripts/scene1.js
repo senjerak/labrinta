@@ -1,23 +1,48 @@
 var preload = [
-  "homebtn.png",
+  "raindrops.webp",
 
-  "home.png",
+  "homebtn.png",
   "home.gif",
-  "windowtilt.gif",
+
+  "homefirst.gif",
   "elevator.gif",
-  "rental.png",
+
+  "rental.gif",
   "overpass.png",
-  "enter.png",
-  "front.png",
-  "lobby.png",
-  "lobby_closer.png",
-  "room1.png",
-  "room1inside.png",
-  "market.jpg",
-  "room2.png",
-  "room2inside.png",
-  "room3.png",
-  "mrchoco.png",
+  "overpass2.png",
+  "overpass3.png",
+
+  "carinside1.png",
+  "carinside2.png",
+  "carinside3.png",
+
+  "enter.gif",
+  "front.gif",
+  "lobby.gif",
+  "lobby_closer.gif",
+
+  "room1door.gif",
+  "room2door.gif",
+  "room3door.gif",
+
+  "roomone.gif",
+  "roomtwo.gif",
+  "room2closer.png",
+
+  "transport.gif",
+  "market.gif",
+
+  "room1minigame.png",
+  "room2minigame.png",
+  "room3minigame.png",
+
+  "choco.png",
+  "choco_R.png",
+
+  "npc1.gif",
+
+  "Sonador_talk.gif",
+  "Sonador_talkL.gif",
 
   "CASCA_talkmad.gif",
   "CASCA_talkmadL.gif",
@@ -27,6 +52,7 @@ var preload = [
   "CASCAwalkmad.gif",
   "CASCA_talk.gif",
   "CASCA_talkL.gif",
+  "Casca_flappies.gif",
 
   "CASPER_talk.gif",
   "CASPER_talkL.gif",
@@ -36,6 +62,7 @@ var preload = [
   "CASPER_talksadL.gif",
   "casper_walks.gif",
   "casper_walksL.gif",
+  "casper_jumps.gif",
 
   "buggotiny.gif",
   "loading.gif",
@@ -67,9 +94,10 @@ function prepareNovel() {
   ((novel.imagePath = "../s_one/"), "../media/"); // path to your image directory
   novel.audioPath = ""; // path to your audio directory
 
-  casca = new Character("Casca", { color: "rgb(145, 148, 230)" });
+  sonador = new Character("Soñador", { color: "rgb(147, 108, 236)" });
+  casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
   casper = new Character("Casper", { color: "rgba(218, 234, 127, 1)" });
-  mrchoco = new Character("Mr.Choco", { color: "rgb(255, 127, 48)" });
+  mrchoco = new Character("Choco", { color: "rgb(255, 127, 48)" });
   npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
   n = new Character("");
 
@@ -77,23 +105,43 @@ function prepareNovel() {
 
   //enter
   rightSide = new Position(1030, 560, 1, 1);
+
+  //home
   // casper
-  place1 = new Position(275, 295, 0, 0);
+  homecasper1 = new Position(275, 295, 0, 0);
   // casca
-  place2 = new Position(572, 430, 0.5, 0.5);
+  homecasca1 = new Position(572, 430, 0.5, 0.5);
   // casper
-  place3 = new Position(897, 300, 1, 0);
+  homecasper2 = new Position(897, 300, 1, 0);
+  //choco
+  homechoco = new Position(850, 465, 1, 0);
 
-  //casca_elevator
-  place4 = new Position(600, 300, 1, 0);
-  //casper_elevator
-  place5 = new Position(470, 290, 1, 0);
+  //elevator
+  //casca
+  elecasca1 = new Position(600, 300, 1, 0);
+  //casper
+  elecasper1 = new Position(470, 290, 1, 0);
+  elecasper2 = new Position(475, 265, 1, 0);
+  //choco
+  elechoco = new Position(450, 460, 1, 0);
 
-  //casper_rental
-  place6 = new Position(150, 200, 1, 0);
-  //casca_rental
-  place7 = new Position(270, 200, 1, 0);
+  //rental
+  //casper
+  rentcasper1 = new Position(150, 200, 1, 0);
+  rentcasper2 = new Position(779, 208, 1, 0);
+  rentcasper3 = new Position(250, 200, 1, 0);
+  //casca
+  rentcasca1 = new Position(270, 200, 1, 0);
+  //choco
+  rentchoco1 = new Position(150, 400, 1, 0);
+  rentchoco2 = new Position(1782, 400, 1, 0);
+  //npc
+  rentnpc1 = new Position(420, 233, 1, 0);
 
+
+
+
+  //no touch
   photo = new Character("", { position: upperCenter });
   textArea = new TextBlock("");
 
@@ -102,7 +150,7 @@ function prepareNovel() {
     "start",
 
     scene,
-    "home.png",
+    "homefirst.gif",
 
     label,
     "menu1",
@@ -160,47 +208,72 @@ function prepareNovel() {
     "Casper. It's too early. Just stop.",
 
     casca,
-    { image: "CASCA_talkmad.gif", position: place2 },
+    { image: "CASCA_talkmad.gif", position: homecasca1 },
 
     casper,
-    { image: "CASPER_talkL.gif", position: place1 },
+    { image: "CASPER_talkL.gif", position: homecasper1 },
     casper,
     ". . . aw. . .",
+
 
     n,
     "Casper couldn't stop, even if he wanted to. He doesn't know how. He doesn't know why.",
     n,
     "What does stopping even mean?",
 
+
     casper,
     { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSide },
+
     casca,
-    { image: "CASCA_talkmadL.gif", position: place2 },
+    { image: "CASCA_talkmadL.gif", position: homecasca1 },
+
     casca,
     "now. . . help me pick up your toys so that we can leave.",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: homecasper2 },
+
     casper,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "can we play monster attack? plushies aren't toys...",
 
     casca,
-    "no. . . leave it alone.",
+    { image: "CASCA_talkL.gif", position: homecasca1 },
 
-    n,
-    "Casca had a brilliant collection of buttons.<br>It was one of the few things they found interesting amongst the seas of industry.",
+    casca,
+    "no. . . put them away.",
+
+    casper,
+    "what about choco? choco's people too. you can't put away people.",
+
+    mrchoco,
+    { image: "choco.png", position: homechoco },
+    mrchoco,
+    ". . .",
+
+    casca,
+    { image: "CASCA_talkmadL.gif", position: homecasca1 },
 
     casca,
     "there's no time for that! we've got to skidaddle before they run out of rentals.",
+
+    casca,
+    ". . . I'll be in a pinch if I can't focus on my homework today, so you're playing somewhere new today.",
+
+    casper,
+    { image: "CASPER_talkmad.gif", position: homecasper2 },
 
     casper,
     ". . .oh. . okay. .",
 
     casper,
-    ". . .rental shmental. .",
+    ". . . .shmental frental. . .",
 
     casca,
     "what was that?",
+
+    casper,
+    { image: "CASPER_talk.gif", position: homecasper2 },
 
     casper,
     "oops! sorry!",
@@ -209,30 +282,29 @@ function prepareNovel() {
     "hmm. . .",
 
     casca,
+    { image: "CASCA_talkL.gif", position: homecasca1 },
+
+    casca,
     "okay, well, come on. let's get those shoes on and head towards the elevators.",
 
     casper,
     "okay! okay! okay!",
 
-    // PAGE 2
+    // PAGE 2 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "elevator",
     scene,
     "elevator.gif",
 
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },
-
     casca,
-    { image: "CASCA_talkmad.gif", position: place4 },
+    { image: "CASCA_talkmad.gif", position: elecasca1 },
 
     casper,
-    { image: "CASPER_talk.gif", position: place5 },
+    { image: "CASPER_talk.gif", position: elecasper1 },
+
+    mrchoco,
+    { image: "choco.png", position: elechoco },
 
     casper,
     "wheeeee~~!",
@@ -241,7 +313,9 @@ function prepareNovel() {
     "Casper. . .",
 
     casper,
-    { image: "CASPER_talkL.gif", position: place5 },
+    { image: "CASPER_talkL.gif", position: elecasper1 },
+    mrchoco,
+    { image: "choco_R.png", position: elechoco },
     casper,
     ". . . sorry! sorry!",
 
@@ -250,6 +324,9 @@ function prepareNovel() {
 
     casper,
     ". . hee hee . . .",
+
+    casper,
+    { image: "casper_jumps.gif", position: elecasper2 },
 
     casper,
     "one!",
@@ -261,38 +338,35 @@ function prepareNovel() {
     "three!!",
 
     casca,
-    ". . . sigh.",
+    { image: "CASCA_talksad.gif", position: elecasca1 },
 
-    // PAGE 3
+    casca,
+    ". . . sigh. .",
+
+    // PAGE 3 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "rental",
     scene,
-    "rental.png",
-    /*
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },*/
+    "rental.gif",
 
-    mrchoco,
-    { image: "mrchoco.png", position: place1 },
-    mrchoco,
-    "hiiiiii",
+    npc,
+    { image: "npc1.gif", position: rentnpc1 },
 
     casca,
-    { image: "CASCA_talkmadL.gif", position: place7 },
+    { image: "CASCA_talkL.gif", position: rentcasca1 },
 
     casper,
-    { image: "CASPER_talkL.gif", position: place6 },
+    { image: "CASPER_talkL.gif", position: rentcasper1 },
+
+    mrchoco,
+    { image: "choco_R.png", position: rentchoco1 },
 
     n,
     "Poddercarts help the Podlets get around. The only thing is, there's more road than house, so to actually own one is kind of a bit much.",
 
     n,
-    "Stations, such as these, make it easier to rent Poddercarts instead.",
+    "Stations make it easier for Podlets to rent Poddercarts instead.",
 
     casper,
     ". . . hee hee! . .",
@@ -301,7 +375,7 @@ function prepareNovel() {
     ". . .",
 
     casper,
-    ". . . okay, mr. choco. . .",
+    ". . . okay, choco. . .",
 
     casper,
     "we're gonna play a game of hide n' seek",
@@ -309,14 +383,86 @@ function prepareNovel() {
     casper,
     "it's MY turn to look. . . so you're gonna have ta go hide somewhere.",
 
+    mrchoco,
+    ". . .",
+
+    casper,
+    "it'll be fun. . . trust me!",
+
+    casper,
+    ". . .here. . let me help you.",
+
+    casper,
+    { image: "CASPER_walksL.gif", position: rentcasper1 },
+    mrchoco,
+    { image: "choco_R.png", position: rentchoco2 },
+
+    casper,
+    "..now stay put!",
+
+    casca,
+    { image: "CASCA_talkmadL.gif", position: rentcasca1 },
+
+    casca,
+    ". . . Casper, get back here.",
+
+    casper,
+    "okay!",
+
+    casper,
+    { image: `casper_walks.gif?A=${Date.now()}`, position: rentcasper2 },
+
+    npc,
+    ". . . oof!",
+
+    casca,
+    ". . . Casper!",
+
+    casca,
+    { image: "CASCA_talkmad.gif", position: rentcasca1 },
+
+    casper,
+    { image: "caspersadbasicL.gif", position: rentcasper1 },
+
+    casper,
+    ". . oops!",
+
+    npc,
+    { image: "npc1L.gif", position: rentnpc1 },
+
+    npc,
+    "oh! it is perfectly f---",
+
+    casca,
+    ". . . Casper! Apologize!",
+
+    casper,
+    ". . i'm sorry!",
+
+    npc,
+    ". . . don't sweat it, kid.",
+
+    npc,
+    { image: "npc1.gif", position: rentnpc1 },
+
+    casca,
+    { image: "CASCA_talkmadL.gif", position: rentcasca1 },
+
+    casca,
+    ". . . Thank you.",
+
+    casper,
+    ". . thank you!",
+
+
+    // PAGE 4 ////////////////////////////////////////////////////////////////////////////////////////////////
+
     label,
     "highwayone",
     scene,
     "overpass.png",
 
-    casper,
-    { image: "CASPER_talk.gif", position: place3 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
     label,
@@ -325,7 +471,7 @@ function prepareNovel() {
     "enter.png",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -336,7 +482,7 @@ function prepareNovel() {
     jsCall,
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -347,7 +493,7 @@ function prepareNovel() {
     jsCall,
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -356,16 +502,9 @@ function prepareNovel() {
     scene,
     "lobby_closer.png",
 
-    /*
-    jsCall,
-    {
-      fcn: () => {
-        document.querySelector(".window").style.display = "none";
-      },
-    },*/
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
 
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
@@ -376,7 +515,7 @@ function prepareNovel() {
     "room1.png",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -386,7 +525,7 @@ function prepareNovel() {
     "room1inside.png",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -396,7 +535,7 @@ function prepareNovel() {
     "market.jpg",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -406,7 +545,7 @@ function prepareNovel() {
     "room2.png",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -416,7 +555,7 @@ function prepareNovel() {
     "room2inside.png",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -426,15 +565,10 @@ function prepareNovel() {
     "room3.png",
 
     casper,
-    { image: "CASPER_talk.gif", position: place3 },
+    { image: "CASPER_talk.gif", position: rentcasper2 },
     casper,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
-    /* jsCall,
-     {
-       fcn: () => {
-         window.location.href = "../scene_two_podderstation.html";
-       },
-     },*/
+
   ];
 }
