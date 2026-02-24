@@ -40,6 +40,8 @@ var preload = [
   "choco_R.png",
 
   "npc1.gif",
+  "npc1L.gif",
+  "npc1oof.gif",
 
   "Sonador_talk.gif",
   "Sonador_talkL.gif",
@@ -127,9 +129,9 @@ function prepareNovel() {
 
   //rental
   //casper
-  rentcasper1 = new Position(150, 200, 1, 0);
-  rentcasper2 = new Position(779, 208, 1, 0);
-  rentcasper3 = new Position(250, 200, 1, 0);
+  rentcasper1 = new Position(150, 210, 1, 0);
+  rentcasper2 = new Position(779, 218, 1, 0);
+  rentcasper3 = new Position(950, 210, 1, 0);
   //casca
   rentcasca1 = new Position(270, 200, 1, 0);
   //choco
@@ -137,6 +139,8 @@ function prepareNovel() {
   rentchoco2 = new Position(1782, 400, 1, 0);
   //npc
   rentnpc1 = new Position(420, 233, 1, 0);
+  rentnpc2 = new Position(431, 233, 1, 0);
+
 
 
 
@@ -393,7 +397,7 @@ function prepareNovel() {
     ". . .here. . let me help you.",
 
     casper,
-    { image: "CASPER_walksL.gif", position: rentcasper1 },
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: rentcasper3 },
     mrchoco,
     { image: "choco_R.png", position: rentchoco2 },
 
@@ -412,14 +416,19 @@ function prepareNovel() {
     casper,
     { image: `casper_walks.gif?A=${Date.now()}`, position: rentcasper2 },
 
+
+    npc,
+    { image: `npc1oof.gif?A=${Date.now()}`, position: rentnpc2 },
+
     npc,
     ". . . oof!",
 
     casca,
-    ". . . Casper!",
+    { image: "CASCA_talkmad.gif", position: rentcasca1 },
 
     casca,
-    { image: "CASCA_talkmad.gif", position: rentcasca1 },
+    ". . . Casper!",
+
 
     casper,
     { image: "caspersadbasicL.gif", position: rentcasper1 },
@@ -465,110 +474,116 @@ function prepareNovel() {
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
+    // PAGE 5 ////////////////////////////////////////////////////////////////////////////////////////////////
+
     label,
     "enter",
     scene,
-    "enter.png",
+    "enter.gif",
 
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    // PAGE 6 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "front",
     scene,
-    "front.png",
-    jsCall,
+    "front.gif",
 
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    // PAGE 7 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "lobby",
     scene,
-    "lobby.png",
-    jsCall,
+    "lobby.gif",
 
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    // PAGE 8 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "lobby_closer",
     scene,
-    "lobby_closer.png",
+    "lobbycloser.gif",
 
-
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    // PAGE 9 - ANTEROOM /////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "room1door",
     scene,
-    "room1.png",
+    "room1door.gif",
 
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
-
-    label,
-    "room1",
-    scene,
-    "room1inside.png",
-
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
-
-    label,
-    "market",
-    scene,
-    "market.jpg",
-
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
     label,
     "room2door",
     scene,
-    "room2.png",
+    "room2door.gif",
 
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
-
-    label,
-    "room2",
-    scene,
-    "room2inside.png",
-
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
     label,
     "room3door",
     scene,
-    "room3.png",
+    "room3door.gif",
 
-    casper,
-    { image: "CASPER_talk.gif", position: rentcasper2 },
-    casper,
+    n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
+    // PAGE 10 ROOM ONE/////////////////////////////////////////////////////////////////////////////////////////
+
+    label,
+    "room1",
+    scene,
+    "roomone.gif",
+
+    n,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+
+    label,
+    "market",
+    scene,
+    "market.gif",
+
+    n,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    // PAGE 11 ROOM TWO /////////////////////////////////////////////////////////////////////////////////////////
+
+    label,
+    "room2",
+    scene,
+    "roomtwo.gif",
+
+    n,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    // PAGE 12 ROOM THREE/////////////////////////////////////////////////////////////////////////////////////////
+    label,
+    "room2",
+    scene,
+    "roomtwo.gif",
+
+    n,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+
+    // SOS 1 /////////////////////////////////////////////////////////////////////////////////////////
+
+    // SOS 2 /////////////////////////////////////////////////////////////////////////////////////////
+
+    // SOS 3 /////////////////////////////////////////////////////////////////////////////////////////
 
   ];
 }
