@@ -150,15 +150,11 @@ function prepareNovel() {
   //choco
   rentchoco1 = new Position(150, 400, 1, 0);
   rentchoco2 = new Position(1782, 400, 1, 0);
-  rentchoco3 = new Position(842, 380, 1, 0);
+  rentchoco3 = new Position(902, 380, 1, 0);
   //npc
   rentnpc1 = new Position(420, 233, 1, 0);
   rentnpc2 = new Position(431, 233, 1, 0);
   rentnpc3 = new Position(1731, 400, 1, 0);
-
-
-
-
 
   //no touch
   photo = new Character("", { position: upperCenter });
@@ -234,12 +230,10 @@ function prepareNovel() {
     casper,
     ". . . aw. . .",
 
-
     n,
     "Casper couldn't stop, even if he wanted to. He doesn't know how. He doesn't know why.",
     n,
     "What does stopping even mean?",
-
 
     casper,
     { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSide },
@@ -434,7 +428,6 @@ function prepareNovel() {
     casper,
     { image: `casper_walks.gif?A=${Date.now()}`, position: rentcasper2 },
 
-
     npc,
     { image: `npc1oof.gif?A=${Date.now()}`, position: rentnpc2 },
 
@@ -446,7 +439,6 @@ function prepareNovel() {
 
     casca,
     ". . . Casper!",
-
 
     casper,
     { image: "caspersadbasicL.gif", position: rentcasper1 },
@@ -507,7 +499,6 @@ function prepareNovel() {
 
     npc3,
     ". . . One Moment. . .",
-
 
     npc3,
     ". . . ",
@@ -633,7 +624,6 @@ function prepareNovel() {
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
-
     label,
     "market",
     scene,
@@ -661,12 +651,10 @@ function prepareNovel() {
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
-
     // SOS 1 /////////////////////////////////////////////////////////////////////////////////////////
 
     // SOS 2 /////////////////////////////////////////////////////////////////////////////////////////
 
     // SOS 3 /////////////////////////////////////////////////////////////////////////////////////////
-
   ];
 }
