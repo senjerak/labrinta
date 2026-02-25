@@ -38,10 +38,16 @@ var preload = [
 
   "choco.png",
   "choco_R.png",
+  "chocofall.gif",
 
   "npc1.gif",
   "npc1L.gif",
   "npc1oof.gif",
+
+  "carnpc1.gif",
+  "carnpc2.gif",
+  "carcasca1.gif",
+  "carcasca2.gif",
 
   "Sonador_talk.gif",
   "Sonador_talkL.gif",
@@ -51,7 +57,8 @@ var preload = [
   "CASCA_talksad.gif",
   "CASCA_talksadL.gif",
   "CASCAwalksad.gif",
-  "CASCAwalkmad.gif",
+  "CASCAWalkmad.gif",
+  "CASCAWalkmadL.gif",
   "CASCA_talk.gif",
   "CASCA_talkL.gif",
   "Casca_flappies.gif",
@@ -100,13 +107,17 @@ function prepareNovel() {
   casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
   casper = new Character("Casper", { color: "rgba(218, 234, 127, 1)" });
   mrchoco = new Character("Choco", { color: "rgb(255, 127, 48)" });
+
   npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
+  npc3 = new Character("Station Manager", { color: "rgb(128,125,116)" });
+  npc2 = new Character("");
   n = new Character("");
 
   europe = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
 
   //enter
-  rightSide = new Position(1030, 560, 1, 1);
+  rightSide = new Position(1030, 600, 1, 1);
+  rightSidedown = new Position(1030, 660, 1, 1);
 
   //home
   // casper
@@ -132,14 +143,18 @@ function prepareNovel() {
   rentcasper1 = new Position(150, 210, 1, 0);
   rentcasper2 = new Position(779, 218, 1, 0);
   rentcasper3 = new Position(950, 210, 1, 0);
+  rentcasper4 = new Position(350, 210, 1, 0);
   //casca
   rentcasca1 = new Position(270, 200, 1, 0);
+  rentcasca2 = new Position(420, 200, 1, 0);
   //choco
   rentchoco1 = new Position(150, 400, 1, 0);
   rentchoco2 = new Position(1782, 400, 1, 0);
+  rentchoco3 = new Position(842, 380, 1, 0);
   //npc
   rentnpc1 = new Position(420, 233, 1, 0);
   rentnpc2 = new Position(431, 233, 1, 0);
+  rentnpc3 = new Position(1731, 400, 1, 0);
 
 
 
@@ -302,7 +317,7 @@ function prepareNovel() {
     "elevator.gif",
 
     casca,
-    { image: "CASCA_talkmad.gif", position: elecasca1 },
+    { image: "CASCA_talk.gif", position: elecasca1 },
 
     casper,
     { image: "CASPER_talk.gif", position: elecasper1 },
@@ -312,6 +327,9 @@ function prepareNovel() {
 
     casper,
     "wheeeee~~!",
+
+    casca,
+    { image: "CASCA_talkmad.gif", position: elecasca1 },
 
     casca,
     "Casper. . .",
@@ -463,6 +481,63 @@ function prepareNovel() {
     casper,
     ". . thank you!",
 
+    npc2,
+    { image: `carnpc2.gif?A=${Date.now()}`, position: rightSide },
+
+    npc3,
+    ". . . Your Poddercart is ready.",
+
+    casca,
+    { image: "CASCA_talkL.gif", position: rentcasca2 },
+
+    casper,
+    { image: "caspersadbasicL.gif", position: rentcasper4 },
+
+    npc,
+    { image: "npc1.gif", position: rentnpc3 },
+
+    npc3,
+    ". . . Next. . .",
+
+    npc2,
+    { image: `carnpc1.gif?A=${Date.now()}`, position: rightSide },
+
+    casca,
+    ". . . i am Casca and i have two riders. .",
+
+    npc3,
+    ". . . One Moment. . .",
+
+
+    npc3,
+    ". . . ",
+
+    npc3,
+    ". . . Your Poddercart is ready.",
+
+    npc2,
+    { image: `carcasca1.gif?A=${Date.now()}`, position: rightSidedown },
+
+    casca,
+    ". . . come on, Casper.",
+
+    casca,
+    { image: "CASCA_talkL.gif", position: rentnpc3 },
+
+    casper,
+    { image: "caspersadbasicL.gif", position: rentnpc3 },
+
+    npc2,
+    { image: `carcasca2.gif?A=${Date.now()}`, position: rightSidedown },
+
+    casper,
+    ". . .",
+
+    mrchoco,
+    { image: `chocofall.gif?A=${Date.now()}`, position: rentchoco3 },
+
+    n,
+    ". . .",
 
     // PAGE 4 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -546,6 +621,14 @@ function prepareNovel() {
     "room1",
     scene,
     "roomone.gif",
+
+    n,
+    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+
+    label,
+    "portal",
+    scene,
+    "transport.gif",
 
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
