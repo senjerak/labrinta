@@ -75,6 +75,8 @@ var preload = [
 
   "buggotiny.gif",
   "loading.gif",
+
+  "road.mp4",
 ];
 
 var preloadObj = new Array(preload.length);
@@ -116,6 +118,7 @@ function prepareNovel() {
   europe = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
 
   //enter
+  rightSideopen = new Position(1030, 560, 1, 1);
   rightSide = new Position(1030, 600, 1, 1);
   rightSidedown = new Position(1030, 660, 1, 1);
 
@@ -171,9 +174,8 @@ function prepareNovel() {
     "menu1",
     menu,
     [
-      "So, what would you like to see?",
-      "OwO",
-      [jump, "beginning"],
+      "Hello Handsome :D",
+
       "stay",
       [jump, "beginning"],
       "elevator",
@@ -182,26 +184,30 @@ function prepareNovel() {
       [jump, "rental"],
       "overpass",
       [jump, "highwayone"],
-      "enter.png",
+      "enter",
       [jump, "enter"],
       "front",
       [jump, "front"],
       "lobby",
       [jump, "lobby"],
-      "lobby_closer",
+      "lobby closer",
       [jump, "lobby_closer"],
-      "room1door",
+      "room1 door",
       [jump, "room1door"],
-      "room1",
-      [jump, "room1inside"],
-      "market",
-      [jump, "market"],
-      "room2door",
+      "room3 door",
+      [jump, "room3door"],
+      "room2 door",
       [jump, "room2door"],
+      "room1",
+      [jump, "room1"],
       "room2",
       [jump, "room2"],
-      "room3door",
-      [jump, "room3door"],
+      "market",
+      [jump, "market"],
+      "portal",
+      [jump, "portal"],
+
+
     ],
 
     label,
@@ -213,12 +219,12 @@ function prepareNovel() {
     "It was only unpleasant enough to ignore.",
 
     casper,
-    { image: `casper_walks.gif?A=${Date.now()}`, position: rightSide },
+    { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
     casper,
     "good morning! . . . the sun is up! so I am up!",
 
     casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSide },
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
     casca,
     "Casper. It's too early. Just stop.",
 
@@ -236,7 +242,7 @@ function prepareNovel() {
     "What does stopping even mean?",
 
     casper,
-    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSide },
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSideopen },
 
     casca,
     { image: "CASCA_talkmadL.gif", position: homecasca1 },
@@ -394,16 +400,16 @@ function prepareNovel() {
     ". . . okay, choco. . .",
 
     casper,
-    "we're gonna play a game of hide n' seek",
+    "we're gonna play hide n' seek",
 
     casper,
-    "it's MY turn to look. . . so you're gonna have ta go hide somewhere.",
+    "it's MY turn to look. . . so you're gonna have ta hide somewhere.",
 
     mrchoco,
     ". . .",
 
     casper,
-    "it'll be fun. . . trust me!",
+    "it's gonna be fun. . . trust me!",
 
     casper,
     ". . .here. . let me help you.",
@@ -538,7 +544,64 @@ function prepareNovel() {
     "overpass.png",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "Well... the road seemed like it was pretty clear. You would think with all the highways that were built that there would be less traffic",
+    n,
+    "Everyone seems to have somewhere to be, all at the same time, every day.",
+
+    casper,
+    " . . oh no!",
+
+    casca,
+    "what!? what is it?",
+
+    casper,
+    " ...sniff... choco!",
+
+    casca,
+    "stop that! use your words, Casper! . . . Come on.",
+
+    casper,
+    "choco!... choco!!",
+
+    casca,
+    "what about choco? isn't he still at home?",
+
+    casper,
+    "n-no!!!",
+
+    casca,
+    "UGH! what do you mean? you left him?",
+
+    casper,
+    ". . . sniff. . . sniff. .",
+
+    casper,
+    ". . . no i did not!",
+
+    casca,
+    "then how's he left at the station? I told you to leave him at home.",
+
+    casper,
+    ". . . no. . . no you did--",
+
+    casca,
+    "CASPER! Don't start talking back to me!",
+
+    n,
+    "HONK!!! HONK HONK!!",
+
+    casca,
+    "AAAAGH!!!",
+
+    casca,
+    "everything hates me right now. everything.",
+
+    casper,
+    ". . . sniff. .",
+
+    casper,
+    ". hmpt. . .",
+
 
     // PAGE 5 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -548,7 +611,31 @@ function prepareNovel() {
     "enter.gif",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "Eventually they made it to their destination.",
+
+    casper,
+    " . . .",
+
+    casca,
+    " . . Did you take your shoes off again? Casper, I told you to--",
+
+    casper,
+    "they fell off!",
+
+    casca,
+    "You don't have to lie to me.",
+
+    casper,
+    "um. . I. .",
+
+    casca,
+    "Here. Just... There. They're back on. Good as new.",
+
+    n,
+    "Casper wasn't a fan of when Casca spoke about good things with such a mad expression.",
+
+    n,
+    "At least the parking is free for two hours.",
 
     // PAGE 6 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -557,8 +644,30 @@ function prepareNovel() {
     scene,
     "front.gif",
 
+    casper,
+    "where are we going. . ?",
+
+    casca,
+    "We're going to read some books.",
+
+    casper,
+    "BOOKS!? but i want to play!",
+
+    casca,
+    "I didn't say you can't play. There's probably toys.",
+
+    casper,
+    "oh. . i thought you said that. . .",
+
+    casca,
+    ". . .",
+
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "LA BRINTA was the only third space left in Poddertown.",
+
+    n,
+    "Casca had been meaning to visit more often; but, they were too busy to remember to relax.",
+
 
     // PAGE 7 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -567,8 +676,15 @@ function prepareNovel() {
     scene,
     "lobby.gif",
 
-    n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    casper,
+    { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
+    casper,
+    "good morning! . . . the sun is up! so I am up!",
+
+    casca,
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    casca,
+    "Casper. It's too early. Just stop.",
 
     // PAGE 8 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -576,6 +692,12 @@ function prepareNovel() {
     "lobby_closer",
     scene,
     "lobbycloser.gif",
+
+    casca,
+    { image: "CASCA_talk.gif", position: elecasca1 },
+
+    casper,
+    { image: "CASPER_talk.gif", position: elecasper1 },
 
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
@@ -587,6 +709,11 @@ function prepareNovel() {
     scene,
     "room1door.gif",
 
+    casca,
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    casca,
+    "Casper. It's too early. Just stop.",
+
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -595,6 +722,11 @@ function prepareNovel() {
     scene,
     "room2door.gif",
 
+    casca,
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    casca,
+    "Casper. It's too early. Just stop.",
+
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
 
@@ -602,6 +734,11 @@ function prepareNovel() {
     "room3door",
     scene,
     "room3door.gif",
+
+    casca,
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    casca,
+    "Casper. It's too early. Just stop.",
 
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
@@ -612,6 +749,11 @@ function prepareNovel() {
     "room1",
     scene,
     "roomone.gif",
+
+    casca,
+    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+    casca,
+    "Casper. It's too early. Just stop.",
 
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
