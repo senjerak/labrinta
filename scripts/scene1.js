@@ -686,6 +686,9 @@ function prepareNovel() {
     casca,
     "Casper. It's too early. Just stop.",
 
+    sonador,
+    "hello.",
+
     // PAGE 8 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
