@@ -8,9 +8,11 @@ var preload = [
   "elevator.gif",
 
   "rental.gif",
-  "overpass.png",
-  "overpass2.png",
-  "overpass3.png",
+  "overpass.gif",
+  "overpass2.gif",
+  "overpass3.gif",
+  "overpass4.gif",
+  "overpass5.gif",
 
   "carinside1.png",
   "carinside2.png",
@@ -26,6 +28,9 @@ var preload = [
   "room3door.gif",
 
   "roomone.gif",
+  "roomone_dark1.gif",
+  "roomone_dark2.gif",
+  "roomone_dark3.gif",
   "roomtwo.gif",
   "room2closer.png",
 
@@ -51,6 +56,8 @@ var preload = [
 
   "Sonador_talk.gif",
   "Sonador_talkL.gif",
+  "Sonador_walk.gif",
+  "Sonador_walkR.gif",
 
   "CASCA_talkmad.gif",
   "CASCA_talkmadL.gif",
@@ -158,6 +165,20 @@ function prepareNovel() {
   rentnpc1 = new Position(420, 233, 1, 0);
   rentnpc2 = new Position(431, 233, 1, 0);
   rentnpc3 = new Position(1731, 400, 1, 0);
+
+  ///Drive
+
+  ///Lobby
+  ///sonador
+  sonadorlobby1 = new Position(902, 380, 1, 0);
+
+  ///casca
+  cascalobby1 = new Position(275, 295, 0, 0);
+
+  ///casper
+  casperlobby1 = new Position(245, 295, 0, 0);
+
+
 
   //no touch
   photo = new Character("", { position: upperCenter });
@@ -507,7 +528,34 @@ function prepareNovel() {
     ". . . One Moment. . .",
 
     npc3,
-    ". . . ",
+    ". . . Are you a member? ",
+
+    casca,
+    "It expired last week--",
+
+    npc3,
+    "You can renew now for only...",
+
+    casca,
+    "No! No thank you. I can't. Yet.",
+
+    npc3,
+    ". . . members save on average 30% on toll fare, you know.",
+
+    casca,
+    "yep. I'll just buy a guest pass for today.",
+
+    npc3,
+    ". . Okay . . . That will be 75 Pods. .",
+
+    casca,
+    "Ugh. . Okay.",
+
+    n,
+    "Guest prices seem to have gone up since the last time Casca was in such a pinch.",
+
+    n,
+    "Not to mention tolls. . .",
 
     npc3,
     ". . . Your Poddercart is ready.",
@@ -541,7 +589,7 @@ function prepareNovel() {
     label,
     "highwayone",
     scene,
-    "overpass.png",
+    "overpass.gif",
 
     n,
     "Well... the road seemed like it was pretty clear. You would think with all the highways that were built that there would be less traffic",
@@ -551,6 +599,11 @@ function prepareNovel() {
     casper,
     " . . oh no!",
 
+    label,
+    "highwaytwo",
+    scene,
+    "overpass3.gif",
+
     casca,
     "what!? what is it?",
 
@@ -559,6 +612,11 @@ function prepareNovel() {
 
     casca,
     "stop that! use your words, Casper! . . . Come on.",
+
+    label,
+    "highwaythree",
+    scene,
+    "overpass4.gif",
 
     casper,
     "choco!... choco!!",
@@ -578,6 +636,11 @@ function prepareNovel() {
     casper,
     ". . . no i did not!",
 
+    label,
+    "highwayfour",
+    scene,
+    "overpass2.gif",
+
     casca,
     "then how's he left at the station? I told you to leave him at home.",
 
@@ -594,13 +657,18 @@ function prepareNovel() {
     "AAAAGH!!!",
 
     casca,
-    "everything hates me right now. everything.",
+    "I HATE this!",
 
     casper,
-    ". . . sniff. .",
+    ". . . . . me too.",
 
-    casper,
-    ". hmpt. . .",
+    label,
+    "highwayfive",
+    scene,
+    "overpass5.gif",
+
+    n,
+    "At least that made sense.",
 
 
     // PAGE 5 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -617,7 +685,7 @@ function prepareNovel() {
     " . . .",
 
     casca,
-    " . . Did you take your shoes off again? Casper, I told you to--",
+    " . . Did you kick your shoes off again? Casper, I told you to--",
 
     casper,
     "they fell off!",
@@ -635,7 +703,7 @@ function prepareNovel() {
     "Casper wasn't a fan of when Casca spoke about good things with such a mad expression.",
 
     n,
-    "At least the parking is free for two hours.",
+    "At least the parking's free for two hours.",
 
     // PAGE 6 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -663,11 +731,10 @@ function prepareNovel() {
     ". . .",
 
     n,
-    "LA BRINTA was the only third space left in Poddertown.",
+    "LA BRINTA was the only third space left in Poddertown. Barely afloat, the Library has anchored itself as the oldest building in Podder.",
 
     n,
-    "Casca had been meaning to visit more often; but, they were too busy to remember to relax.",
-
+    "Casca had been meaning to visit more often for some time.",
 
     // PAGE 7 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -678,16 +745,30 @@ function prepareNovel() {
 
     casper,
     { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
+
     casper,
-    "good morning! . . . the sun is up! so I am up!",
+    "oh! we're so high up!",
 
     casca,
     { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
-    casca,
-    "Casper. It's too early. Just stop.",
 
-    sonador,
-    "hello.",
+    casca,
+    "Mmm.",
+
+    casper,
+    "i bet we can see home from here!",
+
+    casca,
+    ". . .",
+
+    casper,
+    "Casca?",
+
+    casca,
+    ". . what?",
+
+    casper,
+    "nevermind. .",
 
     // PAGE 8 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -696,29 +777,130 @@ function prepareNovel() {
     scene,
     "lobbycloser.gif",
 
-    casca,
-    { image: "CASCA_talk.gif", position: elecasca1 },
+    sonador,
+    { image: "sonador_talkL.gif", position: sonadorlobby1 },
 
     casper,
-    { image: "CASPER_talk.gif", position: elecasper1 },
+    { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
+
+    sonador,
+    "hello.",
+
+    casca,
+    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+
+    sonador,
+    "can I help you two with anything. .?",
+
+    casca,
+    "I just need something to distract Casper for a few hours. Do you have anywhere for kids?",
+
+    sonador,
+    "If you--",
+
+    casca,
+    "Where?",
+
+    sonador,
+    ". . .",
+
+    sonador,
+    ". . If you'll follow me. . .",
+
+    casca,
+    ". . eh- okay-",
+
+    casper,
+    "HI! I'm Casper!",
+
+    sonador,
+    ". .Hello Casper.",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "It was times like these that made Casca feel like they've completely forgotten how to talk to other adults.",
 
-    // PAGE 9 - ANTEROOM /////////////////////////////////////////////////////////////////////////////////////////
+    // PAGE 9 - ANTEROOM (INITIAL SCENE) /////////////////////////////////////////////////////////////
 
     label,
     "room1door",
     scene,
     "room1door.gif",
 
+    sonador,
+    { image: `sonador_walk.gif?A=${Date.now()}`, position: rightSideopen },
+
+    sonador,
+    ". . here you are. . .",
+
+    casper,
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSideopen },
+
+    casper,
+    "wheee~!",
+
+    casca,
+    { image: `CASCAwalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+
+    casca,
+    ". . thank you. . .",
+
+    sonador,
+    ". . anytime. ",
+
+    sonador,
+    { image: `sonador_walkL.gif?A=${Date.now()}`, position: rightSideopen },
+
+
+    ///ROOM ONE (INITIAL SCENE)///////////////////////////////////////////////////////////
+
+    label,
+    "room1",
+    scene,
+    "roomone.gif",
+
+    casca,
+    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+
+    casca,
+    "Here. . There should be plenty to do. .",
+
+
+    label,
+    "room1_2",
+    scene,
+    "roomone_dark1.gif",
+
+    casca,
+    "Here you are. . There should be plenty to do here. .",
+
+    label,
+    "room1_3",
+    scene,
+    "roomone_dark3.gif",
+
+    casca,
+    "Here. . There should be plenty to do. .",
+
+    label,
+    "room1_3",
+    scene,
+    "roomone_dark2.gif",
+
+    casca,
+    "Here. . There should be plenty to do. .",
+
+    /// ANTEROOM //////////////////////////////////////////////////////////////////////////////////
+
+    label,
+    "room1doorante",
+    scene,
+    "room1door.gif",
+
     casca,
     { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
-    casca,
-    "Casper. It's too early. Just stop.",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "The Kindergarten.",
 
     label,
     "room2door",
@@ -727,11 +909,9 @@ function prepareNovel() {
 
     casca,
     { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
-    casca,
-    "Casper. It's too early. Just stop.",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "The Office.",
 
     label,
     "room3door",
@@ -740,11 +920,9 @@ function prepareNovel() {
 
     casca,
     { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
-    casca,
-    "Casper. It's too early. Just stop.",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "Somewhere Familiar.",
 
     // PAGE 10 ROOM ONE/////////////////////////////////////////////////////////////////////////////////////////
 
@@ -755,11 +933,9 @@ function prepareNovel() {
 
     casca,
     { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
-    casca,
-    "Casper. It's too early. Just stop.",
 
-    n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    sonador,
+    "Here you are. . There should be plenty to do here. .",
 
     label,
     "portal",
@@ -789,9 +965,9 @@ function prepareNovel() {
 
     // PAGE 12 ROOM THREE/////////////////////////////////////////////////////////////////////////////////////////
     label,
-    "room2",
+    "room2closer",
     scene,
-    "roomtwo.gif",
+    "roomtwocloser.gif",
 
     n,
     "can I look at your buttons again? pretty please? I want to show mr. choco.",
