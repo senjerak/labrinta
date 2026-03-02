@@ -178,7 +178,12 @@ function prepareNovel() {
   ///casper
   casperlobby1 = new Position(245, 295, 0, 0);
 
-
+  /* jsCall,
+  {
+    fcn: () => {
+      document.querySelector(".window").style.display = "none";
+    },
+  },*/
 
   //no touch
   photo = new Character("", { position: upperCenter });
