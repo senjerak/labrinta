@@ -7,7 +7,6 @@ window.addEventListener(
     setTimeout(
       () => {
         document.querySelector(".loader").remove();
-        playNovel();
       },
       Math.max(0, MIN_LOADING_TIME - delta),
     );
