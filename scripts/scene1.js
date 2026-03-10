@@ -69,6 +69,16 @@ var preload = [
   "CASCA_talk.gif",
   "CASCA_talkL.gif",
   "Casca_flappies.gif",
+  "cascaride1.gif",
+  "cascaride_mad1.gif",
+  "cascahand1.gif",
+  "cascahand2.gif",
+  "cascabehind1,gif",
+  "cascabehind1.gif",
+  "cascabehind2.gif",
+  "cascabehind3.gif",
+  "cascabehind4.gif",
+  "cascabehind5.gif",
 
   "CASPER_talk.gif",
   "CASPER_talkL.gif",
@@ -79,6 +89,14 @@ var preload = [
   "casper_walks.gif",
   "casper_walksL.gif",
   "casper_jumps.gif",
+  "casperride1.gif",
+  "casperride_sad1.gif",
+  "caspermirror.gif",
+  "caspermirror2.gif",
+
+
+  "wheel.gif",
+  "front_car.gif",
 
   "buggotiny.gif",
   "loading.gif",
@@ -160,13 +178,28 @@ function prepareNovel() {
   //choco
   rentchoco1 = new Position(150, 400, 1, 0);
   rentchoco2 = new Position(1782, 400, 1, 0);
-  rentchoco3 = new Position(902, 380, 1, 0);
+  rentchoco3 = new Position(909, 380, 1, 0);
   //npc
   rentnpc1 = new Position(420, 233, 1, 0);
   rentnpc2 = new Position(431, 233, 1, 0);
   rentnpc3 = new Position(1731, 400, 1, 0);
 
   ///Drive
+  ///casca
+  cascadrive = new Position(980, 540, 1, 1);
+  cascadrive2 = new Position(380, 540, 1, 1);
+  cascadrive3 = new Position(530, 600, 1, 1);
+  cascadrive4 = new Position(550, 490, 1, 1);
+  cascadrive5 = new Position(300, 490, 1, 1);
+  cascadrive6 = new Position(250, 520, 1, 1);
+  cascadrive7 = new Position(405, 520, 1, 1);
+  cascadrive8 = new Position(277, 520, 1, 1);
+  ///casper
+  casperride = new Position(700, 20, 1, 0);
+  casperride2 = new Position(700, 220, 1, 0);
+  casperride3 = new Position(1020, 600, 1, 1);
+  ///car
+  rightSidecar = new Position(1030, 600, 1, 1);
 
   ///Lobby
   ///sonador
@@ -202,10 +235,7 @@ function prepareNovel() {
     [
       "Hello Handsome :D",
 
-      "stay",
-      [jump, "beginning"],
-      "elevator",
-      [jump, "elevator"],
+
       "rental",
       [jump, "rental"],
       "overpass",
@@ -230,8 +260,13 @@ function prepareNovel() {
       [jump, "room2"],
       "market",
       [jump, "market"],
-      "portal",
-      [jump, "portal"],
+      "car one",
+      [jump, "highwaytwo"],
+      "car two",
+      [jump, "highwaythree"],
+      "car three",
+      [jump, "highwayfour"],
+
 
 
     ],
@@ -609,19 +644,26 @@ function prepareNovel() {
     scene,
     "overpass3.gif",
 
+    casper,
+    { image: `casperride1.gif?A=${Date.now()}`, position: casperride },
+
+    casca,
+    { image: `cascaride1.gif?A=${Date.now()}`, position: cascadrive },
+
     casca,
     "what!? what is it?",
+
+    casper,
+    { image: `casperride_sad1.gif?A=${Date.now()}`, position: casperride },
 
     casper,
     " ...sniff... choco!",
 
     casca,
-    "stop that! use your words, Casper! . . . Come on.",
+    { image: `cascaride_mad1.gif?A=${Date.now()}`, position: cascadrive },
 
-    label,
-    "highwaythree",
-    scene,
-    "overpass4.gif",
+    casca,
+    "stop that! use your words, Casper! . . . Come on.",
 
     casper,
     "choco!... choco!!",
@@ -629,11 +671,25 @@ function prepareNovel() {
     casca,
     "what about choco? isn't he still at home?",
 
+    label,
+    "highwaythree",
+    scene,
+    "overpass4.gif",
+
+    casper,
+    { image: `casperride_tantrum1.gif?A=${Date.now()}`, position: casperride2 },
+
     casper,
     "n-no!!!",
 
     casca,
+    { image: `cascahand1.gif?A=${Date.now()}`, position: cascadrive2 },
+
+    casca,
     "UGH! what do you mean? you left him?",
+
+    casca,
+    { image: `cascahand2.gif?A=${Date.now()}`, position: cascadrive2 },
 
     casper,
     ". . . sniff. . . sniff. .",
@@ -647,22 +703,49 @@ function prepareNovel() {
     "overpass2.gif",
 
     casca,
+    { image: `cascabehind1.gif?A=${Date.now()}`, position: cascadrive3 },
+
+    casper,
+    { image: `caspermirror.gif?A=${Date.now()}`, position: casperride3 },
+
+    casca,
     "then how's he left at the station? I told you to leave him at home.",
 
     casper,
     ". . . no. . . no you did--",
 
     casca,
+    { image: `cascabehind3.gif?A=${Date.now()}`, position: cascadrive3 },
+
+    casca,
     "CASPER! Don't start talking back to me!",
+
+    casca,
+    { image: `cascabehind5.gif?A=${Date.now()}`, position: cascadrive3 },
+
+    casper,
+    { image: `caspermirror3.gif?A=${Date.now()}`, position: casperride3 },
 
     n,
     "HONK!!! HONK HONK!!",
 
     casca,
+    { image: `cascabehind4.gif?A=${Date.now()}`, position: cascadrive3 },
+
+    casca,
     "AAAAGH!!!",
 
     casca,
+    { image: `cascabehind2.gif?A=${Date.now()}`, position: cascadrive3 },
+
+    casper,
+    { image: `caspermirror.gif?A=${Date.now()}`, position: casperride3 },
+
+    casca,
     "I HATE this!",
+
+    casper,
+    { image: `caspermirror2.gif?A=${Date.now()}`, position: casperride3 },
 
     casper,
     ". . . . . me too.",
@@ -683,26 +766,61 @@ function prepareNovel() {
     scene,
     "enter.gif",
 
+    casca,
+    { image: `front_car.gif?A=${Date.now()}`, position: rightSide },
+
+
     n,
     "Eventually they made it to their destination.",
+
+
+    npc,
+    { image: `front_car.png?A=${Date.now()}`, position: rightSidecar },
+
+    casca,
+    { image: "CASCA_talkmad.gif", position: cascadrive4 },
+
+    casper,
+    { image: "CASPER_talkL.gif", position: homecasper1 },
 
     casper,
     " . . .",
 
     casca,
+    { image: "CASCA_talkmadL.gif", position: cascadrive5 },
+
+    casca,
     " . . Did you kick your shoes off again? Casper, I told you to--",
+
+    casca,
+    { image: "CASCA_talkmadL.gif", position: cascadrive6 },
+
+    casper,
+    { image: "CASPER_talk.gif", position: homecasper1 },
 
     casper,
     "they fell off!",
 
     casca,
+    { image: "CASCA_talksadL.gif", position: cascadrive6 },
+
+    casca,
     "You don't have to lie to me.",
+
+    casper,
+    { image: "CASPERsadbasic.gif", position: homecasper1 },
 
     casper,
     "um. . I. .",
 
     casca,
+    { image: `casca_tiest.gif?A=${Date.now()}`, position: cascadrive7 },
+
+    casca,
     "Here. Just... There. They're back on. Good as new.",
+
+    casca,
+    { image: "CASCA_talksadL.gif", position: cascadrive8 },
 
     n,
     "Casper wasn't a fan of when Casca spoke about good things with such a mad expression.",
