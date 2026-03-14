@@ -1,0 +1,20 @@
+---
+import '../styles/loader.css';
+---
+
+<div class="loader">
+    <img id="load" src="/media/loading.gif" />
+    <img src="/media/buggotiny.gif" />
+</div>
+
+<script>
+    const MIN_LOADING_TIME = 1000;
+    const start = Date.now();
+    window.addEventListener('load', () => {
+        const delta = Date.now() - start;
+        setTimeout(() => {
+            document.querySelector('.loader')?.remove();
+            document.dispatchEvent(new Event('loader:complete'));
+        }, Math.max(0, MIN_LOADING_TIME - delta));
+    });
+</script>

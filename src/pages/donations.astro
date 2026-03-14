@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Loader from '../components/Loader.astro';
+import '../styles/donation.css';
+---
+
+<BaseLayout>
+    <script is:inline src="/scripts/fireworks.js"></script>
+    <script is:inline src="/scripts/wobble.js"></script>
+
+    <div class="text" id="wobble">THANK YOU FOR DONATING!</div>
+    <div class="video">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_u6QV2dwxys?si=By06UZedbHTGvTep"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+</BaseLayout>
