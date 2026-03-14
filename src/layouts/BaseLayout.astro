@@ -16,11 +16,11 @@ const { title = 'LA BRINTA' } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/media/labrifavi.png" />
-    <ClientRouter />
-    <div slot="fallback"><Loader /></div>
+    <ClientRouter  />
     <slot name="head" />
 </head>
 <body>
+    <Loader />
     <slot />
 </body>
 </html>

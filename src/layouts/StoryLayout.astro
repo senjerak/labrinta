@@ -4,10 +4,8 @@ import '../styles/fonts.css';
 ---
 
 <BaseLayout>
-    <head>
-        <script is:inline src="/scripts/novel_engine.js"></script>
-        <script is:inline src="/scripts/clicksplosion.js"></script>
+    <Fragment slot="head">
         <slot name="head" />
-    </head>
+    </Fragment>
     <slot />
 </BaseLayout>

@@ -8,13 +8,18 @@ import '../styles/loader.css';
 </div>
 
 <script>
+    function completeLoading() {
+        document.querySelector('.loader')?.remove();
+        document.dispatchEvent(new Event('loader:complete'));
+    }
+
+    document.addEventListener('astro:after-swap', completeLoading);
+
+    // Initial page load: show loader for at least 1s
     const MIN_LOADING_TIME = 1000;
     const start = Date.now();
     window.addEventListener('load', () => {
         const delta = Date.now() - start;
-        setTimeout(() => {
-            document.querySelector('.loader')?.remove();
-            document.dispatchEvent(new Event('loader:complete'));
-        }, Math.max(0, MIN_LOADING_TIME - delta));
-    });
+        setTimeout(completeLoading, Math.max(0, MIN_LOADING_TIME - delta));
+    }, { once: true });
 </script>
