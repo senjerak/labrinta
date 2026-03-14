@@ -1,0 +1,14 @@
+---
+interface Props {
+    activePage?: 'about' | 'prologue' | 'links' | 'begin';
+}
+
+const { activePage } = Astro.props;
+---
+
+<div class="banner">
+    <a href="/about"><button class={activePage === 'about' ? 'active' : ''}>about</button></a>
+    <a href="/prologue"><button class={activePage === 'prologue' ? 'active' : ''}>prologue</button></a>
+    <a href="/links"><button class={activePage === 'links' ? 'active' : ''}>links</button></a>
+    <a href="/scenes/one_wall"><button class={activePage === 'begin' ? 'active' : ''}>begin</button></a>
+</div>

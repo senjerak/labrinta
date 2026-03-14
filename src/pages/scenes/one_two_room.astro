@@ -1,0 +1,30 @@
+---
+import { getImage } from 'astro:assets';
+import StoryLayout from '../../layouts/StoryLayout.astro';
+import '../../styles/novel.css';
+
+---
+
+<StoryLayout>
+    <Fragment slot="head">
+        <script is:inline src="/scripts/scene1.js"></script>
+    </Fragment>
+
+    <div id="novelDiv">
+        <a href="/main">
+            <div class="homebtn"></div>
+        </a>
+
+        <div style="position: absolute; left:0; top: 0; z-index:-1">
+            <img id="background0" src="/s_one/stills/home.png" />
+        </div>
+
+        <div id="dialogDiv" style="z-index:100"></div>
+    </div>
+
+    <script>
+        if (typeof initNovel === 'function') {
+            initNovel(800, 600);
+        }
+    </script>
+</StoryLayout>
