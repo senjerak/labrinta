@@ -118,3 +118,8 @@ button {
     z-index: 1;
     background-size: contain;
 }
+
+#video {
+    opacity: 0;
+    pointer-events: none;
+}

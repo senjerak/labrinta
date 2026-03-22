@@ -183,17 +183,28 @@ function prepareNovel() {
   sonadorlobby1 = new Position(902, 380, 1, 0);
 
   ///casca
-  cascalobby1 = new Position(275, 295, 0, 0);
+  cascalobby1 = new Position(480, 295, 0, 0);
 
   ///casper
   casperlobby1 = new Position(245, 295, 0, 0);
 
-  /* jsCall,
+  /*
+   jsCall,
   {
     fcn: () => {
       document.querySelector(".window").style.display = "none";
     },
-  },*/
+  },
+  
+    jsCall,
+  {
+    fcn: () => {
+      document.querySelector(".window").style.display = "none";
+    },
+  },
+  
+  
+  */
 
   //no touch
   photo = new Character("", { position: upperCenter });
@@ -216,6 +227,8 @@ function prepareNovel() {
       [jump, "rental"],
       "overpass",
       [jump, "highwayone"],
+      "video",
+      [jump, "video"],
       "enter",
       [jump, "enter"],
       "front",
@@ -731,10 +744,40 @@ function prepareNovel() {
     n,
     "At least that made sense.",
 
+    label,
+    "video",
+
+    jsCall,
+    {
+      fcn: () => {
+        const dialog = document.getElementById("dialogDiv");
+        dialog.style.display = "none";
+        const bg = document.getElementById("background0");
+        bg.style.display = "none";
+        const video = document.querySelector("#video");
+        video.style.opacity = 1;
+
+        document.body.style.pointerEvents = "none";
+
+        video.play();
+        video.addEventListener("ended", () => {
+          bg.style.display = "unset";
+          dialog.style.display = "block";
+          document.body.style.pointerEvents = "unset";
+          video.remove();
+          playNovel();
+        });
+      },
+    },
+
+    pause,
+    undefined,
+
     // PAGE 5 ////////////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "enter",
+
     scene,
     "enter.gif",
 
@@ -778,13 +821,13 @@ function prepareNovel() {
     "You don't have to lie to me.",
 
     casper,
-    { image: "CASPERsadbasic.gif", position: homecasper1 },
+    { image: "caspersadbasic.gif", position: homecasper1 },
 
     casper,
     "um. . I. .",
 
     casca,
-    { image: `casca_tiest.gif?A=${Date.now()}`, position: cascadrive7 },
+    { image: `CASCA_tiest.gif?A=${Date.now()}`, position: cascadrive7 },
 
     casca,
     "Here. Just... There. They're back on. Good as new.",
@@ -793,7 +836,7 @@ function prepareNovel() {
     { image: "CASCA_talksadL.gif", position: cascadrive8 },
 
     n,
-    "Casper wasn't a fan of when Casca spoke about good things with such a mad expression.",
+    "Casper wasn't a fan of when Casca spoke such a mad expression.",
 
     n,
     "At least the parking's free for two hours.",
@@ -815,7 +858,7 @@ function prepareNovel() {
     "BOOKS!? but i want to play!",
 
     casca,
-    "I didn't say you can't play. There's probably toys.",
+    "I didn't say you can't play. . . There's probably toys.",
 
     casper,
     "oh. . i thought you said that. . .",
@@ -843,19 +886,34 @@ function prepareNovel() {
     "oh! we're so high up!",
 
     casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `CASCAWalkmad.gif?A=${Date.now()}`, position: rightSideopen },
 
     casca,
     "Mmm.",
 
     casper,
+    { image: `CASPER_talk.gif?A=${Date.now()}`, position: casperlobby1 },
+
+    casper,
     "i bet we can see home from here!",
+
+    casca,
+    { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascalobby1 },
 
     casca,
     ". . .",
 
     casper,
-    "Casca?",
+    "there's so many cars on the road!",
+
+    casca,
+    ". . .",
+
+    casper,
+    { image: `CASPER_talkL.gif?A=${Date.now()}`, position: casperlobby1 },
+
+    casper,
+    ". .casca..!",
 
     casca,
     ". . what?",
@@ -938,10 +996,7 @@ function prepareNovel() {
     ". . thank you. . .",
 
     sonador,
-    ". . anytime. ",
-
-    sonador,
-    { image: `sonador_walkL.gif?A=${Date.now()}`, position: rightSideopen },
+    ". . If you need anything, you know where to find me. ",
 
     ///ROOM ONE (INITIAL SCENE)///////////////////////////////////////////////////////////
 
@@ -950,11 +1005,40 @@ function prepareNovel() {
     scene,
     "roomone.gif",
 
-    casca,
-    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+    casper,
+    "woah! so many toys!!",
+
+    casper,
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSideopen },
 
     casca,
     "Here. . There should be plenty to do. .",
+
+    casca,
+    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+
+    casper,
+    "will you play with me?",
+
+    casca,
+    "...no, not right now,",
+
+    //casca_sit
+
+    casper,
+    "whaa.. why?",
+
+    casca,
+    "I just can't.",
+
+    casper,
+    "but-",
+
+    casca,
+    "Casper..",
+
+    casper,
+    "aw... okay..",
 
     label,
     "room1_2",
