@@ -63,7 +63,7 @@ function Character(characterName) {
     if (obj.image) {
       this.image.setAttribute(
         "src",
-        novel.imagePath + obj.image.replace(/{{(.*?)}}/g, novel_interpolator)
+        novel.imagePath + obj.image.replace(/{{(.*?)}}/g, novel_interpolator),
       );
     }
     this.position = obj.position || new Position(0, 0, true);
@@ -763,7 +763,7 @@ function novel_fadeBgOut(targetAlpha) {
     novel.paused = true;
     setTimeout(
       'novel_finishLoadingBackground("fade", ' + targetAlpha + ")",
-      30
+      30,
     );
   }
 }
@@ -967,7 +967,7 @@ function menu(menuArray) {
   novel.ignoreClicks = true;
   novel.dialog.innerHTML = menuArray[0].replace(
     /{{(.*?)}}/g,
-    novel_interpolator
+    novel_interpolator,
   );
   novel.dialog.style.textAlign = "center";
   for (var i = 1; i < menuArray.length; i += 2) {
@@ -1083,7 +1083,7 @@ function novel_changeBackground(param, clearAll) {
   } else if (effect == "dissolve") {
     novel.backgroundImage[1 - novel.activeBG] = fileName;
     novel.pendingBackgroundImage = document.getElementById(
-      "background" + (1 - novel.activeBG)
+      "background" + (1 - novel.activeBG),
     );
     novel.pendingBackgroundImage.src = novel.imagePath + fileName;
     novel.paused = true;
@@ -1091,7 +1091,7 @@ function novel_changeBackground(param, clearAll) {
   if (effect != "fade") {
     setTimeout(
       'novel_finishLoadingBackground("' + effect + '", ' + targetAlpha + ")",
-      30
+      30,
     );
   }
 }
@@ -1114,7 +1114,7 @@ function novel_finishLoadingBackground(effect, targetAlpha) {
   } else {
     setTimeout(
       'novel_finishLoadingBackground("' + effect + '", ' + targetAlpha + ")",
-      30
+      30,
     );
   }
 }

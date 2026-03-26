@@ -8,9 +8,74 @@ var n; // short for "narrator"
 var photo;
 var textBlock;
 
+var crystalnpc;
+var scrollnpc;
+var fruitnpc;
+var armsnpc;
+
 var leftSide;
 var rightSide;
 var upperCenter;
+
+var rightSideopen;
+var rightSide;
+var rightSidedown;
+
+var rightSidelobby;
+var leftSide;
+var leftSidetwo;
+var leftSidethree;
+
+//choco
+var rentchoco1;
+var rentchoco2;
+var rentchoco3;
+var homechoco;
+var elechoco;
+//npc
+var rentnpc1;
+var rentnpc2;
+var rentnpc3;
+///car
+var rightSidecar;
+//sonador
+var desk;
+var sonadorlobby1;
+var sonadorlobby2;
+///casca
+var elecasca1;
+var homecasca1;
+var cascalobby1;
+var cascalobby2;
+var cascalobby3;
+var cascadrive;
+var cascadrive2;
+var cascadrive3;
+var cascadrive4;
+var cascadrive5;
+var cascadrive6;
+var cascadrive7;
+var cascadrive8;
+var rentcasca1;
+var rentcasca2;
+///casper
+var elecasper1;
+var elecasper2;
+var homecasper2;
+var homecasper1;
+var casperlobby1;
+var casperlobby2;
+var casperlobby3;
+var casperlobby4;
+var casperride;
+var casperride2;
+var casperride3;
+var rentcasper1;
+var rentcasper2;
+var rentcasper3;
+var rentcasper4;
+
+var room_one;
 
 const preload = [
   "raindrops.webp",
@@ -69,6 +134,8 @@ const preload = [
   "CASCA_talk.gif",
   "CASCA_talkL.gif",
   "Casca_flappies.gif",
+  "Casca_fall.gif",
+  "CASCA_portal.gif",
   "cascaride1.gif",
   "cascaride_mad1.gif",
   "cascahand1.gif",
@@ -117,7 +184,13 @@ function prepareNovel() {
   npc2 = new Character("");
   n = new Character("");
 
-  europe = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
+  crystalnpc = new Character("Crystal Seller", { color: "rgb(197, 0, 215)" });
+  scrollnpc = new Character("Scroll Seller", { color: "rgb(249, 126, 92)" });
+  fruitnpc = new Character("Fruit Seller", { color: "rgb(224, 0, 0)" });
+  armsnpc = new Character("Arms Seller", { color: "rgb(0, 146, 78)" });
+
+  one = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
+  marketmap = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
 
   //enter
   rightSideopen = new Position(1030, 560, 1, 1);
@@ -180,13 +253,35 @@ function prepareNovel() {
 
   ///Lobby
   ///sonador
-  sonadorlobby1 = new Position(902, 380, 1, 0);
+  desk = new Position(600, 690, 1, 1);
+  sonadorlobby1 = new Position(516, 295, 1, 0);
+  sonadorlobby2 = new Position(816, 300, 1, 0);
 
   ///casca
   cascalobby1 = new Position(480, 295, 0, 0);
+  cascalobby2 = new Position(500, 300, 0, 0);
+  cascalobby3 = new Position(350, 300, 0, 0);
+
+  rightSidelobby = new Position(1020, 560, 1, 1);
+  leftSide = new Position(800, 560, 1, 1);
+  leftSidetwo = new Position(500, 560, 1, 1);
+  leftSidethree = new Position(600, 560, 1, 1);
 
   ///casper
   casperlobby1 = new Position(245, 295, 0, 0);
+  casperlobby2 = new Position(45, 295, 0, 0);
+  casperlobby3 = new Position(275, 295, 0, 0);
+  casperlobby4 = new Position(540, 300, 0, 0);
+
+  /// Room One ////////////
+  cascaroom1 = new Position(285, 300, 0, 0);
+  cascaroom2 = new Position(45, 160, 0, 0);
+  cascaroom3 = new Position(115, 220, 0, 0);
+  cascaportal = new Position(350, 10, 0, 0);
+  cascamarket1 = new Position(445, 10, 0, 0);
+  cascamarket2 = new Position(458, 325, 0, 0);
+
+  casperroom1 = new Position(5, 300, 0, 0);
 
   /*
    jsCall,
@@ -223,16 +318,10 @@ function prepareNovel() {
     [
       "Hello Handsome :D",
 
-      "rental",
-      [jump, "rental"],
-      "overpass",
-      [jump, "highwayone"],
-      "video",
-      [jump, "video"],
-      "enter",
-      [jump, "enter"],
       "front",
       [jump, "front"],
+      "map_one",
+      [jump, "room1map"],
       "lobby",
       [jump, "lobby"],
       "lobby closer",
@@ -245,16 +334,14 @@ function prepareNovel() {
       [jump, "room2door"],
       "room1",
       [jump, "room1"],
+      "room1 cont",
+      [jump, "room1_3"],
       "room2",
       [jump, "room2"],
       "market",
       [jump, "market"],
-      "car one",
-      [jump, "highwaytwo"],
-      "car two",
-      [jump, "highwaythree"],
-      "car three",
-      [jump, "highwayfour"],
+      "portal",
+      [jump, "portal"],
     ],
 
     label,
@@ -916,6 +1003,9 @@ function prepareNovel() {
     ". .casca..!",
 
     casca,
+    { image: `CASCA_talkmad.gif?A=${Date.now()}`, position: cascalobby1 },
+
+    casca,
     ". . what?",
 
     casper,
@@ -929,7 +1019,10 @@ function prepareNovel() {
     "lobbycloser.gif",
 
     sonador,
-    { image: "sonador_talkL.gif", position: sonadorlobby1 },
+    { image: "Sonador_talkL.gif", position: sonadorlobby1 },
+
+    npc2,
+    { image: "desk.png", position: desk },
 
     casper,
     { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
@@ -938,34 +1031,64 @@ function prepareNovel() {
     "hello.",
 
     casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `CASCAWalkmad.gif?A=${Date.now()}`, position: rightSidelobby },
 
     sonador,
-    "can I help you two with anything. .?",
+    "can I help you two with anything. . ?",
+
+    casca,
+    { image: `CASCA_talkmad.gif?A=${Date.now()}`, position: cascalobby2 },
+
+    casper,
+    { image: `CASPER_talkL.gif?A=${Date.now()}`, position: casperlobby3 },
 
     casca,
     "I just need something to distract Casper for a few hours. Do you have anywhere for kids?",
 
     sonador,
-    "If you--",
+    { image: "Sonador_eyestalkL.gif", position: sonadorlobby1 },
+
+    sonador,
+    "If you-",
+
+    casca,
+    { image: `CASCA_talksad.gif?A=${Date.now()}`, position: cascalobby2 },
 
     casca,
     "Where?",
 
     sonador,
+    { image: "Sonador_talk.gif", position: sonadorlobby1 },
+
+    sonador,
     ". . .",
+
+    sonador,
+    { image: "Sonador_eyestalk.gif", position: sonadorlobby1 },
 
     sonador,
     ". . If you'll follow me. . .",
 
     casca,
-    ". . eh- okay-",
+    { image: `CASCA_talk.gif?A=${Date.now()}`, position: cascalobby2 },
+
+    casca,
+    ". . oh- okay-",
+
+    casper,
+    { image: `casper_jumps.gif?A=${Date.now()}`, position: casperlobby3 },
 
     casper,
     "HI! I'm Casper!",
 
     sonador,
-    ". .Hello Casper.",
+    { image: "Sonador_talkL.gif", position: sonadorlobby1 },
+
+    sonador,
+    ". . Hello Casper.",
+
+    casca,
+    { image: `CASCA_talksad.gif?A=${Date.now()}`, position: cascalobby2 },
 
     n,
     "It was times like these that made Casca feel like they've completely forgotten how to talk to other adults.",
@@ -978,27 +1101,54 @@ function prepareNovel() {
     "room1door.gif",
 
     sonador,
-    { image: `sonador_walk.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `Sonador_walk.gif?A=${Date.now()}`, position: leftSide },
 
     sonador,
     ". . here you are. . .",
 
-    casper,
-    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSideopen },
+    sonador,
+    { image: "Sonador_talkL.gif", position: sonadorlobby2 },
 
     casper,
-    "wheee~!",
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: leftSide },
+
+    sonador,
+    "This is the kindergarten.",
 
     casca,
-    { image: `CASCAwalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: leftSidetwo },
+
+    casper,
+    { image: `CASPER_talk.gif?A=${Date.now()}`, position: casperlobby4 },
+
+    sonador,
+    "There's plenty to do inside.",
+
+    casca,
+    { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascalobby3 },
+
+    casper,
+    "woooahh!",
+
+    sonador,
+    ". . .",
 
     casca,
     ". . thank you. . .",
 
     sonador,
+    { image: "Sonador_eyestalkL.gif", position: sonadorlobby2 },
+
+    sonador,
     ". . If you need anything, you know where to find me. ",
 
-    ///ROOM ONE (INITIAL SCENE)///////////////////////////////////////////////////////////
+    sonador,
+    { image: `Sonador_walkR.gif?A=${Date.now()}`, position: leftSidethree },
+
+    sonador,
+    ". . If you need anything, you know where to find me. ",
+
+    // PAGE 10 ROOM ONE/////////////////////////////////////////////////////////////////////////////////////////
 
     label,
     "room1",
@@ -1006,27 +1156,37 @@ function prepareNovel() {
     "roomone.gif",
 
     casper,
-    "woah! so many toys!!",
+    { image: `casper_walksL.gif?A=${Date.now()}`, position: leftSide },
 
     casper,
-    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSideopen },
+    "woah! so many toys!!",
 
     casca,
-    "Here. . There should be plenty to do. .",
+    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: leftSidetwo },
 
     casca,
-    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
+    "Thank goodness. . .",
+
+    casper,
+    { image: `CASPER_talk.gif?A=${Date.now()}`, position: casperlobby4 },
 
     casper,
     "will you play with me?",
 
     casca,
-    "...no, not right now,",
+    { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascalobby3 },
 
-    //casca_sit
+    casper,
+    { image: "caspersadbasic.gif", position: casperlobby4 },
+
+    casca,
+    "...no, not right now,",
 
     casper,
     "whaa.. why?",
+
+    casca,
+    { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascalobby3 },
 
     casca,
     "I just can't.",
@@ -1035,10 +1195,108 @@ function prepareNovel() {
     "but-",
 
     casca,
-    "Casper..",
+    "Cas-",
 
     casper,
-    "aw... okay..",
+    { image: "CASPER_talkmad.gif", position: casperlobby4 },
+
+    casper,
+    "No! WHY Why Why!",
+
+    casper,
+    { image: `CASPER_jumpmad.gif?A=${Date.now()}`, position: casperlobby4 },
+
+    casper,
+    "WHY!!! Why!!",
+
+    casper,
+    "W",
+
+    casper,
+    "H",
+
+    casper,
+    "Y",
+
+    casper,
+    "!!!!",
+
+    casper,
+    { image: "CASPER_talkmad.gif", position: casperlobby4 },
+
+    casca,
+    { image: `Casca_flappies.gif?A=${Date.now()}`, position: cascaroom1 },
+
+    casca,
+    "CASPER!",
+
+    casca,
+    { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascalobby3 },
+
+    casca,
+    ". . .",
+
+    casper,
+    { image: "CASPER_talkmadL.gif", position: casperlobby4 },
+
+    casper,
+    ". . .",
+
+    casca,
+    { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascaroom3 },
+
+    casca,
+    "Go on. . . I'll watch from here.",
+
+    casca,
+    { image: `CASCA_sit.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    n,
+    "Casper knew better than to continue at this rate.",
+
+    casca,
+    { image: `CASCA_sit4.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    n,
+    ". . . to some degree.",
+
+    casca,
+    { image: `CASCA_sit7.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    //phone scene
+
+    casper,
+    { image: "CASPER_talkmadL.gif", position: casperlobby4 },
+
+    casca,
+    ". . . ick . .",
+
+    casca,
+    { image: `CASCA_sit8.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    ". . I can't stop yawning . .",
+
+    casca,
+    { image: `CASCA_sit2.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    ". . .",
+
+    casper,
+    " Hmmmm. . . i want to play with. . . YOU!",
+
+    casca,
+    { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    ". . . . . . ZzZzzZ . .",
+
+    casper,
+    "you're the BAD GUY!",
+
+    casper,
+    "hee hee!",
 
     label,
     "room1_2",
@@ -1046,15 +1304,13 @@ function prepareNovel() {
     "roomone_dark1.gif",
 
     casca,
-    "Here you are. . There should be plenty to do here. .",
+    { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
 
-    label,
-    "room1_3",
-    scene,
-    "roomone_dark3.gif",
+    casper,
+    { image: "CASPER_talkL.gif", position: casperlobby4 },
 
-    casca,
-    "Here. . There should be plenty to do. .",
+    casper,
+    "huh. . ?",
 
     label,
     "room1_3",
@@ -1062,7 +1318,371 @@ function prepareNovel() {
     "roomone_dark2.gif",
 
     casca,
-    "Here. . There should be plenty to do. .",
+    { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casper,
+    { image: "caspersadbasic.gif", position: casperlobby4 },
+
+    casper,
+    "whats going on?",
+
+    casca,
+    ". . .",
+
+    casper,
+    "who's there?",
+
+    n,
+    ". . .",
+
+    casper,
+    "i'm scared. . !",
+
+    casca,
+    ". . ZZzZzzz. . .",
+
+    label,
+    "room1_4",
+    scene,
+    "roomone_dark3.gif",
+
+    casper,
+    { image: "CASPER_talk.gif", position: casperlobby4 },
+
+    casca,
+    { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casper,
+    "woah!",
+
+    casper,
+    "what was that?",
+
+    casper,
+    { image: `casper_walks2.gif?A=${Date.now()}`, position: casperroom1 },
+
+    casper,
+    "Oh..!!",
+
+    label,
+    "room1_5",
+    scene,
+    "roomone_dark2.gif",
+
+    casca,
+    { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    ". . . ZzzZZZzZzz . .",
+
+    casca,
+    ". . . . . . ZzZzz . .",
+
+    casca,
+    { image: `CASCA_sit5.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    ". . . . huh?",
+
+    casca,
+    { image: `CASCA_sit9.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    n,
+    "It never failed to surprise Casca. .",
+
+    casca,
+    { image: `CASCA_sit6.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    n,
+    ". . how quickly everything changes.",
+
+    casca,
+    "Casper?",
+
+    casca,
+    { image: `CASCA_sit9.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    "Casper! Where are you?",
+
+    label,
+    "room1_6",
+    scene,
+    "roomone_dark1.gif",
+
+    casca,
+    { image: `CASCA_sit9.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    casca,
+    "Casper?",
+
+    label,
+    "room1_7",
+    scene,
+    "roomone.gif",
+
+    casca,
+    { image: `CASCA_sit9.gif?A=${Date.now()}`, position: cascaroom2 },
+
+    /// IMG MAP ONE //////////////////////////////////////////////////////////////////////////////////
+
+    label,
+    "room1map",
+
+    room_one,
+    { image: "roomone.gif" },
+    imagemap,
+    { madId: "room_one", character: one },
+
+    label,
+    "stars",
+    n,
+    "little twinkle star",
+
+    label,
+    "animals",
+    n,
+    "plastic zoo creature",
+
+    label,
+    "posters",
+    n,
+    "playful posties of goobles",
+
+    label,
+    "dinos",
+    n,
+    "speedy speedster-saur",
+
+    label,
+    "busyboard",
+    n,
+    "knick-knacker wall for twisty knobs",
+
+    label,
+    "cat",
+    n,
+    "Mi-mi Ow",
+
+    label,
+    "mouse",
+    n,
+    "Squeaker",
+
+    label,
+    "bowl",
+    n,
+    "bowl of naks",
+
+    label,
+    "skates",
+    n,
+    "Rolley Pollies",
+
+    label,
+    "books",
+    n,
+    "pastpods recounter",
+
+    label,
+    "carpet",
+    n,
+    "what's this?",
+
+    /// PORTAL //////////////////////////////////////////////////////////////////////////////////
+
+    label,
+    "carpet",
+    label,
+    "portal",
+    scene,
+    "transport.gif",
+
+    casca,
+    { image: `CASCA_portal.gif?A=${Date.now()}`, position: cascaportal },
+
+    casca,
+    "A-AAAA!!!",
+
+    /// MARKET //////////////////////////////////////////////////////////////////////////////////
+
+    label,
+    "market",
+    scene,
+    "market.gif",
+
+    casca,
+    { image: `CASCA_fall.gif?A=${Date.now()}`, position: cascamarket1 },
+
+    casca,
+    "w-woah!!",
+
+    casca,
+    { image: `CASCA_fall2.gif?A=${Date.now()}`, position: cascamarket2 },
+
+    casca,
+    "omf!",
+
+    n,
+    "The Underpass",
+
+    casca,
+    ". . . Where am I?",
+
+    n,
+    "Casca found it hard to think through the noise of the crowd.",
+
+    crystalnpc,
+    "THE CRYSTAL CALLS!",
+
+    scrollnpc,
+    "What have you?",
+
+    fruitnpc,
+    "Farm Fresh!",
+
+    armsnpc,
+    "Trade Here. Trade.",
+
+    casca,
+    { image: `CASCA_talk.gif?A=${Date.now()}`, position: cascamarket2 },
+
+    casca,
+    "Casper? Are you here?",
+
+    casca,
+    "Casper!!",
+
+    label,
+    "Crystal",
+
+    crystalnpc,
+    "Ah.. Welcome to my shop. I have plenty of delightful trinkets.",
+
+    crystalnpc,
+    "There is more than meets the eye, my dear.",
+
+    casca,
+    "I need to get back to the library... do you know where we are?",
+
+    crystalnpc,
+    "..why, we are on Scarlet of course!",
+
+    crystalnpc,
+    "The best, most beautiful world to grace the eyes!",
+
+    casca,
+    "what? no- thats obvious! i meant here! right here'",
+
+    crystalnpc,
+    "The Library? ah... I love the Library.",
+
+    crystalnpc,
+    "I have something I need to return there.",
+
+    casca,
+    "Did you hear me? CAN you hear me?",
+
+    casca,
+    "how am I gonna get back?",
+
+    crystalnpc,
+    "hmm... not sure about that. but here!",
+
+    crystalnpc,
+    "be a doll and take this for me once you figure it out!",
+
+    casca,
+    "...huh?",
+
+    n,
+    "The Story of Scarlet",
+
+    casca,
+    "...what? what is this?",
+
+    crystalnpc,
+    "Go on! Shoo! Go find your way!",
+
+    label,
+    "backfromcrystal",
+
+    casca,
+    "...",
+
+    ///OS1 plays
+
+    label,
+    "Scroll",
+
+    scrollnpc,
+    "I have wares... you have pods?",
+
+    casca,
+    "barely... can you help me?",
+
+    scrollnpc,
+    "help has a price..",
+
+    casca,
+    "No! Please! Where am I?",
+
+    casca,
+    "did you not see me drop from the sky?",
+
+    scrollnpc,
+    "...not everything is about you.",
+
+    casca,
+    "...thanks..",
+
+    scrollnpc,
+    "I give you nothing.",
+
+    label,
+    "backfromscroll",
+
+    casca,
+    "I can see that...",
+
+    casca,
+    "...what am I going to do?",
+
+    label,
+    "Fruit",
+
+    fruitnpc,
+    "No, No, No! I smell your wealth!",
+
+    fruitnpc,
+    "theres nothing for you. theres nothing for me.",
+
+    casca,
+    "i just need to know how to get back to the library!",
+
+    fruitnpc,
+    "You think I know?",
+
+    fruitnpc,
+    "i just sell fruit.",
+
+    casca,
+    "you've never driven past there?",
+
+    fruitnpc,
+    "Fruit is a grind that never lets up the hustle.",
+
+    label,
+    "backfromfruit",
+
+    casca,
+    "...ugh.. that was fruitless..",
+
+    casca,
+    "ha ha ha...",
+
+    label,
+    "Arms",
 
     /// ANTEROOM //////////////////////////////////////////////////////////////////////////////////
 
@@ -1072,10 +1692,13 @@ function prepareNovel() {
     "room1door.gif",
 
     casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `CASCAWalkL.gif?A=${Date.now()}`, position: leftSidetwo },
 
     n,
     "The Kindergarten.",
+
+    casper,
+    { image: "CASPER_talkL.gif", position: casperlobby4 },
 
     label,
     "room2door",
@@ -1083,10 +1706,13 @@ function prepareNovel() {
     "room2door.gif",
 
     casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `CASCAWalkL.gif?A=${Date.now()}`, position: leftSidetwo },
 
     n,
     "The Office.",
+
+    casper,
+    { image: "CASPER_talkL.gif", position: casperlobby4 },
 
     label,
     "room3door",
@@ -1094,39 +1720,13 @@ function prepareNovel() {
     "room3door.gif",
 
     casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+    { image: `CASCAWalkL.gif?A=${Date.now()}`, position: leftSidetwo },
 
     n,
     "Somewhere Familiar.",
 
-    // PAGE 10 ROOM ONE/////////////////////////////////////////////////////////////////////////////////////////
-
-    label,
-    "room1",
-    scene,
-    "roomone.gif",
-
-    casca,
-    { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: rightSideopen },
-
-    sonador,
-    "Here you are. . There should be plenty to do here. .",
-
-    label,
-    "portal",
-    scene,
-    "transport.gif",
-
-    n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
-
-    label,
-    "market",
-    scene,
-    "market.gif",
-
-    n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    casper,
+    { image: "CASPER_talkL.gif", position: casperlobby4 },
 
     // PAGE 11 ROOM TWO /////////////////////////////////////////////////////////////////////////////////////////
 
