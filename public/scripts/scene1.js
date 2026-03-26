@@ -1556,11 +1556,130 @@ function prepareNovel() {
     label,
     "Crystal",
 
+    crystalnpc,
+    "Ah.. Welcome to my shop. I have plenty of delightful trinkets.",
+
+    crystalnpc,
+    "There is more than meets the eye, my dear.",
+
+    casca,
+    "I need to get back to the library... do you know where we are?",
+
+    crystalnpc,
+    "..why, we are on Scarlet of course!",
+
+    crystalnpc,
+    "The best, most beautiful world to grace the eyes!",
+
+    casca,
+    "what? no- thats obvious! i meant here! right here'",
+
+    crystalnpc,
+    "The Library? ah... I love the Library.",
+
+    crystalnpc,
+    "I have something I need to return there.",
+
+    casca,
+    "Did you hear me? CAN you hear me?",
+
+    casca,
+    "how am I gonna get back?",
+
+    crystalnpc,
+    "hmm... not sure about that. but here!",
+
+    crystalnpc,
+    "be a doll and take this for me once you figure it out!",
+
+    casca,
+    "...huh?",
+
+    n,
+    "The Story of Scarlet",
+
+    casca,
+    "...what? what is this?",
+
+    crystalnpc,
+    "Go on! Shoo! Go find your way!",
+
+    label,
+    "backfromcrystal",
+
+    casca,
+    "...",
+
+    ///OS1 plays
+
     label,
     "Scroll",
 
+    scrollnpc,
+    "I have wares... you have pods?",
+
+    casca,
+    "barely... can you help me?",
+
+    scrollnpc,
+    "help has a price..",
+
+    casca,
+    "No! Please! Where am I?",
+
+    casca,
+    "did you not see me drop from the sky?",
+
+    scrollnpc,
+    "...not everything is about you.",
+
+    casca,
+    "...thanks..",
+
+    scrollnpc,
+    "I give you nothing.",
+
+    label,
+    "backfromscroll",
+
+    casca,
+    "I can see that...",
+
+    casca,
+    "...what am I going to do?",
+
     label,
     "Fruit",
+
+    fruitnpc,
+    "No, No, No! I smell your wealth!",
+
+    fruitnpc,
+    "theres nothing for you. theres nothing for me.",
+
+    casca,
+    "i just need to know how to get back to the library!",
+
+    fruitnpc,
+    "You think I know?",
+
+    fruitnpc,
+    "i just sell fruit.",
+
+    casca,
+    "you've never driven past there?",
+
+    fruitnpc,
+    "Fruit is a grind that never lets up the hustle.",
+
+    label,
+    "backfromfruit",
+
+    casca,
+    "...ugh.. that was fruitless..",
+
+    casca,
+    "ha ha ha...",
 
     label,
     "Arms",
