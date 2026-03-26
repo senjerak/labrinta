@@ -283,6 +283,10 @@ function prepareNovel() {
 
   casperroom1 = new Position(5, 300, 0, 0);
 
+  /// Room Two //////
+  sonadorroom2_1 = new Position(705, 300, 0, 0);
+  cascaroom2_1 = new Position(258, 325, 0, 0);
+
   /*
    jsCall,
   {
@@ -318,6 +322,8 @@ function prepareNovel() {
     [
       "Hello Handsome :D",
 
+      "START",
+      [jump, "beginning"],
       "front",
       [jump, "front"],
       "map_one",
@@ -1596,7 +1602,7 @@ function prepareNovel() {
     "...huh?",
 
     n,
-    "The Story of Scarlet",
+    "The Story of Scarlet, Vol. One",
 
     casca,
     "...what? what is this?",
@@ -1610,7 +1616,7 @@ function prepareNovel() {
     casca,
     "...",
 
-    ///OS1 plays
+    ///SOS1 plays
 
     label,
     "Scroll",
@@ -1692,10 +1698,34 @@ function prepareNovel() {
     "room1door.gif",
 
     casca,
-    { image: `CASCAWalkL.gif?A=${Date.now()}`, position: leftSidetwo },
+    { image: `CASCA_fall.gif?A=${Date.now()}`, position: cascamarket1 },
+
+    casca,
+    "woah!!",
+
+    casca,
+    { image: `CASCA_fall2.gif?A=${Date.now()}`, position: cascamarket2 },
+
+    casca,
+    "oof!",
 
     n,
     "The Kindergarten.",
+
+    casca,
+    "that was weird...",
+
+    casca,
+    "did that book bring me back here?",
+
+    casca,
+    "CASPER!! WHERE ARE YOU?",
+
+    casca,
+    "Casper...?",
+
+    n,
+    ". . .",
 
     casper,
     { image: "CASPER_talkL.gif", position: casperlobby4 },
@@ -1711,22 +1741,8 @@ function prepareNovel() {
     n,
     "The Office.",
 
-    casper,
-    { image: "CASPER_talkL.gif", position: casperlobby4 },
-
-    label,
-    "room3door",
-    scene,
-    "room3door.gif",
-
     casca,
-    { image: `CASCAWalkL.gif?A=${Date.now()}`, position: leftSidetwo },
-
-    n,
-    "Somewhere Familiar.",
-
-    casper,
-    { image: "CASPER_talkL.gif", position: casperlobby4 },
+    "Casper?? You in there?",
 
     // PAGE 11 ROOM TWO /////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1735,17 +1751,165 @@ function prepareNovel() {
     scene,
     "roomtwo.gif",
 
+    sonador,
+    { image: "Sonador_eyestalkL.gif", position: sonadorroom2_1 },
+
+    casca,
+    { image: `CASCA_talkL.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+    casca,
+    "oh..! I'm sorry. I didn't realize you were in here.",
+
+    sonador,
+    ". . . It's quite alright.",
+
+    sonador,
+    { image: "Sonador_talkL.gif", position: sonadorroom2_1 },
+
+    sonador,
+    "why don't you join me?",
+
+    casca,
+    { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+    casca,
+    "I can't. I'm looking for Casper. He's lost.",
+
+    sonador,
+    ". . . Is Casper the one who's lost?",
+
+    casca,
+    { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+    casca,
+    "Whats that supposed to mean?",
+
+    sonador,
+    "Maybe you should slow down and take a moment to think this through.",
+
+    casca,
+    { image: `CASCA_flappies.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+    casca,
+    "Did you hear me? I don't HAVE the time! I HAVE to FIND CASPER!",
+
+    sonador,
+    "If I told you I know where he is, would you sit and chat with me..?",
+
+    casca,
+    "You know where he is?? Is this some sort of joke!?",
+
+    sonador,
+    "I don't know for certain, but I have an idea.",
+
+    sonador,
+    "I'm sure that he's safe, regardless.",
+
+    casca,
+    ". . . fine.",
+
+    casca,
+    "you better help me after this.",
+
+    sonador,
+    "come with me.",
+
+    ///observatory
+
+    sonador,
+    "I want to give you a book.",
+
+    casca,
+    ". . . uh . . I appreciate it, but I'm not sure how this is going to help me find casper.",
+
+    sonador,
+    "Is anyone sure of anything?",
+
+    casca,
+    "um. . . I guess not.",
+
+    sonador,
+    "I like to think that assurance comes with routine.",
+
+    sonador,
+    "habit.",
+
+    sonador,
+    "it's pretty hard to know what to do when no one's done it right before.",
+
+    casca,
+    "but who's to say whats right or wrong?",
+
+    sonador,
+    "does that make a difference?",
+
+    casca,
+    "well, yeah, duh.",
+
+    casca,
+    "you can't just pretend like there aren't bad intentions out there.",
+
+    sonador,
+    ". . . even good intentions can hurt sometimes too.",
+
+    casca,
+    ". . .",
+
+    casca,
+    "yeah, well, they're still good.",
+
+    sonador,
+    "are they...?",
+
+    casca,
+    ". . .",
+
+    sonador,
+    "Here, take this.",
+
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "The Story of Scarlet, Vol. Two",
+
+    casca,
+    "What do I need this for?",
+
+    sonador,
+    "You're at the library. You might as well read something while you're here.",
+
+    n,
+    "Casca thought about the first book and had second thoughts.",
+
+    casca,
+    "I'm doing this for Casper.",
+
+    sonador,
+    "As am I.",
+
+    ///SOS2
+
 
     // PAGE 12 ROOM THREE/////////////////////////////////////////////////////////////////////////////////////////
+
     label,
-    "room2closer",
+    "room3door",
     scene,
-    "roomtwocloser.gif",
+    "room3door.gif",
+
+    casca,
+    { image: `CASCA_fall.gif?A=${Date.now()}`, position: cascamarket1 },
+
+    casca,
+    "woah!!",
+
+    casca,
+    { image: `CASCA_fall2.gif?A=${Date.now()}`, position: cascamarket2 },
+
+    casca,
+    "oof!",
 
     n,
-    "can I look at your buttons again? pretty please? I want to show mr. choco.",
+    "Somewhere Familiar.",
+
 
     // SOS 1 /////////////////////////////////////////////////////////////////////////////////////////
 
