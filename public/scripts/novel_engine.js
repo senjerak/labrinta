@@ -1083,7 +1083,7 @@ function novel_changeBackground(param, clearAll) {
   } else if (effect == "dissolve") {
     novel.backgroundImage[1 - novel.activeBG] = fileName;
     novel.pendingBackgroundImage = document.getElementById(
-      "background" + (1 - novel.activeBG),
+      "background" + (1 - novel.activeBG)
     );
     novel.pendingBackgroundImage.src = novel.imagePath + fileName;
     novel.paused = true;
@@ -1091,7 +1091,7 @@ function novel_changeBackground(param, clearAll) {
   if (effect != "fade") {
     setTimeout(
       'novel_finishLoadingBackground("' + effect + '", ' + targetAlpha + ")",
-      30,
+      30
     );
   }
 }
@@ -1114,7 +1114,7 @@ function novel_finishLoadingBackground(effect, targetAlpha) {
   } else {
     setTimeout(
       'novel_finishLoadingBackground("' + effect + '", ' + targetAlpha + ")",
-      30,
+      30
     );
   }
 }

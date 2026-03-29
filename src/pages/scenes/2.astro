@@ -1,0 +1,108 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "elevator.gif",
+      "CASCA_talk.gif",
+      "CASPER_talk.gif",
+      "choco.png",
+      "CASCA_talkmad.gif",
+      "CASPER_talkL.gif",
+      "choco_R.png",
+      "casper_jumps.gif",
+      "CASCA_talksad.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+      const mrchoco = new Character("Choco", { color: "rgb(255, 127, 48)" });
+
+      /**
+       * Positions
+       */
+
+      const elecasca1 = new Position(600, 300, 1, 0);
+      //casper
+      const elecasper1 = new Position(470, 290, 1, 0);
+      const elecasper2 = new Position(475, 265, 1, 0);
+      //choco
+      const elechoco = new Position(450, 460, 1, 0);
+
+      /**
+       * Scene Two
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "elevator.gif",
+
+        casca,
+        { image: "CASCA_talk.gif", position: elecasca1 },
+
+        casper,
+        { image: "CASPER_talk.gif", position: elecasper1 },
+
+        mrchoco,
+        { image: "choco.png", position: elechoco },
+
+        casper,
+        "wheeeee~~!",
+
+        casca,
+        { image: "CASCA_talkmad.gif", position: elecasca1 },
+
+        casca,
+        "Casper. . .",
+
+        casper,
+        { image: "CASPER_talkL.gif", position: elecasper1 },
+        mrchoco,
+        { image: "choco_R.png", position: elechoco },
+        casper,
+        ". . . sorry! sorry!",
+
+        casca,
+        ". . .",
+
+        casper,
+        ". . hee hee . . .",
+
+        casper,
+        { image: "casper_jumps.gif", position: elecasper2 },
+
+        casper,
+        "one!",
+
+        casper,
+        ". . two!!",
+
+        casper,
+        "three!!",
+
+        casca,
+        { image: "CASCA_talksad.gif", position: elecasca1 },
+
+        casca,
+        ". . . sigh. .",
+        jsCall,
+        { fcn: changeScene(3) },
+      ];
+    });
+  </script>
+</StoryLayout>

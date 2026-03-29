@@ -1,5 +1,3 @@
-var script;
-
 var casca;
 var casper;
 var mrchoco;
@@ -165,19 +163,8 @@ const preload = [
   "road.mp4",
 ];
 
-for (const src of preload) {
-  const image = new Image();
-  image.src = "/s_one/" + src;
-}
-
 function prepareNovel() {
-  novel.imagePath = "/s_one/"; // path to your image directory
-  novel.audioPath = ""; // path to your audio directory
-
   sonador = new Character("Soñador", { color: "rgb(147, 108, 236)" });
-  casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
-  casper = new Character("Casper", { color: "rgba(218, 234, 127, 1)" });
-  mrchoco = new Character("Choco", { color: "rgb(255, 127, 48)" });
 
   npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
   npc3 = new Character("Station Manager", { color: "rgb(128,125,116)" });
@@ -191,30 +178,6 @@ function prepareNovel() {
 
   one = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
   marketmap = new Character("", { position: new Position(0.5, 0.2, 0.5, 0.5) });
-
-  //enter
-  rightSideopen = new Position(1030, 560, 1, 1);
-  rightSide = new Position(1030, 600, 1, 1);
-  rightSidedown = new Position(1030, 660, 1, 1);
-
-  //home
-  // casper
-  homecasper1 = new Position(275, 295, 0, 0);
-  // casca
-  homecasca1 = new Position(572, 430, 0.5, 0.5);
-  // casper
-  homecasper2 = new Position(897, 300, 1, 0);
-  //choco
-  homechoco = new Position(850, 465, 1, 0);
-
-  //elevator
-  //casca
-  elecasca1 = new Position(600, 300, 1, 0);
-  //casper
-  elecasper1 = new Position(470, 290, 1, 0);
-  elecasper2 = new Position(475, 265, 1, 0);
-  //choco
-  elechoco = new Position(450, 460, 1, 0);
 
   //rental
   //casper
@@ -349,161 +312,6 @@ function prepareNovel() {
       "portal",
       [jump, "portal"],
     ],
-
-    label,
-    "beginning",
-    n,
-    "Poddertown, the industrious hive for the humble Podlet, wakes to the gentle embrace of a dwarf sun.<br> It is somewhat cold, wet, and not very bright.",
-
-    n,
-    "It was only unpleasant enough to ignore.",
-
-    casper,
-    { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
-    casper,
-    "good morning! . . . the sun is up! so I am up!",
-
-    casca,
-    { image: `CASCAwalkmad.gif?A=${Date.now()}`, position: rightSideopen },
-    casca,
-    "Casper. It's too early. Just stop.",
-
-    casca,
-    { image: "CASCA_talkmad.gif", position: homecasca1 },
-
-    casper,
-    { image: "CASPER_talkL.gif", position: homecasper1 },
-    casper,
-    ". . . aw. . .",
-
-    n,
-    "Casper couldn't stop, even if he wanted to. He doesn't know how. He doesn't know why.",
-    n,
-    "What does stopping even mean?",
-
-    casper,
-    { image: `casper_walksL.gif?A=${Date.now()}`, position: rightSideopen },
-
-    casca,
-    { image: "CASCA_talkmadL.gif", position: homecasca1 },
-
-    casca,
-    "now. . . help me pick up your toys so that we can leave.",
-
-    casper,
-    { image: "CASPER_talk.gif", position: homecasper2 },
-
-    casper,
-    "can we play monster attack? plushies aren't toys...",
-
-    casca,
-    { image: "CASCA_talkL.gif", position: homecasca1 },
-
-    casca,
-    "no. . . put them away.",
-
-    casper,
-    "what about choco? choco's people too. you can't put away people.",
-
-    mrchoco,
-    { image: "choco.png", position: homechoco },
-    mrchoco,
-    ". . .",
-
-    casca,
-    { image: "CASCA_talkmadL.gif", position: homecasca1 },
-
-    casca,
-    "there's no time for that! we've got to skidaddle before they run out of rentals.",
-
-    casca,
-    ". . . I'll be in a pinch if I can't focus on my homework today, so you're playing somewhere new today.",
-
-    casper,
-    { image: "CASPER_talkmad.gif", position: homecasper2 },
-
-    casper,
-    ". . .oh. . okay. .",
-
-    casper,
-    ". . . .shmental frental. . .",
-
-    casca,
-    "what was that?",
-
-    casper,
-    { image: "CASPER_talk.gif", position: homecasper2 },
-
-    casper,
-    "oops! sorry!",
-
-    casca,
-    "hmm. . .",
-
-    casca,
-    { image: "CASCA_talkL.gif", position: homecasca1 },
-
-    casca,
-    "okay, well, come on. let's get those shoes on and head towards the elevators.",
-
-    casper,
-    "okay! okay! okay!",
-
-    // PAGE 2 ////////////////////////////////////////////////////////////////////////////////////////////////
-
-    label,
-    "elevator",
-    scene,
-    "elevator.gif",
-
-    casca,
-    { image: "CASCA_talk.gif", position: elecasca1 },
-
-    casper,
-    { image: "CASPER_talk.gif", position: elecasper1 },
-
-    mrchoco,
-    { image: "choco.png", position: elechoco },
-
-    casper,
-    "wheeeee~~!",
-
-    casca,
-    { image: "CASCA_talkmad.gif", position: elecasca1 },
-
-    casca,
-    "Casper. . .",
-
-    casper,
-    { image: "CASPER_talkL.gif", position: elecasper1 },
-    mrchoco,
-    { image: "choco_R.png", position: elechoco },
-    casper,
-    ". . . sorry! sorry!",
-
-    casca,
-    ". . .",
-
-    casper,
-    ". . hee hee . . .",
-
-    casper,
-    { image: "casper_jumps.gif", position: elecasper2 },
-
-    casper,
-    "one!",
-
-    casper,
-    ". . two!!",
-
-    casper,
-    "three!!",
-
-    casca,
-    { image: "CASCA_talksad.gif", position: elecasca1 },
-
-    casca,
-    ". . . sigh. .",
 
     // PAGE 3 ////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -1887,7 +1695,6 @@ function prepareNovel() {
 
     ///SOS2
 
-
     // PAGE 12 ROOM THREE/////////////////////////////////////////////////////////////////////////////////////////
 
     label,
@@ -1909,7 +1716,6 @@ function prepareNovel() {
 
     n,
     "Somewhere Familiar.",
-
 
     // SOS 1 /////////////////////////////////////////////////////////////////////////////////////////
 
