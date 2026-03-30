@@ -1,0 +1,280 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "rental.gif",
+
+      "choco.png",
+      "choco_R.png",
+      "chocofall.gif",
+
+      "CASCA_talksad.gif",
+      "CASCA_talkmad.gif",
+      "CASCA_talk.gif",
+
+      "casper_jumps.gif",
+      "CASPER_talkL.gif",
+      "CASPER_talk.gif",
+      "caspersadbasicL.gif",
+      "caspersadbasic.gif",
+
+      "npc1.gif",
+      "npc1L.gif",
+      "npc1oof.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+      const mrchoco = new Character("Choco", { color: "rgb(255, 127, 48)" });
+      const npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
+      const npc3 = new Character("Station Manager", {
+        color: "rgb(128,125,116)",
+      });
+      const npc2 = new Character("");
+      const n = new Character("");
+
+      /**
+       * Positions
+       */
+
+      const rightSideopen = new Position(1030, 560, 1, 1);
+      const rightSide = new Position(1030, 600, 1, 1);
+      const rightSidedown = new Position(1030, 660, 1, 1);
+      //casper
+      rentcasper1 = new Position(150, 210, 1, 0);
+      rentcasper2 = new Position(779, 218, 1, 0);
+      rentcasper3 = new Position(950, 210, 1, 0);
+      rentcasper4 = new Position(350, 210, 1, 0);
+      //casca
+      rentcasca1 = new Position(270, 200, 1, 0);
+      rentcasca2 = new Position(420, 200, 1, 0);
+      //choco
+      rentchoco1 = new Position(150, 400, 1, 0);
+      rentchoco2 = new Position(1782, 400, 1, 0);
+      rentchoco3 = new Position(909, 380, 1, 0);
+      //npc
+      rentnpc1 = new Position(420, 233, 1, 0);
+      rentnpc2 = new Position(431, 233, 1, 0);
+      rentnpc3 = new Position(1731, 400, 1, 0);
+
+      /**
+       * Scene Three - Rental
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "rental.gif",
+
+        npc,
+        { image: "npc1.gif", position: rentnpc1 },
+
+        casca,
+        { image: "CASCA_talkL.gif", position: rentcasca1 },
+
+        casper,
+        { image: "CASPER_talkL.gif", position: rentcasper1 },
+
+        mrchoco,
+        { image: "choco_R.png", position: rentchoco1 },
+
+        n,
+        "Poddercarts help the Podlets get around. The only thing is, there's more road than house, so to actually own one is kind of a bit much.",
+
+        n,
+        "Stations make it easier for Podlets to rent Poddercarts instead.",
+
+        casper,
+        ". . . hee hee! . .",
+
+        casca,
+        ". . .",
+
+        casper,
+        ". . . okay, choco. . .",
+
+        casper,
+        "we're gonna play hide n' seek",
+
+        casper,
+        "it's MY turn to look. . . so you're gonna have ta hide somewhere.",
+
+        mrchoco,
+        ". . .",
+
+        casper,
+        "it's gonna be fun. . . trust me!",
+
+        casper,
+        ". . .here. . let me help you.",
+
+        casper,
+        { image: `casper_walksL.gif?A=${Date.now()}`, position: rentcasper3 },
+        mrchoco,
+        { image: "choco_R.png", position: rentchoco2 },
+
+        casper,
+        "..now stay put!",
+
+        casca,
+        { image: "CASCA_talkmadL.gif", position: rentcasca1 },
+
+        casca,
+        ". . . Casper, get back here.",
+
+        casper,
+        "okay!",
+
+        casper,
+        { image: `casper_walks.gif?A=${Date.now()}`, position: rentcasper2 },
+
+        npc,
+        { image: `npc1oof.gif?A=${Date.now()}`, position: rentnpc2 },
+
+        npc,
+        ". . . oof!",
+
+        casca,
+        { image: "CASCA_talkmad.gif", position: rentcasca1 },
+
+        casca,
+        ". . . Casper!",
+
+        casper,
+        { image: "caspersadbasicL.gif", position: rentcasper1 },
+
+        casper,
+        ". . oops!",
+
+        npc,
+        { image: "npc1L.gif", position: rentnpc1 },
+
+        npc,
+        "oh! it is perfectly f---",
+
+        casca,
+        ". . . Casper! Apologize!",
+
+        casper,
+        ". . i'm sorry!",
+
+        npc,
+        ". . . don't sweat it, kid.",
+
+        npc,
+        { image: "npc1.gif", position: rentnpc1 },
+
+        casca,
+        { image: "CASCA_talkmadL.gif", position: rentcasca1 },
+
+        casca,
+        ". . . Thank you.",
+
+        casper,
+        ". . thank you!",
+
+        npc2,
+        { image: `carnpc2.gif?A=${Date.now()}`, position: rightSide },
+
+        npc3,
+        ". . . Your Poddercart is ready.",
+
+        casca,
+        { image: "CASCA_talkL.gif", position: rentcasca2 },
+
+        casper,
+        { image: "caspersadbasicL.gif", position: rentcasper4 },
+
+        npc,
+        { image: "npc1.gif", position: rentnpc3 },
+
+        npc3,
+        ". . . Next. . .",
+
+        npc2,
+        { image: `carnpc1.gif?A=${Date.now()}`, position: rightSide },
+
+        casca,
+        ". . . i am Casca and i have two riders. .",
+
+        npc3,
+        ". . . One Moment. . .",
+
+        npc3,
+        ". . . Are you a member? ",
+
+        casca,
+        "It expired last week--",
+
+        npc3,
+        "You can renew now for only...",
+
+        casca,
+        "No! No thank you. I can't. Yet.",
+
+        npc3,
+        ". . . members save on average 30% on toll fare, you know.",
+
+        casca,
+        "yep. I'll just buy a guest pass for today.",
+
+        npc3,
+        ". . Okay . . . That will be 75 Pods. .",
+
+        casca,
+        "Ugh. . Okay.",
+
+        n,
+        "Guest prices seem to have gone up since the last time Casca was in such a pinch.",
+
+        n,
+        "Not to mention tolls. . .",
+
+        npc3,
+        ". . . Your Poddercart is ready.",
+
+        npc2,
+        { image: `carcasca1.gif?A=${Date.now()}`, position: rightSidedown },
+
+        casca,
+        ". . . come on, Casper.",
+
+        casca,
+        { image: "CASCA_talkL.gif", position: rentnpc3 },
+
+        casper,
+        { image: "caspersadbasicL.gif", position: rentnpc3 },
+
+        npc2,
+        { image: `carcasca2.gif?A=${Date.now()}`, position: rightSidedown },
+
+        casper,
+        ". . .",
+
+        mrchoco,
+        { image: `chocofall.gif?A=${Date.now()}`, position: rentchoco3 },
+
+        n,
+        ". . .",
+
+        jsCall,
+        { fcn: changeScene(4) },
+      ];
+    });
+  </script>
+</StoryLayout>

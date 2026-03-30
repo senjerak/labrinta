@@ -1,0 +1,85 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room1door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Positions
+       */
+      const cascaroom2 = new Position(45, 160, 0, 0);
+      /**
+       * Scene Twenty Four - Anteroom
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "room1door.gif",
+
+        casca,
+        { image: `CASCA_fall.gif?A=${Date.now()}`, position: cascamarket1 },
+
+        casca,
+        "woah!!",
+
+        casca,
+        { image: `CASCA_fall2.gif?A=${Date.now()}`, position: cascamarket2 },
+
+        casca,
+        "oof!",
+
+        n,
+        "The Kindergarten.",
+
+        casca,
+        "that was weird...",
+
+        casca,
+        "did that book bring me back here?",
+
+        casca,
+        "CASPER!! WHERE ARE YOU?",
+
+        casca,
+        "Casper...?",
+
+        n,
+        ". . .",
+
+        scene,
+        "room2door.gif",
+
+        casca,
+        { image: `CASCAWalkL.gif?A=${Date.now()}`, position: leftSidetwo },
+
+        n,
+        "The Office.",
+
+        casca,
+        "Casper?? You in there?",
+
+        jsCall,
+        { fcn: changeScene(25) },
+      ];
+    });
+  </script>
+</StoryLayout>

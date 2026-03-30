@@ -1,0 +1,211 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "roomone.gif",
+      "casper_walksL.gif",
+      "CASCAWalkmad_L.gif",
+      "CASPER_talk.gif",
+      "CASCA_talkmadL.gif",
+      "CASCA_talksadL.gif",
+      "CASCA_talksad.gif",
+      "CASCA_talk.gif",
+      "caspersadbasic.gif",
+      "CASPER_jumpmad.gif",
+      "Casca_flappies.gif",
+      "CASCA_sit.gif",
+
+      "CASCA_sit2.gif",
+      "CASCA_sit3.gif",
+      "CASCA_sit4.gif",
+
+      "CASCA_sit7.gif",
+      "CASCA_sit8.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Positions
+       */
+      const leftSide = new Position(800, 560, 1, 1);
+      const leftSidetwo = new Position(500, 560, 1, 1);
+
+      const cascaroom1 = new Position(285, 300, 0, 0);
+      const cascaroom2 = new Position(45, 160, 0, 0);
+      const cascaroom3 = new Position(115, 220, 0, 0);
+      const cascalobby3 = new Position(350, 300, 0, 0);
+
+      const casperlobby4 = new Position(540, 300, 0, 0);
+      /**
+       * Scene Fifteen - Room One
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "roomone.gif",
+
+        casper,
+        { image: `casper_walksL.gif?A=${Date.now()}`, position: leftSide },
+
+        casper,
+        "woah! so many toys!!",
+
+        casca,
+        { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: leftSidetwo },
+
+        casca,
+        "Thank goodness. . .",
+
+        casper,
+        { image: `CASPER_talk.gif?A=${Date.now()}`, position: casperlobby4 },
+
+        casper,
+        "will you play with me?",
+
+        casca,
+        { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascalobby3 },
+
+        casper,
+        { image: "caspersadbasic.gif", position: casperlobby4 },
+
+        casca,
+        "...no, not right now,",
+
+        casper,
+        "whaa.. why?",
+
+        casca,
+        { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascalobby3 },
+
+        casca,
+        "I just can't.",
+
+        casper,
+        "but-",
+
+        casca,
+        "Cas-",
+
+        casper,
+        { image: "CASPER_talkmad.gif", position: casperlobby4 },
+
+        casper,
+        "No! WHY Why Why!",
+
+        casper,
+        { image: `CASPER_jumpmad.gif?A=${Date.now()}`, position: casperlobby4 },
+
+        casper,
+        "WHY!!! Why!!",
+
+        casper,
+        "W",
+
+        casper,
+        "H",
+
+        casper,
+        "Y",
+
+        casper,
+        "!!!!",
+
+        casper,
+        { image: "CASPER_talkmad.gif", position: casperlobby4 },
+
+        casca,
+        { image: `Casca_flappies.gif?A=${Date.now()}`, position: cascaroom1 },
+
+        casca,
+        "CASPER!",
+
+        casca,
+        { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascalobby3 },
+
+        casca,
+        ". . .",
+
+        casper,
+        { image: "CASPER_talkmadL.gif", position: casperlobby4 },
+
+        casper,
+        ". . .",
+
+        casca,
+        { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascaroom3 },
+
+        casca,
+        "Go on. . . I'll watch from here.",
+
+        casca,
+        { image: `CASCA_sit.gif?A=${Date.now()}`, position: cascaroom2 },
+
+        n,
+        "Casper knew better than to continue at this rate.",
+
+        casca,
+        { image: `CASCA_sit4.gif?A=${Date.now()}`, position: cascaroom2 },
+
+        n,
+        ". . . to some degree.",
+
+        casca,
+        { image: `CASCA_sit7.gif?A=${Date.now()}`, position: cascaroom2 },
+
+        casper,
+        { image: "CASPER_talkmadL.gif", position: casperlobby4 },
+
+        casca,
+        ". . . ick . .",
+
+        casca,
+        { image: `CASCA_sit8.gif?A=${Date.now()}`, position: cascaroom2 },
+
+        casca,
+        ". . I can't stop yawning . .",
+
+        casca,
+        { image: `CASCA_sit2.gif?A=${Date.now()}`, position: cascaroom2 },
+
+        casca,
+        ". . .",
+
+        casper,
+        " Hmmmm. . . i want to play with. . . YOU!",
+
+        casca,
+        { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
+
+        casca,
+        ". . . . . . ZzZzzZ . .",
+
+        casper,
+        "you're the BAD GUY!",
+
+        casper,
+        "hee hee!",
+
+        jsCall,
+        { fcn: changeScene(16) },
+      ];
+    });
+  </script>
+</StoryLayout>

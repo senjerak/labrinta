@@ -1,0 +1,109 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", ["roomone_dark1.gif", "CASCA_sit9.gif"]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Positions
+       */
+      const cascaroom2 = new Position(45, 160, 0, 0);
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "observatory.gif",
+
+        sonador,
+        "I want to give you a book.",
+
+        casca,
+        ". . . uh . . I appreciate it, but I'm not sure how this is going to help me find casper.",
+
+        sonador,
+        "Is anyone sure of anything?",
+
+        casca,
+        "um. . . I guess not.",
+
+        sonador,
+        "I like to think that assurance comes with routine.",
+
+        sonador,
+        "habit.",
+
+        sonador,
+        "it's pretty hard to know what to do when no one's done it right before.",
+
+        casca,
+        "but who's to say whats right or wrong?",
+
+        sonador,
+        "does that make a difference?",
+
+        casca,
+        "well, yeah, duh.",
+
+        casca,
+        "you can't just pretend like there aren't bad intentions out there.",
+
+        sonador,
+        ". . . even good intentions can hurt sometimes too.",
+
+        casca,
+        ". . .",
+
+        casca,
+        "yeah, well, they're still good.",
+
+        sonador,
+        "are they...?",
+
+        casca,
+        ". . .",
+
+        sonador,
+        "Here, take this.",
+
+        n,
+        "The Story of Scarlet, Vol. Two",
+
+        casca,
+        "What do I need this for?",
+
+        sonador,
+        "You're at the library. You might as well read something while you're here.",
+
+        n,
+        "Casca thought about the first book and had second thoughts.",
+
+        casca,
+        "I'm doing this for Casper.",
+
+        sonador,
+        "As am I.",
+
+        ///SOS2
+        jsCall,
+        { fcn: changeScene(27) },
+      ];
+    });
+  </script>
+</StoryLayout>

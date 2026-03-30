@@ -1,0 +1,79 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "overpass3.gif",
+
+      "casperride1.gif",
+      "casperride_sad1.gif",
+
+      "cascaride_mad1.gif",
+      "cascaride1.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Positions
+       */
+      const casperride = new Position(700, 20, 1, 0);
+      const cascadrive = new Position(980, 540, 1, 1);
+
+      /**
+       * Scene Five- Overpass 2
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "overpass3.gif",
+
+        casper,
+        { image: `casperride1.gif?A=${Date.now()}`, position: casperride },
+
+        casca,
+        { image: `cascaride1.gif?A=${Date.now()}`, position: cascadrive },
+
+        casca,
+        "what!? what is it?",
+
+        casper,
+        { image: `casperride_sad1.gif?A=${Date.now()}`, position: casperride },
+
+        casper,
+        " ...sniff... choco!",
+
+        casca,
+        { image: `cascaride_mad1.gif?A=${Date.now()}`, position: cascadrive },
+
+        casca,
+        "stop that! use your words, Casper! . . . Come on.",
+
+        casper,
+        "choco!... choco!!",
+
+        casca,
+        "what about choco? isn't he still at home?",
+
+        jsCall,
+        { fcn: changeScene(6) },
+      ];
+    });
+  </script>
+</StoryLayout>

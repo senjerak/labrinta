@@ -1,0 +1,66 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", ["front.gif"]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Positions
+       */
+      /**
+       * Scene Eleven - Front
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "front.gif",
+
+        casper,
+        "where are we going. . ?",
+
+        casca,
+        "We're going to read some books.",
+
+        casper,
+        "BOOKS!? but i want to play!",
+
+        casca,
+        "I didn't say you can't play. . . There's probably toys.",
+
+        casper,
+        "oh. . i thought you said that. . .",
+
+        casca,
+        ". . .",
+
+        n,
+        "LA BRINTA was the only third space left in Poddertown. Barely afloat, the Library has anchored itself as the oldest building in Podder.",
+
+        n,
+        "Casca had been meaning to visit more often for some time.",
+
+        jsCall,
+        { fcn: changeScene(12) },
+      ];
+    });
+  </script>
+</StoryLayout>

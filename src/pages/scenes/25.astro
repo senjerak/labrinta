@@ -1,0 +1,112 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "roomtwo.gif",
+      "Sonador_eyestalkL.gif",
+      "Sonador_talkL.gif",
+      "CASCA_talkL.gif",
+      "CASCA_talkmadL.gif",
+      "CASCA_talksadL.gif",
+      "CASCA_flappies.gif",
+      "CASCA_talk.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const sonador = new Character("Soñador", { color: "rgb(147, 108, 236)" });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Positions
+       */
+      const cascaroom2 = new Position(45, 160, 0, 0);
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "roomtwo.gif",
+
+        sonador,
+        { image: "Sonador_eyestalkL.gif", position: sonadorroom2_1 },
+
+        casca,
+        { image: `CASCA_talkL.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+        casca,
+        "oh..! I'm sorry. I didn't realize you were in here.",
+
+        sonador,
+        ". . . It's quite alright.",
+
+        sonador,
+        { image: "Sonador_talkL.gif", position: sonadorroom2_1 },
+
+        sonador,
+        "why don't you join me?",
+
+        casca,
+        { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+        casca,
+        "I can't. I'm looking for Casper. He's lost.",
+
+        sonador,
+        ". . . Is Casper the one who's lost?",
+
+        casca,
+        { image: `CASCA_talksadL.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+        casca,
+        "Whats that supposed to mean?",
+
+        sonador,
+        "Maybe you should slow down and take a moment to think this through.",
+
+        casca,
+        { image: `CASCA_flappies.gif?A=${Date.now()}`, position: cascaroom2_1 },
+
+        casca,
+        "Did you hear me? I don't HAVE the time! I HAVE to FIND CASPER!",
+
+        sonador,
+        "If I told you I know where he is, would you sit and chat with me..?",
+
+        casca,
+        "You know where he is?? Is this some sort of joke!?",
+
+        sonador,
+        "I don't know for certain, but I have an idea.",
+
+        sonador,
+        "I'm sure that he's safe, regardless.",
+
+        casca,
+        ". . . fine.",
+
+        casca,
+        "you better help me after this.",
+
+        sonador,
+        "come with me.",
+
+        jsCall,
+        { fcn: changeScene(26) },
+      ];
+    });
+  </script>
+</StoryLayout>

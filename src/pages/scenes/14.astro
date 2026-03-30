@@ -1,0 +1,107 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room1door.gif",
+      "Sonador_walk.gif",
+      "Sonador_talkL.gif",
+      "casper_walksL.gif",
+      "CASCAWalkmad_L.gif",
+      "CASPER_talk.gif",
+      "CASCA_talkmadL.gif",
+      "Sonador_eyestalkL.gif",
+      "Sonador_walkR.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+      const sonador = new Character("Soñador", { color: "rgb(147, 108, 236)" });
+
+      /**
+       * Positions
+       */
+      const sonadorlobby2 = new Position(816, 300, 1, 0);
+      const leftSide = new Position(800, 560, 1, 1);
+      const leftSidetwo = new Position(500, 560, 1, 1);
+      const leftSidethree = new Position(600, 560, 1, 1);
+      const casperlobby4 = new Position(540, 300, 0, 0);
+      const cascalobby3 = new Position(350, 300, 0, 0);
+      /**
+       * Scene Fourteen - Anteroom
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "room1door.gif",
+
+        sonador,
+        { image: `Sonador_walk.gif?A=${Date.now()}`, position: leftSide },
+
+        sonador,
+        ". . here you are. . .",
+
+        sonador,
+        { image: "Sonador_talkL.gif", position: sonadorlobby2 },
+
+        casper,
+        { image: `casper_walksL.gif?A=${Date.now()}`, position: leftSide },
+
+        sonador,
+        "This is the kindergarten.",
+
+        casca,
+        { image: `CASCAWalkmad_L.gif?A=${Date.now()}`, position: leftSidetwo },
+
+        casper,
+        { image: `CASPER_talk.gif?A=${Date.now()}`, position: casperlobby4 },
+
+        sonador,
+        "There's plenty to do inside.",
+
+        casca,
+        { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascalobby3 },
+
+        casper,
+        "woooahh!",
+
+        sonador,
+        ". . .",
+
+        casca,
+        ". . thank you. . .",
+
+        sonador,
+        { image: "Sonador_eyestalkL.gif", position: sonadorlobby2 },
+
+        sonador,
+        ". . If you need anything, you know where to find me. ",
+
+        sonador,
+        { image: `Sonador_walkR.gif?A=${Date.now()}`, position: leftSidethree },
+
+        sonador,
+        ". . If you need anything, you know where to find me. ",
+
+        jsCall,
+        { fcn: changeScene(15) },
+      ];
+    });
+  </script>
+</StoryLayout>
