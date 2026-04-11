@@ -17,7 +17,9 @@ const { title = "LA BRINTA" } = Astro.props;
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/media/labrifavi.png" />
     <ClientRouter />
+    <script is:inline src="/scripts/novel_engine.js"></script>
     <script is:inline src="/scripts/novel_helpers.js"></script>
+    <script is:inline src="/scripts/positions.js"></script>
     <slot name="head" />
   </head>
   <body>
