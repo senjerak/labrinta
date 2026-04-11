@@ -47,30 +47,6 @@ import "../../styles/novel.css";
       const n = new Character("");
 
       /**
-       * Positions
-       */
-
-      const rightSideopen = new Position(1030, 560, 1, 1);
-      const rightSide = new Position(1030, 600, 1, 1);
-      const rightSidedown = new Position(1030, 660, 1, 1);
-      //casper
-      rentcasper1 = new Position(150, 210, 1, 0);
-      rentcasper2 = new Position(779, 218, 1, 0);
-      rentcasper3 = new Position(950, 210, 1, 0);
-      rentcasper4 = new Position(350, 210, 1, 0);
-      //casca
-      rentcasca1 = new Position(270, 200, 1, 0);
-      rentcasca2 = new Position(420, 200, 1, 0);
-      //choco
-      rentchoco1 = new Position(150, 400, 1, 0);
-      rentchoco2 = new Position(1782, 400, 1, 0);
-      rentchoco3 = new Position(909, 380, 1, 0);
-      //npc
-      rentnpc1 = new Position(420, 233, 1, 0);
-      rentnpc2 = new Position(431, 233, 1, 0);
-      rentnpc3 = new Position(1731, 400, 1, 0);
-
-      /**
        * Scene Three - Rental
        *
        */
@@ -231,19 +207,10 @@ import "../../styles/novel.css";
         ". . . members save on average 30% on toll fare, you know.",
 
         casca,
-        "yep. I'll just buy a guest pass for today.",
-
-        npc3,
-        ". . Okay . . . That will be 75 Pods. .",
+        { image: "CASCA_talkmadL.gif", position: rentcasca2 },
 
         casca,
         "Ugh. . Okay.",
-
-        n,
-        "Guest prices seem to have gone up since the last time Casca was in such a pinch.",
-
-        n,
-        "Not to mention tolls. . .",
 
         npc3,
         ". . . Your Poddercart is ready.",

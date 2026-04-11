@@ -4,60 +4,56 @@ import "../../styles/novel.css";
 ---
 
 <StoryLayout>
-    <script is:inline>
-        preloadImages("/s_one/", [
-            "room3door.gif",
-            "CASCA_fall.gif",
-            "CASCA_fall2.gif",
-        ]);
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room3door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+    ]);
 
-        waitForNovel(function prepareNovel() {
-            novel.imagePath = "/s_one/"; // path to your image directory
-            novel.audioPath = ""; // path to your audio directory
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
 
-            /**
-             * Characters
-             */
-            const n = new Character("");
-            const casca = new Character("Casca", {
-                color: "rgb(230, 145, 185)",
-            });
+      /**
+       * Characters
+       */
+      const n = new Character("");
 
-            /**
-             * Positions
-             */
-            const cascaroom2 = new Position(45, 160, 0, 0);
-            /**
-             * Scene Twenty - Room One Dark P5
-             *
-             */
-            script = [
-                label,
-                "start",
-                scene,
-                "ending.png",
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "ending.png",
 
-                n,
-                "Thank you for reading LA BRINTA.",
+        n,
+        "Thank you for reading LA BRINTA.",
 
-                n,
-                "Written, Directed, and Fabricated by Gabi Lecusay.",
+        n,
+        "Written, Directed, and Fabricated by Gabi Lecusay.",
 
-                n,
-                "Music by Nathan Jefferson and Dayna Whitmarsh",
+        n,
+        "Electronics and lighting by Gabi Lecusay",
 
-                n,
-                "Code and Light network by Angel Piscola",
+        n,
+        "Microcontroller code and website development by Gabi Lecusay and Angel Piscola",
 
-                n,
-                "Asset Assistance with Valkyrie Toro",
+        n,
+        "Music by Nathan Jefferson and Dayna Whitmarsh",
 
-                n,
-                "BFA Thesis 2026 - What Of The Obvious",
+        n,
+        "Asset Assistance by Valkyrie Toro",
 
-                jsCall,
-                { fcn: changeScene(1) },
-            ];
-        });
-    </script>
+        n,
+        "BFA Thesis 2026 - What Of The Obvious",
+
+        jsCall,
+        { fcn: () => (window.location.href = "/") },
+      ];
+    });
+  </script>
 </StoryLayout>

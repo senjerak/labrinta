@@ -4,72 +4,71 @@ import "../../styles/novel.css";
 ---
 
 <StoryLayout>
-    <script is:inline>
-        preloadImages("/s_one/", [
-            "room3door.gif",
-            "CASCA_fall.gif",
-            "CASCA_fall2.gif",
-        ]);
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room3door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+    ]);
 
-        waitForNovel(function prepareNovel() {
-            novel.imagePath = "/s_one/"; // path to your image directory
-            novel.audioPath = ""; // path to your audio directory
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
 
-            /**
-             * Characters
-             */
-            const n = new Character("");
-            const casca = new Character("Casca", {
-                color: "rgb(230, 145, 185)",
-            });
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", {
+        color: "rgb(230, 145, 185)",
+      });
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
 
-            /**
-             * Positions
-             */
-            const cascaroom2 = new Position(45, 160, 0, 0);
-            /**
-             * Scene Twenty - Room One Dark P5
-             *
-             */
-            script = [
-                label,
-                "start",
-                scene,
-                "outside4.gif",
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "outside4.gif",
 
-                casca,
-                {
-                    image: `CASCA_talkmadL.gif?A=${Date.now()}`,
-                    position: cascalobby3,
-                },
+        casca,
+        {
+          image: `CASCA_talkmadL.gif?A=${Date.now()}`,
+          position: cascalobby3,
+        },
 
-                casca,
-                "Alright.. Its time to go home.",
+        casca,
+        "Alright.. Its time to go home.",
 
-                casper,
-                "AW..! what? already?",
+        casper,
+        "AW..! what? already?",
 
-                casca,
-                "yep. come on.",
+        casca,
+        "yep. come on.",
 
-                casca,
-                "...please.",
+        casca,
+        "...please.",
 
-                n,
-                "The thread of connection between the many minds of our world might never be seen,",
+        n,
+        "The thread of connection between the many minds of our world might never be seen,",
 
-                n,
-                "...but, sometimes, a glint or two might peek beneath the lines of our stories.",
+        n,
+        "...but, sometimes, a glint or two might peek beneath the lines of our stories.",
 
-                n,
-                "our history, our experience,",
+        n,
+        "our history, our experience,",
 
-                n,
-                "our everything.",
+        n,
+        "our everything.",
 
-                jsCall,
-                { fcn: changeScene(33) },
-            ];
-        });
-    </script>
+        jsCall,
+        { fcn: changeScene(33) },
+      ];
+    });
+  </script>
 </StoryLayout>

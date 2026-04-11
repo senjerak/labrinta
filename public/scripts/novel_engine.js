@@ -46,8 +46,8 @@ function Character(characterName) {
   this.prevSrc = null;
   this.avatar = "";
   this.domRef = null;
-  this.position = new Position(0, 0, true);
-  this.prevPosition = new Position(0, 0, true);
+  this.position = positionDefaultRelative.clone();
+  this.prevPosition = positionDefaultRelative.clone();
   this.alpha = 1.0;
   this.visibility = "visible";
 
@@ -66,7 +66,7 @@ function Character(characterName) {
         novel.imagePath + obj.image.replace(/{{(.*?)}}/g, novel_interpolator),
       );
     }
-    this.position = obj.position || new Position(0, 0, true);
+    this.position = obj.position || positionDefaultRelative.clone();
   }
 }
 
@@ -274,7 +274,7 @@ function TextBlock(textName) {
   this.div.setAttribute("class", "textClass");
   this.div.setAttribute("className", "textClass");
   this.domRef = null;
-  this.position = new Position(0, 0, true);
+  this.position = positionDefaultRelative.clone();
   this.align = "left";
   this.font = '20px "Deja Vu Sans", Helvetica, Arial, sans-serif';
   this.width = 1.0; // decimal percentage
@@ -440,7 +440,7 @@ function Input(textName) {
     this.inputElement.attachEvent("onchange", novel_inputChange);
   }
   this.domRef = null;
-  this.position = new Position(0, 0, true);
+  this.position = positionDefaultRelative.clone();
   this.align = "left";
   this.font = '20px "Deja Vu Sans", Helvetica, Arial, sans-serif';
   this.width = 1.0; // decimal percentage
