@@ -6,6 +6,7 @@ body {
     width: 100vw;
     height: 100vh;
     user-select: none;
+    margin: 0;
 }
 
 
@@ -39,10 +40,9 @@ body {
     height: 600px;
     margin-left: auto;
     margin-right: auto;
-    left: -8px;
-    margin-top: -8px;
     position: relative;
     text-align: center;
+    overflow: hidden;
 }
 
 a,
@@ -120,6 +120,7 @@ button {
 }
 
 #video {
+    display: none;
     opacity: 0;
     pointer-events: none;
 }

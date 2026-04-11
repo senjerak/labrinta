@@ -1,0 +1,201 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "observatory.gif",
+      "roomone_dark1.gif",
+      "CASCA_sit9.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+      const sonador = new Character("Soñador", { color: "rgb(147, 108, 236)" });
+
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "observatory.gif",
+
+        casca,
+        {
+          image: `observatory_guys.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        sonador,
+        ". . . lets talk.",
+
+        sonador,
+        "how are you feeling...?",
+
+        casca,
+        ". . . uh . . I appreciate it, but I'm not sure how this is going to help me find casper.",
+
+        sonador,
+        "Is anyone sure of anything?",
+
+        casca,
+        "um. . . I guess not.",
+
+        sonador,
+        "I like to think that assurance comes with routine.",
+
+        sonador,
+        "habit.",
+
+        sonador,
+        "it's pretty hard to know what to do when no one's done it right before.",
+
+        casca,
+        {
+          image: `observatory_guys_mad.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        "but who's to say whats right or wrong?",
+
+        sonador,
+        "does that make a difference?",
+
+        casca,
+        "well, yeah, duh.",
+
+        casca,
+        "you can't just pretend like there aren't bad intentions out there.",
+
+        casca,
+        {
+          image: `observatory_guys_madsonador.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        sonador,
+        ". . . even good intentions can hurt sometimes too.",
+
+        casca,
+        {
+          image: `observatory_guys.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        ". . .",
+
+        casca,
+        "yeah, well, they're still good.",
+
+        sonador,
+        "are they...?",
+
+        casca,
+        ". . .",
+
+        sonador,
+        "The world is so full of potential that it feels pretty bloated, huh?",
+
+        casca,
+        {
+          image: `observatory_guys_mad.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        "I guess.",
+
+        casca,
+        "It should be easier to know what to do.",
+
+        casca,
+        "Everyone just pretends to know.",
+
+        sonador,
+        "What even is... knowing?",
+
+        sonador,
+        "I'm certain that nothing truly is certain.",
+
+        casca,
+        "That... doesn't make sense.",
+
+        casca,
+        {
+          image: `observatory_guys.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        "That's silly.",
+
+        sonador,
+        "Would you like to read the rest of the story?",
+
+        casca,
+        "what?",
+
+        sonador,
+        "My story. Our story. How we got here.",
+
+        casca,
+        {
+          image: `observatory_guys_mad.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        n,
+        "The Story of Scarlet, Vol. Two",
+
+        sonador,
+        "You're at the library. You might as well read something while you're here.",
+
+        n,
+        "Casca thought about the first book and had second thoughts.",
+
+        casca,
+        "I'm doing this for Casper.",
+
+        sonador,
+        "As am I.",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["room3door.gif", "CASCA_fall.gif"]);
+          },
+        },
+
+        hide,
+        casca,
+
+        hide,
+        sonador,
+
+        jsCall,
+        playVideo("/s_one/sos3mama.mp4"),
+
+        pause,
+        undefined,
+
+        ///SOS2
+        jsCall,
+        { fcn: changeScene(27) },
+      ];
+    });
+  </script>
+</StoryLayout>

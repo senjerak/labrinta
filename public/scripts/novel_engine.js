@@ -15,6 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 var novel_script;
+const positionDefaultRelative = new Position(0, 0, true);
+
 /*
     A Character is an actor that can speak and be displayed.
     
@@ -46,8 +48,8 @@ function Character(characterName) {
   this.prevSrc = null;
   this.avatar = "";
   this.domRef = null;
-  this.position = new Position(0, 0, true);
-  this.prevPosition = new Position(0, 0, true);
+  this.position = positionDefaultRelative.clone();
+  this.prevPosition = positionDefaultRelative.clone();
   this.alpha = 1.0;
   this.visibility = "visible";
 
@@ -66,7 +68,7 @@ function Character(characterName) {
         novel.imagePath + obj.image.replace(/{{(.*?)}}/g, novel_interpolator),
       );
     }
-    this.position = obj.position || new Position(0, 0, true);
+    this.position = obj.position || positionDefaultRelative.clone();
   }
 }
 
@@ -274,7 +276,7 @@ function TextBlock(textName) {
   this.div.setAttribute("class", "textClass");
   this.div.setAttribute("className", "textClass");
   this.domRef = null;
-  this.position = new Position(0, 0, true);
+  this.position = positionDefaultRelative.clone();
   this.align = "left";
   this.font = '20px "Deja Vu Sans", Helvetica, Arial, sans-serif';
   this.width = 1.0; // decimal percentage
@@ -440,7 +442,7 @@ function Input(textName) {
     this.inputElement.attachEvent("onchange", novel_inputChange);
   }
   this.domRef = null;
-  this.position = new Position(0, 0, true);
+  this.position = positionDefaultRelative.clone();
   this.align = "left";
   this.font = '20px "Deja Vu Sans", Helvetica, Arial, sans-serif';
   this.width = 1.0; // decimal percentage
@@ -1083,7 +1085,7 @@ function novel_changeBackground(param, clearAll) {
   } else if (effect == "dissolve") {
     novel.backgroundImage[1 - novel.activeBG] = fileName;
     novel.pendingBackgroundImage = document.getElementById(
-      "background" + (1 - novel.activeBG),
+      "background" + (1 - novel.activeBG)
     );
     novel.pendingBackgroundImage.src = novel.imagePath + fileName;
     novel.paused = true;
@@ -1091,7 +1093,7 @@ function novel_changeBackground(param, clearAll) {
   if (effect != "fade") {
     setTimeout(
       'novel_finishLoadingBackground("' + effect + '", ' + targetAlpha + ")",
-      30,
+      30
     );
   }
 }
@@ -1114,7 +1116,7 @@ function novel_finishLoadingBackground(effect, targetAlpha) {
   } else {
     setTimeout(
       'novel_finishLoadingBackground("' + effect + '", ' + targetAlpha + ")",
-      30,
+      30
     );
   }
 }

@@ -1,0 +1,103 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+    <script is:inline>
+        preloadImages("/s_one/", [
+            "room3door.gif",
+            "CASCA_fall.gif",
+            "CASCA_fall2.gif",
+            "outside1.gif",
+            "outside1_casca.gif",
+            "CASCA_talkmadL.gif",
+        ]);
+
+        waitForNovel(function prepareNovel() {
+            novel.imagePath = "/s_one/"; // path to your image directory
+            novel.audioPath = ""; // path to your audio directory
+
+            /**
+             * Characters
+             */
+            const n = new Character("");
+            const npc = new Character("Stranger", {
+                color: "rgb(48, 255, 186)",
+            });
+            const casca = new Character("Casca", {
+                color: "rgb(230, 145, 185)",
+            });
+
+            const casper = new Character("Casper", {
+                color: "rgba(218, 234, 127, 1)",
+            });
+
+            /**
+             * Scene Twenty - Room One Dark P5
+             *
+             */
+            script = [
+                label,
+                "start",
+                scene,
+                "outside1.gif",
+
+                npc,
+                {
+                    image: `outside1_wave.gif?A=${Date.now()}`,
+                    position: rightSide,
+                },
+
+                casca,
+                {
+                    image: `outside1_casca.gif?A=${Date.now()}`,
+                    position: rightSidecar,
+                },
+
+                npc,
+                {
+                    image: `outside1_wave.gif?A=${Date.now()}`,
+                    position: rightSidecar,
+                },
+
+                casca,
+                "woah!!",
+
+                casca,
+                "...These rocks look like signals...",
+
+                casca,
+                "But.. how...",
+
+                casca,
+                "C A S P E R !",
+
+                casca,
+                "...",
+
+                n,
+                "...",
+
+                casper,
+                "C A S C A !",
+
+                casca,
+                "!!!",
+
+                jsCall,
+                {
+                    fcn: () => {
+                        preloadImages("/s_one/", [
+                            "outside2.gif",
+                            "CASCA_talkmadL.gif",
+                        ]);
+                    },
+                },
+
+                jsCall,
+                { fcn: changeScene(30) },
+            ];
+        });
+    </script>
+</StoryLayout>

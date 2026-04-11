@@ -1,0 +1,100 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "overpass2.gif",
+
+      "cascabehind1.gif",
+      "cascabehind2.gif",
+      "cascabehind3.gif",
+      "cascabehind4.gif",
+      "cascabehind5.gif",
+
+      "caspermirror.gif",
+      "caspermirror2.gif",
+      "caspermirror3.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Scene Seven - Overpass 4
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "overpass2.gif",
+
+        casca,
+        { image: `cascabehind1.gif?A=${Date.now()}`, position: cascadrive3 },
+
+        casper,
+        { image: `caspermirror.gif?A=${Date.now()}`, position: casperride3 },
+
+        casca,
+        "then how's he left at the station? I told you to leave him at home.",
+
+        casper,
+        ". . . no. . . no you did--",
+
+        casca,
+        { image: `cascabehind3.gif?A=${Date.now()}`, position: cascadrive3 },
+
+        casca,
+        "CASPER! Don't start talking back to me!",
+
+        casca,
+        { image: `cascabehind5.gif?A=${Date.now()}`, position: cascadrive3 },
+
+        casper,
+        { image: `caspermirror3.gif?A=${Date.now()}`, position: casperride3 },
+
+        n,
+        "HONK!!! HONK HONK!!",
+
+        casca,
+        { image: `cascabehind4.gif?A=${Date.now()}`, position: cascadrive3 },
+
+        casca,
+        "AAAAGH!!!",
+
+        casca,
+        { image: `cascabehind2.gif?A=${Date.now()}`, position: cascadrive3 },
+
+        casper,
+        { image: `caspermirror.gif?A=${Date.now()}`, position: casperride3 },
+
+        casca,
+        "I HATE this!",
+
+        casper,
+        { image: `caspermirror2.gif?A=${Date.now()}`, position: casperride3 },
+
+        casper,
+        ". . . . . me too.",
+
+        jsCall,
+        { fcn: changeScene(8) },
+      ];
+    });
+  </script>
+</StoryLayout>

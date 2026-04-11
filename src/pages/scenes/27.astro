@@ -1,0 +1,73 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room3door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "room3door.gif",
+
+        casca,
+        { image: `CASCA_fall.gif?A=${Date.now()}`, position: cascamarket1 },
+
+        casca,
+        "woah!!",
+
+        casca,
+        { image: `CASCA_fall2.gif?A=${Date.now()}`, position: cascamarket2 },
+
+        casca,
+        "oof!",
+
+        casca,
+        "... great!",
+
+        casca,
+        "here we go, again and again.",
+
+        casca,
+        "CASPER!!!!",
+
+        casca,
+        "oh man.. what am I going to do?",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["outside1.gif", "CASCAWalkmad_L.gif"]);
+          },
+        },
+
+        casca,
+        "I'm just gonna check in here...",
+
+        jsCall,
+        { fcn: changeScene(28) },
+      ];
+    });
+  </script>
+</StoryLayout>

@@ -1,0 +1,127 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room3door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+      "outside2.gif",
+      "CASCA_talkmadL.gif",
+      "choco.png",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const npc = new Character("Stranger", {
+        color: "rgb(48, 255, 186)",
+      });
+      const casca = new Character("Casca", {
+        color: "rgb(230, 145, 185)",
+      });
+
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const mrchoco = new Character("Choco", {
+        color: "rgb(255, 127, 48)",
+      });
+
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "outside2.gif",
+
+        npc,
+        {
+          image: `outside2_wave.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        {
+          image: `outside2_hug.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        "Casper!!",
+
+        hide,
+        npc,
+
+        casca,
+        {
+          image: `outside2_up.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        "oh- oh my god-",
+
+        casca,
+        {
+          image: `outside2_up2.gif?A=${Date.now()}`,
+          position: rightSide,
+        },
+
+        casca,
+        "You're here! You're really here!",
+
+        npc,
+        { image: "dragonfly2.gif", position: rightSide },
+
+        casper,
+        "well, yeah! I was playing with a big red lady...",
+
+        casper,
+        "Look!! Look!!!",
+
+        mrchoco,
+        { image: `chocofield.png`, position: rightSide },
+
+        mrchoco,
+        "...",
+
+        casper,
+        "would you believe it?",
+
+        casper,
+        "I found Choco!!!!!!!!",
+
+        casper,
+        "I found Choco! I found Choco! Yippee! I found him!",
+
+        casca,
+        "haha... yeah...",
+
+        casca,
+        "you sure did.",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["outside4.gif", "CASCA_talkmadL.gif"]);
+          },
+        },
+
+        jsCall,
+        { fcn: changeScene(31) },
+      ];
+    });
+  </script>
+</StoryLayout>

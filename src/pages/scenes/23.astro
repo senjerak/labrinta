@@ -1,0 +1,280 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "market.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+      "CASCA_talk.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+      const crystalnpc = new Character("Crystal Seller", {
+        color: "rgb(197, 0, 215)",
+      });
+      const scrollnpc = new Character("Scroll Seller", {
+        color: "rgb(249, 126, 92)",
+      });
+      const fruitnpc = new Character("Fruit Seller", {
+        color: "rgb(224, 0, 0)",
+      });
+      const armsnpc = new Character("Arms Seller", {
+        color: "rgb(0, 146, 78)",
+      });
+
+      /**
+       * Scene Twenty Three - Market
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "market.gif",
+
+        casca,
+        { image: `CASCA_fall.gif?A=${Date.now()}`, position: cascamarket1 },
+
+        casca,
+        "w-woah!!",
+
+        casca,
+        { image: `CASCA_fall2.gif?A=${Date.now()}`, position: cascamarket2 },
+
+        casca,
+        "omf!",
+
+        n,
+        "The Underpass",
+
+        casca,
+        ". . . Where am I?",
+
+        n,
+        "Casca found it hard to think through the noise of the crowd.",
+
+        casca,
+        { image: `CASCA_talk.gif?A=${Date.now()}`, position: cascamarket2 },
+
+        casca,
+        "Casper? Are you here?",
+
+        casca,
+        "Casper!!",
+
+        // Scroll Shop
+
+        label,
+        "Scroll",
+
+        casca,
+        { image: `shop1.gif?A=${Date.now()}`, position: rightSide },
+
+        scrollnpc,
+        "I have wares... you have pods?",
+
+        casca,
+        "barely... can you help me?",
+
+        scrollnpc,
+        "help has a price..",
+
+        casca,
+        "No! Please! Where am I?",
+
+        casca,
+        "did you not see me drop from the sky?",
+
+        scrollnpc,
+        "...not everything is about you.",
+
+        casca,
+        "...thanks..",
+
+        scrollnpc,
+        "I give you nothing.",
+
+        label,
+        "backfromscroll",
+
+        casca,
+        { image: `CASCA_talk.gif?A=${Date.now()}`, position: cascamarket2 },
+
+        casca,
+        "I can see that...",
+
+        casca,
+        "...what am I going to do?",
+
+        casca,
+        { image: `shop2.gif?A=${Date.now()}`, position: rightSide },
+
+        armsnpc,
+        "have anything you would like to look at?",
+
+        casca,
+        "no.. I have no idea where I am..",
+
+        armsnpc,
+        "that reminds me of when I got a papercut this morning.",
+
+        armsnpc,
+        "would you believe how badly it hurt? I had to use two bandaids.",
+
+        casca,
+        "uhuh..",
+
+        armsnpc,
+        "I wish paper would be more forgiving.",
+
+        casca,
+        "...",
+
+        armsnpc,
+        "would you like to see my bandaids?",
+
+        casca,
+        "I'm going to leave now.",
+
+        casca,
+        { image: `CASCA_talk.gif?A=${Date.now()}`, position: cascamarket2 },
+
+        // Fruit Shop
+
+        label,
+        "Fruit",
+
+        fruitnpc,
+        "No, No, No! I smell your wealth!",
+
+        casca,
+        { image: `shop3.gif?A=${Date.now()}`, position: rightSide },
+
+        fruitnpc,
+        "theres nothing for you. theres nothing for me.",
+
+        casca,
+        "i just need to know how to get back to the library!",
+
+        fruitnpc,
+        "You think I know?",
+
+        fruitnpc,
+        "i just sell fruit.",
+
+        casca,
+        "you've never driven past there?",
+
+        fruitnpc,
+        "Fruit is a grind that never lets up the hustle.",
+
+        label,
+        "backfromfruit",
+
+        casca,
+        "...ugh.. that was fruitless..",
+
+        casca,
+        "ha ha ha...",
+
+        // Arms Shop
+
+        // Crystal Shop
+
+        label,
+        "Crystal",
+
+        casca,
+        { image: `shop4.gif?A=${Date.now()}`, position: rightSide },
+
+        crystalnpc,
+        "Ah.. Welcome to my shop. I have plenty of delightful trinkets.",
+
+        crystalnpc,
+        "There is more than meets the eye, my dear.",
+
+        casca,
+        "I need to get back to the library... do you know where we are?",
+
+        crystalnpc,
+        "..why, we are on Scarlet of course!",
+
+        crystalnpc,
+        "The best, most beautiful world to grace the eyes!",
+
+        casca,
+        "what? no- thats obvious! i meant here! right here!",
+
+        crystalnpc,
+        "The Library? ah... I love the Library.",
+
+        crystalnpc,
+        "I have something I need to return there.",
+
+        casca,
+        "Did you hear me? CAN you hear me?",
+
+        casca,
+        "how am I gonna get back?",
+
+        crystalnpc,
+        "hmm... not sure about that. but here!",
+
+        crystalnpc,
+        "be a doll and take this for me once you figure it out!",
+
+        casca,
+        "...huh?",
+
+        n,
+        "The Story of Scarlet, Vol. One",
+
+        casca,
+        "...what? what is this?",
+
+        crystalnpc,
+        "Go on! Shoo! Go find your way!",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "room1door.gif",
+              "CASCA_fall.gif",
+              "CASCA_fall2.gif",
+            ]);
+          },
+        },
+
+        casca,
+        "...",
+
+        hide,
+        casca,
+
+        jsCall,
+        playVideo("/s_one/sos1.mp4"),
+
+        pause,
+        undefined,
+
+        ///SOS1 plays
+
+        jsCall,
+        { fcn: changeScene(24) },
+      ];
+    });
+  </script>
+</StoryLayout>

@@ -3,24 +3,25 @@ import { ClientRouter } from "astro:transitions";
 import Loader from "../components/Loader.astro";
 
 interface Props {
-    title?: string;
+  title?: string;
 }
 
-const { title = 'LA BRINTA' } = Astro.props;
+const { title = "LA BRINTA" } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
     <link rel="icon" type="image/x-icon" href="/media/labrifavi.png" />
-    <ClientRouter  />
+    <ClientRouter />
+    <script is:inline src="/scripts/novel_helpers.js"></script>
     <slot name="head" />
-</head>
-<body>
-    <Loader />
+  </head>
+  <body>
+    <!-- <Loader /> -->
     <slot />
-</body>
+  </body>
 </html>

@@ -1,36 +1,36 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import Loader from '../components/Loader.astro';
-import Header from '../components/Header.astro';
-import NavBanner from '../components/NavBanner.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/main.css';
-import '../styles/animations.css';
-import '../styles/fonts.css';
+import BaseLayout from "./BaseLayout.astro";
+import Loader from "../components/Loader.astro";
+import Header from "../components/Header.astro";
+import NavBanner from "../components/NavBanner.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/main.css";
+import "../styles/animations.css";
+import "../styles/fonts.css";
 
 interface Props {
-    activePage?: 'about' | 'prologue' | 'links' | 'begin';
-    footerText?: string;
+  activePage?: "about" | "prologue" | "links" | "begin";
+  footerText?: string;
 }
 
-const { activePage, footerText = '' } = Astro.props;
+const { activePage, footerText = "" } = Astro.props;
 ---
 
 <BaseLayout>
-    <slot name="head" slot="head" />
-    <div class="container">
-        <div class="stars"></div>
+  <slot name="head" slot="head" />
+  <div class="container">
+    <div class="stars"></div>
+  </div>
+  <div class="fatwrap">
+    <Header />
+    <div class="mainwrapper">
+      <div class="centerwrapper">
+        <NavBanner activePage={activePage} />
+        <slot />
+      </div>
+      <div class="right"></div>
+      <div class="left"></div>
     </div>
-    <div class="fatwrap">
-        <Header />
-        <div class="mainwrapper">
-            <div class="centerwrapper">
-                <NavBanner activePage={activePage} />
-                <slot />
-            </div>
-            <div class="right"></div>
-            <div class="left"></div>
-        </div>
-        <Footer text={footerText} />
-    </div>
+    <Footer text={footerText} />
+  </div>
 </BaseLayout>

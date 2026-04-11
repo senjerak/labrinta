@@ -1,0 +1,60 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room3door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+      "ending.png",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "ending.png",
+
+        n,
+        "Thank you for reading LA BRINTA.",
+
+        n,
+        "Written, Directed, and Fabricated by Gabi Lecusay.",
+
+        n,
+        "Electronics and lighting by Gabi Lecusay",
+
+        n,
+        "Microcontroller code and website development by Gabi Lecusay and Angel Piscola",
+
+        n,
+        "Music by Nathan Jefferson and Dayna Whitmarsh",
+
+        n,
+        "Asset Assistance by Valkyrie Toro",
+
+        n,
+        "BFA Thesis 2026 - What Of The Obvious",
+
+        jsCall,
+        { fcn: () => (window.location.href = "/") },
+      ];
+    });
+  </script>
+</StoryLayout>

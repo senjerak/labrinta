@@ -1,11 +1,22 @@
 ---
-import BaseLayout from './BaseLayout.astro';
-import '../styles/fonts.css';
+import BaseLayout from "./BaseLayout.astro";
+import "../styles/fonts.css";
+import "../styles/novel.css";
 ---
 
 <BaseLayout>
-    <Fragment slot="head">
-        <slot name="head" />
-    </Fragment>
-    <slot />
+  <Fragment slot="head">
+    <script is:inline src="/scripts/story_inactivity.js"></script>
+    <script is:inline src="/scripts/novel_engine.js"></script>
+    <script is:inline src="/scripts/positions.js"></script>
+  </Fragment>
+  <div id="novelDiv">
+    <a class="homebtn" href="/main"></a>
+    <div style="position: absolute; left:0; top: 0; z-index:-1">
+      <video id="video"></video>
+      <img id="background0" />
+    </div>
+    <div id="dialogDiv" style="z-index:100"></div>
+  </div>
+  <slot />
 </BaseLayout>

@@ -1,0 +1,141 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "lobbycloser.gif",
+      "Sonador_talkL.gif",
+      "Sonador_eyestalkL.gif",
+      "Sonador_eyestalk.gif",
+      "Sonador_talk.gif",
+      "desk.png",
+      "casper_walks.gif",
+      "CASCAWalkmad.gif",
+      "CASPER_talk.gif",
+      "CASPER_talkL.gif",
+      "CASCA_talkmad.gif",
+      "CASCA_talksad.gif",
+      "CASCA_talkmadL.gif",
+      "CASCA_talksadL.gif",
+      "CASCA_talk.gif",
+      "casper_jumps.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+      const sonador = new Character("Soñador", { color: "rgb(147, 108, 236)" });
+      const npc2 = new Character("");
+      /**
+       * Scene Thirteen - Lobby Closer
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "lobbycloser.gif",
+
+        sonador,
+        { image: "Sonador_talkL.gif", position: sonadorlobby1 },
+
+        npc2,
+        { image: "desk.png", position: desk },
+
+        casper,
+        { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
+
+        sonador,
+        "hello.",
+
+        casca,
+        { image: `CASCAWalkmad.gif?A=${Date.now()}`, position: rightSidelobby },
+
+        sonador,
+        "can I help you two with anything. . ?",
+
+        casca,
+        { image: `CASCA_talkmad.gif?A=${Date.now()}`, position: cascalobby2 },
+
+        casper,
+        { image: `CASPER_talkL.gif?A=${Date.now()}`, position: casperlobby3 },
+
+        casca,
+        "I just need something to distract Casper for a few hours. Do you have anywhere for kids?",
+
+        sonador,
+        { image: "Sonador_eyestalkL.gif", position: sonadorlobby1 },
+
+        sonador,
+        "If you-",
+
+        casca,
+        { image: `CASCA_talksad.gif?A=${Date.now()}`, position: cascalobby2 },
+
+        casca,
+        "Where?",
+
+        sonador,
+        { image: "Sonador_talk.gif", position: sonadorlobby1 },
+
+        sonador,
+        ". . .",
+
+        sonador,
+        { image: "Sonador_eyestalk.gif", position: sonadorlobby1 },
+
+        sonador,
+        ". . If you'll follow me. . .",
+
+        casca,
+        { image: `CASCA_talk.gif?A=${Date.now()}`, position: cascalobby2 },
+
+        casca,
+        ". . oh- okay-",
+
+        casper,
+        { image: `casper_jumps.gif?A=${Date.now()}`, position: casperlobby3 },
+
+        casper,
+        "HI! I'm Casper!",
+
+        sonador,
+        { image: "Sonador_talkL.gif", position: sonadorlobby1 },
+
+        sonador,
+        ". . Hello Casper.",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "room1door.gif",
+              "Sonador_walk.gif",
+            ]);
+          },
+        },
+
+        casca,
+        { image: `CASCA_talksad.gif?A=${Date.now()}`, position: cascalobby2 },
+
+        n,
+        "It was times like these that made Casca feel like they've completely forgotten how to talk to other adults.",
+
+        jsCall,
+        { fcn: changeScene(14) },
+      ];
+    });
+  </script>
+</StoryLayout>

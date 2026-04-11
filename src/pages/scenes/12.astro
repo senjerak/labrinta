@@ -1,0 +1,109 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "lobby.gif",
+      "casper_walks.gif",
+      "CASCAWalkmad.gif",
+      "CASPER_talk.gif",
+      "CASPER_talkL.gif",
+      "CASCA_talkmadL.gif",
+      "CASCA_talkmad.gif",
+      "caspersadbasic.gif",
+    ]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+
+      /**
+       * Scene Twelve - Lobby
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        scene,
+        "lobby.gif",
+
+        casper,
+        { image: `casper_walks.gif?A=${Date.now()}`, position: rightSideopen },
+
+        casper,
+        "oh! we're so high up!",
+
+        casca,
+        { image: `CASCAWalkmad.gif?A=${Date.now()}`, position: rightSideopen },
+
+        casca,
+        "Mmm.",
+
+        casper,
+        { image: `CASPER_talk.gif?A=${Date.now()}`, position: casperlobby1 },
+
+        casper,
+        "i bet we can see home from here!",
+
+        casca,
+        { image: `CASCA_talkmadL.gif?A=${Date.now()}`, position: cascalobby1 },
+
+        casca,
+        ". . .",
+
+        casper,
+        "there's so many cars on the road!",
+
+        casca,
+        ". . .",
+
+        casper,
+        { image: `CASPER_talkL.gif?A=${Date.now()}`, position: casperlobby1 },
+
+        casper,
+        ". .casca..!",
+
+        casca,
+        { image: `CASCA_talkmad.gif?A=${Date.now()}`, position: cascalobby1 },
+
+        casca,
+        ". . what?",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "lobbycloser.gif",
+              "Sonador_talkL.gif",
+              "desk.png",
+              "casper_walks.gif",
+              "CASCAWalkmad.gif",
+            ]);
+          },
+        },
+
+        casper,
+        { image: `caspersadbasic.gif?A=${Date.now()}`, position: casperlobby1 },
+
+        casper,
+        "nevermind. .",
+
+        jsCall,
+        { fcn: changeScene(13) },
+      ];
+    });
+  </script>
+</StoryLayout>
