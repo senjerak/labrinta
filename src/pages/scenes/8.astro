@@ -33,38 +33,13 @@ import "../../styles/novel.css";
         "At least that made sense.",
 
         jsCall,
-        {
-          fcn: () => {
-            debugger;
-            const dialog = document.getElementById("dialogDiv");
-            dialog.style.display = "none";
-            const bg = document.getElementById("background0");
-            bg.style.display = "none";
-            const video = document.querySelector("#video");
-            video.src = "/s_one/road.mp4";
-            video.style.opacity = 1;
-            video.style.display = "block";
-
-            document.body.style.pointerEvents = "none";
-
-            video.play();
-            video.addEventListener("ended", () => {
-              bg.style.display = "unset";
-              dialog.style.display = "block";
-              document.body.style.pointerEvents = "unset";
-              video.style.display = "none";
-              video.style.opacity = 0;
-              playNovel();
-            });
-          },
-        },
+        playVideo("/s_one/road.mp4"),
 
         pause,
         undefined,
 
         jsCall,
-        // TODO: change to the next scene
-        { fcn: changeScene(1) },
+        { fcn: changeScene(10) },
       ];
     });
   </script>

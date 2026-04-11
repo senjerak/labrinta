@@ -1,0 +1,91 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+    <script is:inline>
+        preloadImages("/s_one/", [
+            "room3door.gif",
+            "CASCA_fall.gif",
+            "CASCA_fall2.gif",
+        ]);
+
+        waitForNovel(function prepareNovel() {
+            novel.imagePath = "/s_one/"; // path to your image directory
+            novel.audioPath = ""; // path to your audio directory
+
+            /**
+             * Characters
+             */
+            const n = new Character("");
+            const casca = new Character("Casca", {
+                color: "rgb(230, 145, 185)",
+            });
+
+            const casper = new Character("Casper", {
+                color: "rgba(218, 234, 127, 1)",
+            });
+            const mrchoco = new Character("Choco", {
+                color: "rgb(255, 127, 48)",
+            });
+
+            /**
+             * Positions
+             */
+            const cascaroom2 = new Position(45, 160, 0, 0);
+            /**
+             * Scene Twenty - Room One Dark P5
+             *
+             */
+            script = [
+                label,
+                "start",
+                scene,
+                "outside2.gif",
+
+                casca,
+                {
+                    image: `CASCA_talkmadL.gif?A=${Date.now()}`,
+                    position: cascalobby3,
+                },
+
+                casca,
+                "Casper!!",
+
+                casca,
+                "oh- oh my god-",
+
+                casca,
+                "You're here! You're really here!",
+
+                casper,
+                "well, yeah! I was playing with a big red lady...",
+
+                casper,
+                "Look!! Look!!!",
+
+                mrchoco,
+                "...",
+
+                casper,
+                "would you believe it?",
+
+                casper,
+                "I found Choco!!!!!!!!",
+
+                casper,
+                "I found Choco! I found Choco! Yippee! I found him!",
+
+                casca,
+                "haha... yeah...",
+
+                casca,
+                "you sure did.",
+
+                jsCall,
+                { fcn: changeScene(31) },
+            ];
+        });
+    </script>
+</StoryLayout>

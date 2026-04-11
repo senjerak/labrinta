@@ -27,3 +27,30 @@ function changeScene(scene) {
     window.location.href = `/scenes/${scene}`;
   };
 }
+
+function playVideo(path) {
+  return {
+    fcn: () => {
+      const dialog = document.getElementById("dialogDiv");
+      dialog.style.display = "none";
+      const bg = document.getElementById("background0");
+      bg.style.display = "none";
+      const video = document.querySelector("#video");
+      video.src = path;
+      video.style.opacity = 1;
+      video.style.display = "block";
+
+      document.body.style.pointerEvents = "none";
+
+      video.play();
+      video.addEventListener("ended", () => {
+        bg.style.display = "unset";
+        dialog.style.display = "block";
+        document.body.style.pointerEvents = "unset";
+        video.style.display = "none";
+        video.style.opacity = 0;
+        playNovel();
+      });
+    },
+  }
+}
