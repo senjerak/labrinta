@@ -9,6 +9,9 @@ import "../../styles/novel.css";
             "room3door.gif",
             "CASCA_fall.gif",
             "CASCA_fall2.gif",
+            "outside2.gif",
+            "CASCA_talkmadL.gif",
+            "choco.png",
         ]);
 
         waitForNovel(function prepareNovel() {
@@ -78,6 +81,16 @@ import "../../styles/novel.css";
 
                 casca,
                 "you sure did.",
+
+                jsCall,
+                {
+                    fcn: () => {
+                        preloadImages("/s_one/", [
+                            "outside4.gif",
+                            "CASCA_talkmadL.gif",
+                        ]);
+                    },
+                },
 
                 jsCall,
                 { fcn: changeScene(31) },

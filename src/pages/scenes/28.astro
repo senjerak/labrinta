@@ -9,6 +9,10 @@ import "../../styles/novel.css";
             "room3door.gif",
             "CASCA_fall.gif",
             "CASCA_fall2.gif",
+            "outside1.gif",
+            "CASCAWalkmad_L.gif",
+            "CASCA_talkmadL.gif",
+            "CASCA_talksadL.gif",
         ]);
 
         waitForNovel(function prepareNovel() {
@@ -74,6 +78,16 @@ import "../../styles/novel.css";
 
                 casca,
                 "...I can't do this without you.",
+
+                jsCall,
+                {
+                    fcn: () => {
+                        preloadImages("/s_one/", [
+                            "outside3.gif",
+                            "CASCA_fall.gif",
+                        ]);
+                    },
+                },
 
                 jsCall,
                 { fcn: changeScene(29) },

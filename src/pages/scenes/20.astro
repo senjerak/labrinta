@@ -26,6 +26,13 @@ import "../../styles/novel.css";
         scene,
         "roomone_dark1.gif",
 
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["roomone.gif", "CASCA_sit9.gif"]);
+          },
+        },
+
         casca,
         { image: `CASCA_sit9.gif?A=${Date.now()}`, position: cascaroom2 },
 

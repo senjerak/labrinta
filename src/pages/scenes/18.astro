@@ -6,6 +6,7 @@ import "../../styles/novel.css";
 <StoryLayout>
   <script is:inline>
     preloadImages("/s_one/", [
+      "roomone_dark2.gif",
       "roomone_dark3.gif",
       "CASCA_sit3.gif",
       "CASPER_talk.gif",
@@ -46,6 +47,13 @@ import "../../styles/novel.css";
 
         casper,
         "what was that?",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["roomone_dark2.gif", "CASCA_sit3.gif"]);
+          },
+        },
 
         casper,
         { image: `casper_walks2.gif?A=${Date.now()}`, position: casperroom1 },

@@ -26,6 +26,13 @@ import "../../styles/novel.css";
         scene,
         "transport.gif",
 
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["market.gif", "CASCA_fall.gif"]);
+          },
+        },
+
         casca,
         { image: `CASCA_portal.gif?A=${Date.now()}`, position: cascaportal },
 

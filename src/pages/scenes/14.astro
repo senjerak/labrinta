@@ -84,6 +84,17 @@ import "../../styles/novel.css";
         sonador,
         ". . If you need anything, you know where to find me. ",
 
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "roomone.gif",
+              "casper_walksL.gif",
+              "CASCAWalkmad_L.gif",
+            ]);
+          },
+        },
+
         sonador,
         { image: `Sonador_walkR.gif?A=${Date.now()}`, position: leftSidethree },
 

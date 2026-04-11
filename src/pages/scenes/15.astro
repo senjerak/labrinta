@@ -25,6 +25,8 @@ import "../../styles/novel.css";
 
       "CASCA_sit7.gif",
       "CASCA_sit8.gif",
+      "CASPER_talkmad.gif",
+      "CASPER_talkmadL.gif",
     ]);
 
     waitForNovel(function prepareNovel() {
@@ -184,6 +186,13 @@ import "../../styles/novel.css";
 
         casca,
         ". . . . . . ZzZzzZ . .",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["roomone_dark1.gif", "CASCA_sit3.gif"]);
+          },
+        },
 
         casper,
         "you're the BAD GUY!",

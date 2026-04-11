@@ -12,6 +12,8 @@ import "../../styles/novel.css";
       "CASPER_talk.gif",
       "CASPER_talkL.gif",
       "CASCA_talkmadL.gif",
+      "CASCA_talkmad.gif",
+      "caspersadbasic.gif",
     ]);
 
     waitForNovel(function prepareNovel() {
@@ -79,6 +81,19 @@ import "../../styles/novel.css";
 
         casca,
         ". . what?",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "lobbycloser.gif",
+              "Sonador_talkL.gif",
+              "desk.png",
+              "casper_walks.gif",
+              "CASCAWalkmad.gif",
+            ]);
+          },
+        },
 
         casper,
         { image: `caspersadbasic.gif?A=${Date.now()}`, position: casperlobby1 },

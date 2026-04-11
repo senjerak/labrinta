@@ -25,6 +25,13 @@ import "../../styles/novel.css";
       "npc1.gif",
       "npc1L.gif",
       "npc1oof.gif",
+
+      "casper_walks.gif",
+      "casper_walksL.gif",
+      "carnpc1.gif",
+      "carnpc2.gif",
+      "carcasca1.gif",
+      "carcasca2.gif",
     ]);
 
     waitForNovel(function prepareNovel() {
@@ -226,6 +233,13 @@ import "../../styles/novel.css";
 
         casper,
         { image: "caspersadbasicL.gif", position: rentnpc3 },
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["overpass.gif"]);
+          },
+        },
 
         npc2,
         { image: `carcasca2.gif?A=${Date.now()}`, position: rightSidedown },

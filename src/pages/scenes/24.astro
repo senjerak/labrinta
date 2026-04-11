@@ -7,8 +7,10 @@ import "../../styles/novel.css";
   <script is:inline>
     preloadImages("/s_one/", [
       "room1door.gif",
+      "room2door.gif",
       "CASCA_fall.gif",
       "CASCA_fall2.gif",
+      "CASCAWalkL.gif",
     ]);
 
     waitForNovel(function prepareNovel() {
@@ -59,6 +61,17 @@ import "../../styles/novel.css";
 
         n,
         ". . .",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "roomtwo.gif",
+              "Sonador_eyestalkL.gif",
+              "CASCA_talkL.gif",
+            ]);
+          },
+        },
 
         scene,
         "room2door.gif",

@@ -5,7 +5,11 @@ import "../../styles/novel.css";
 
 <StoryLayout>
   <script is:inline>
-    preloadImages("/s_one/", ["roomone_dark1.gif", "CASCA_sit9.gif"]);
+    preloadImages("/s_one/", [
+      "observatory.gif",
+      "roomone_dark1.gif",
+      "CASCA_sit9.gif",
+    ]);
 
     waitForNovel(function prepareNovel() {
       novel.imagePath = "/s_one/"; // path to your image directory
@@ -126,6 +130,13 @@ import "../../styles/novel.css";
 
         sonador,
         "As am I.",
+
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["room3door.gif", "CASCA_fall.gif"]);
+          },
+        },
 
         jsCall,
         playVideo("/s_one/sos3mama.mp4"),

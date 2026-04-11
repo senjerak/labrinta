@@ -30,6 +30,13 @@ import "../../styles/novel.css";
         "At least that made sense.",
 
         jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["enter.gif", "front_car.gif"]);
+          },
+        },
+
+        jsCall,
         playVideo("/s_one/road.mp4"),
 
         pause,

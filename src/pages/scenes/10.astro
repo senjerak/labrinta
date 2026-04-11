@@ -5,8 +5,9 @@ import "../../styles/novel.css";
 
 <StoryLayout>
   <script is:inline>
-    preloadImages("/s_one/", ["enter.gif"]);
-    ("front_car.gif",
+    preloadImages("/s_one/", [
+      "enter.gif",
+      "front_car.gif",
       "front_car.png",
       "CASCA_talkmad.gif",
       "CASPER_talkL.gif",
@@ -17,94 +18,103 @@ import "../../styles/novel.css";
       "CASCA_tiest.gif",
       "CASCA_talk.gif",
       "caspersadbasic.gif",
-      waitForNovel(function prepareNovel() {
-        novel.imagePath = "/s_one/"; // path to your image directory
-        novel.audioPath = ""; // path to your audio directory
+    ]);
 
-        /**
-         * Characters
-         */
-        const n = new Character("");
-        npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
-        const casper = new Character("Casper", {
-          color: "rgba(218, 234, 127, 1)",
-        });
-        const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
 
-        /**
-         * Scene Ten - Enter
-         *
-         */
-        script = [
-          label,
-          "start",
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
+      const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
 
-          scene,
-          "enter.gif",
+      /**
+       * Scene Ten - Enter
+       *
+       */
+      script = [
+        label,
+        "start",
 
-          casca,
-          { image: `front_car.gif?A=${Date.now()}`, position: rightSide },
+        scene,
+        "enter.gif",
 
-          n,
-          "Eventually they made it to their destination.",
+        casca,
+        { image: `front_car.gif?A=${Date.now()}`, position: rightSide },
 
-          npc,
-          { image: `front_car.png?A=${Date.now()}`, position: rightSidecar },
+        n,
+        "Eventually they made it to their destination.",
 
-          casca,
-          { image: "CASCA_talkmad.gif", position: cascadrive4 },
+        npc,
+        { image: `front_car.png?A=${Date.now()}`, position: rightSidecar },
 
-          casper,
-          { image: "CASPER_talkL.gif", position: homecasper1 },
+        casca,
+        { image: "CASCA_talkmad.gif", position: cascadrive4 },
 
-          casper,
-          " . . .",
+        casper,
+        { image: "CASPER_talkL.gif", position: homecasper1 },
 
-          casca,
-          { image: "CASCA_talkmadL.gif", position: cascadrive5 },
+        casper,
+        " . . .",
 
-          casca,
-          " . . Did you kick your shoes off again? Casper, I told you to--",
+        casca,
+        { image: "CASCA_talkmadL.gif", position: cascadrive5 },
 
-          casca,
-          { image: "CASCA_talkmadL.gif", position: cascadrive6 },
+        casca,
+        " . . Did you kick your shoes off again? Casper, I told you to--",
 
-          casper,
-          { image: "CASPER_talk.gif", position: homecasper1 },
+        casca,
+        { image: "CASCA_talkmadL.gif", position: cascadrive6 },
 
-          casper,
-          "they fell off!",
+        casper,
+        { image: "CASPER_talk.gif", position: homecasper1 },
 
-          casca,
-          { image: "CASCA_talksadL.gif", position: cascadrive6 },
+        casper,
+        "they fell off!",
 
-          casca,
-          "You don't have to lie to me.",
+        casca,
+        { image: "CASCA_talksadL.gif", position: cascadrive6 },
 
-          casper,
-          { image: "caspersadbasic.gif", position: homecasper1 },
+        casca,
+        "You don't have to lie to me.",
 
-          casper,
-          "um. . I. .",
+        casper,
+        { image: "caspersadbasic.gif", position: homecasper1 },
 
-          casca,
-          { image: `CASCA_tiest.gif?A=${Date.now()}`, position: cascadrive7 },
+        casper,
+        "um. . I. .",
 
-          casca,
-          "Here. Just... There. They're back on. Good as new.",
+        casca,
+        { image: `CASCA_tiest.gif?A=${Date.now()}`, position: cascadrive7 },
 
-          casca,
-          { image: "CASCA_talksadL.gif", position: cascadrive8 },
+        casca,
+        "Here. Just... There. They're back on. Good as new.",
 
-          n,
-          "Casper wasn't a fan of when Casca spoke such a mad expression.",
+        casca,
+        { image: "CASCA_talksadL.gif", position: cascadrive8 },
 
-          n,
-          "At least the parking's free for two hours.",
+        n,
+        "Casper wasn't a fan of when Casca spoke with such a mad expression.",
 
-          jsCall,
-          { fcn: changeScene(11) },
-        ];
-      }));
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["front.gif"]);
+          },
+        },
+
+        n,
+        "At least the parking's free for two hours.",
+
+        jsCall,
+        { fcn: changeScene(11) },
+      ];
+    });
   </script>
 </StoryLayout>

@@ -450,6 +450,18 @@ import StoryLayout from "../../layouts/StoryLayout.astro";
         casca,
         { image: "CASCA_talkL.gif", position: homecasca1 },
 
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "elevator.gif",
+              "CASCA_talk.gif",
+              "CASPER_talk.gif",
+              "choco.png",
+            ]);
+          },
+        },
+
         casca,
         "okay, well, come on. let's get those shoes on and head towards the elevators.",
 

@@ -117,6 +117,16 @@ import "../../styles/novel.css";
         sonador,
         ". . Hello Casper.",
 
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "room1door.gif",
+              "Sonador_walk.gif",
+            ]);
+          },
+        },
+
         casca,
         { image: `CASCA_talksad.gif?A=${Date.now()}`, position: cascalobby2 },
 

@@ -37,6 +37,17 @@ import "../../styles/novel.css";
         casca,
         { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
 
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", [
+              "roomone_dark2.gif",
+              "CASCA_sit3.gif",
+              "caspersadbasic.gif",
+            ]);
+          },
+        },
+
         casper,
         { image: "CASPER_talkL.gif", position: casperlobby4 },
 

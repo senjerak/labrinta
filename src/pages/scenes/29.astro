@@ -9,6 +9,7 @@ import "../../styles/novel.css";
             "room3door.gif",
             "CASCA_fall.gif",
             "CASCA_fall2.gif",
+            "outside3.gif",
         ]);
 
         waitForNovel(function prepareNovel() {
@@ -65,6 +66,16 @@ import "../../styles/novel.css";
 
                 n,
                 "Where... is casper?",
+
+                jsCall,
+                {
+                    fcn: () => {
+                        preloadImages("/s_one/", [
+                            "outside1.gif",
+                            "CASCA_talkmadL.gif",
+                        ]);
+                    },
+                },
 
                 jsCall,
                 { fcn: changeScene(32) },
