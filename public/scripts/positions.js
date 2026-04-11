@@ -1,9 +1,6 @@
 /**
  * Positions
  */
-
-const positionDefaultRelative = new Position(0, 0, true);
-
 const homecasper1 = new Position(275, 295, 0, 0);
 const homecasca1 = new Position(572, 430, 0.5, 0.5);
 const homecasper2 = new Position(897, 300, 1, 0);

@@ -6,7 +6,6 @@ import "../../styles/novel.css";
 <StoryLayout>
   <script is:inline>
     preloadImages("/s_one/", [
-      "roomone_dark2.gif",
       "roomone_dark3.gif",
       "CASCA_sit3.gif",
       "CASPER_talk.gif",
@@ -21,11 +20,15 @@ import "../../styles/novel.css";
        * Characters
        */
       const n = new Character("");
+      const npc = new Character("Stranger", { color: "rgb(48, 255, 186)" });
       const casper = new Character("Casper", {
         color: "rgba(218, 234, 127, 1)",
       });
       const casca = new Character("Casca", { color: "rgb(230, 145, 185)" });
 
+      /**
+       * Positions
+       */
       /**
        * Scene Eighteen - Room One Dark P3
        *
@@ -42,18 +45,14 @@ import "../../styles/novel.css";
         casca,
         { image: `CASCA_sit3.gif?A=${Date.now()}`, position: cascaroom2 },
 
+        npc,
+        { image: "dragonfly1.gif", position: rightSide },
+
         casper,
         "woah!",
 
         casper,
         "what was that?",
-
-        jsCall,
-        {
-          fcn: () => {
-            preloadImages("/s_one/", ["roomone_dark2.gif", "CASCA_sit3.gif"]);
-          },
-        },
 
         casper,
         { image: `casper_walks2.gif?A=${Date.now()}`, position: casperroom1 },

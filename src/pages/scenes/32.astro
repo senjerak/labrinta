@@ -10,6 +10,7 @@ import "../../styles/novel.css";
             "CASCA_fall.gif",
             "CASCA_fall2.gif",
             "outside1.gif",
+            "outside1_casca.gif",
             "CASCA_talkmadL.gif",
         ]);
 
@@ -21,6 +22,9 @@ import "../../styles/novel.css";
              * Characters
              */
             const n = new Character("");
+            const npc = new Character("Stranger", {
+                color: "rgb(48, 255, 186)",
+            });
             const casca = new Character("Casca", {
                 color: "rgb(230, 145, 185)",
             });
@@ -39,10 +43,22 @@ import "../../styles/novel.css";
                 scene,
                 "outside1.gif",
 
+                npc,
+                {
+                    image: `outside1_wave.gif?A=${Date.now()}`,
+                    position: rightSide,
+                },
+
                 casca,
                 {
-                    image: `CASCA_talkmadL.gif?A=${Date.now()}`,
-                    position: cascalobby3,
+                    image: `outside1_casca.gif?A=${Date.now()}`,
+                    position: rightSidecar,
+                },
+
+                npc,
+                {
+                    image: `outside1_wave.gif?A=${Date.now()}`,
+                    position: rightSidecar,
                 },
 
                 casca,
@@ -53,9 +69,6 @@ import "../../styles/novel.css";
 
                 casca,
                 "But.. how...",
-
-                n,
-                "The moment casca placed their hand on the stone, a signal burst outwards in all directions.",
 
                 casca,
                 "C A S P E R !",

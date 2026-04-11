@@ -15,6 +15,8 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 */
 var novel_script;
+const positionDefaultRelative = new Position(0, 0, true);
+
 /*
     A Character is an actor that can speak and be displayed.
     

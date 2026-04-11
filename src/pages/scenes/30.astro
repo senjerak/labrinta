@@ -22,6 +22,9 @@ import "../../styles/novel.css";
              * Characters
              */
             const n = new Character("");
+            const npc = new Character("Stranger", {
+                color: "rgb(48, 255, 186)",
+            });
             const casca = new Character("Casca", {
                 color: "rgb(230, 145, 185)",
             });
@@ -43,20 +46,41 @@ import "../../styles/novel.css";
                 scene,
                 "outside2.gif",
 
+                npc,
+                {
+                    image: `outside2_wave.gif?A=${Date.now()}`,
+                    position: rightSide,
+                },
+
                 casca,
                 {
-                    image: `CASCA_talkmadL.gif?A=${Date.now()}`,
-                    position: cascalobby3,
+                    image: `outside2_hug.gif?A=${Date.now()}`,
+                    position: rightSide,
                 },
 
                 casca,
                 "Casper!!",
 
                 casca,
+                {
+                    image: `outside2_up.gif?A=${Date.now()}`,
+                    position: rightSide,
+                },
+
+                casca,
                 "oh- oh my god-",
 
                 casca,
+                {
+                    image: `outside2_up2.gif?A=${Date.now()}`,
+                    position: rightSide,
+                },
+
+                casca,
                 "You're here! You're really here!",
+
+                npc,
+                { image: "dragonfly2.gif", position: rightSide },
 
                 casper,
                 "well, yeah! I was playing with a big red lady...",
