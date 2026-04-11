@@ -3,11 +3,10 @@
   window.__labrintaStoryInactivity = true;
 
   var INACTIVITY_MS = 5 * 60 * 1000; // 5 minutes
-  var REDIRECT = "/scenes/1";
   var timerId;
 
   function redirect() {
-    window.location.href = REDIRECT;
+    window.location.href = "/";
   }
 
   function resetTimer() {
