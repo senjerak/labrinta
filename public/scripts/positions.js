@@ -6,6 +6,8 @@ const homecasca1 = new Position(572, 430, 0.5, 0.5);
 const homecasper2 = new Position(897, 300, 1, 0);
 const homechoco = new Position(850, 465, 1, 0);
 
+const fullpage = new Position(0, 0, 1, 0);
+
 const elecasca1 = new Position(600, 300, 1, 0);
 const elecasper1 = new Position(470, 290, 1, 0);
 const elecasper2 = new Position(475, 265, 1, 0);
@@ -69,6 +71,7 @@ const cascaportal = new Position(350, 10, 0, 0);
 
 const cascamarket1 = new Position(445, 10, 0, 0);
 const cascamarket2 = new Position(458, 325, 0, 0);
+const cascamarket3 = new Position(445, 0, 0, 0);
 
 const rightSidelobby = new Position(1020, 560, 1, 1);
 const casperlobby2 = new Position(45, 295, 0, 0);

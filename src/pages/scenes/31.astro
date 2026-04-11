@@ -4,96 +4,96 @@ import "../../styles/novel.css";
 ---
 
 <StoryLayout>
-    <script is:inline>
-        preloadImages("/s_one/", [
-            "room3door.gif",
-            "CASCA_fall.gif",
-            "CASCA_fall2.gif",
-            "outside4.gif",
-            "CASCA_talkmadL.gif",
-        ]);
+  <script is:inline>
+    preloadImages("/s_one/", [
+      "room3door.gif",
+      "CASCA_fall.gif",
+      "CASCA_fall2.gif",
+      "outside4.gif",
+      "CASCA_talkmadL.gif",
+    ]);
 
-        waitForNovel(function prepareNovel() {
-            novel.imagePath = "/s_one/"; // path to your image directory
-            novel.audioPath = ""; // path to your audio directory
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
 
-            /**
-             * Characters
-             */
-            const n = new Character("");
-            const casca = new Character("Casca", {
-                color: "rgb(230, 145, 185)",
-            });
-            const casper = new Character("Casper", {
-                color: "rgba(218, 234, 127, 1)",
-            });
+      /**
+       * Characters
+       */
+      const n = new Character("");
+      const casca = new Character("Casca", {
+        color: "rgb(230, 145, 185)",
+      });
+      const casper = new Character("Casper", {
+        color: "rgba(218, 234, 127, 1)",
+      });
 
-            /**
-             * Scene Twenty - Room One Dark P5
-             *
-             */
-            script = [
-                label,
-                "start",
-                scene,
-                "outside4.gif",
+      /**
+       * Scene Twenty - Room One Dark P5
+       *
+       */
+      script = [
+        label,
+        "start",
+        scene,
+        "outside4.gif",
 
-                casca,
-                { image: `CASCAWalkmad.gif`, position: rightSideopen },
-                casper,
-                { image: `casper_walks.gif`, position: rightSideopen },
+        casca,
+        { image: `CASCAWalkmad.gif`, position: rightSideopen },
+        casper,
+        { image: `casper_walks.gif`, position: rightSideopen },
 
-                casca,
-                "Alright.. Its time to go home.",
+        casca,
+        "Alright.. Its time to go home.",
 
-                casca,
-                { image: "CASCA_talkmad.gif", position: homecasca1 },
+        casca,
+        { image: "CASCA_talkmad.gif", position: homecasca1 },
 
-                casper,
-                { image: "CASPER_talksadL.gif", position: homecasper1 },
+        casper,
+        { image: "CASPER_talksadL.gif", position: homecasper1 },
 
-                casper,
-                "AW..! what? already?",
+        casper,
+        "AW..! what? already?",
 
-                casca,
-                "yep. come on.",
+        casca,
+        "yep. come on.",
 
-                casca,
-                { image: "CASCA_talksL.gif", position: homecasca1 },
+        casca,
+        { image: "CASCA_talkL.gif", position: homecasca1 },
 
-                casper,
-                { image: "CASPER_talkL.gif", position: homecasper1 },
+        casper,
+        { image: "CASPER_talkL.gif", position: homecasper1 },
 
-                casca,
-                "...please.",
+        casca,
+        "...please.",
 
-                casca,
-                { image: `CASCAWalkmad.gif`, position: rentcasper2 },
-                casper,
-                { image: `casper_walks.gif`, position: rentcasper2 },
+        casca,
+        { image: `CASCAWalkmad.gif`, position: rentcasper2 },
+        casper,
+        { image: `casper_walks.gif`, position: rentcasper2 },
 
-                n,
-                "The thread of connection between the many minds of our world might never be seen,",
+        n,
+        "The thread of connection between the many minds of our world might never be seen,",
 
-                n,
-                "...but, sometimes, a glint or two might peek beneath the lines of our stories.",
+        n,
+        "...but, sometimes, a glint or two might peek beneath the lines of our stories.",
 
-                n,
-                "our history, our experience,",
+        n,
+        "our history, our experience,",
 
-                n,
-                "our everything.",
+        n,
+        "our everything.",
 
-                jsCall,
-                {
-                    fcn: () => {
-                        preloadImages("/s_one/", ["ending.png"]);
-                    },
-                },
+        jsCall,
+        {
+          fcn: () => {
+            preloadImages("/s_one/", ["ending.png"]);
+          },
+        },
 
-                jsCall,
-                { fcn: changeScene(33) },
-            ];
-        });
-    </script>
+        jsCall,
+        { fcn: changeScene(33) },
+      ];
+    });
+  </script>
 </StoryLayout>

@@ -42,6 +42,7 @@ body {
     margin-right: auto;
     position: relative;
     text-align: center;
+    overflow: hidden;
 }
 
 a,
