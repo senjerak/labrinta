@@ -1,0 +1,38 @@
+---
+import StoryLayout from "../../layouts/StoryLayout.astro";
+import "../../styles/novel.css";
+---
+
+<StoryLayout>
+  <script is:inline>
+    preloadImages("/s_one/", ["road.mp4"]);
+
+    waitForNovel(function prepareNovel() {
+      novel.imagePath = "/s_one/"; // path to your image directory
+      novel.audioPath = ""; // path to your audio directory
+
+      /**
+       * Characters
+       */
+
+      /**
+       * Positions
+       */
+
+      /**
+       * Scene Nine - Overpass 6
+       *
+       */
+      script = [
+        label,
+        "start",
+
+        label,
+        "video",
+
+        jsCall,
+        { fcn: changeScene(10) },
+      ];
+    });
+  </script>
+</StoryLayout>
